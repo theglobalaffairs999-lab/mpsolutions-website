@@ -149,6 +149,31 @@ section h2 {
   margin-bottom: 10px;
 }
 
+.banner-nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+.banner-nav-btn {
+  background: #f58220;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  flex: 1;
+}
+
+.banner-nav-btn:hover {
+  background: #d66a1a;
+}
+
 footer {
   background: #0b2f66;
   color: #fff;
@@ -172,6 +197,14 @@ footer {
   section h2 {
     font-size: 24px;
   }
+
+  .banner-nav-buttons {
+    flex-direction: column;
+  }
+
+  .banner-nav-btn {
+    padding: 12px 18px;
+  }
 }
 </style>
 </head>
@@ -192,6 +225,10 @@ footer {
 <div class="container">
   <section id="home" class="hero">
     <img src="hero-banner.jpg" alt="MP Solutions Hero Banner">
+    <div class="banner-nav-buttons">
+      <button class="banner-nav-btn" onclick="smoothScroll('contact')">← Previous</button>
+      <button class="banner-nav-btn" onclick="smoothScroll('about')">Next →</button>
+    </div>
   </section>
 
   <section id="about">
@@ -263,6 +300,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Smooth scroll function for banner nav buttons
+function smoothScroll(sectionId) {
+  const target = document.getElementById(sectionId);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 </script>
 
 </body>
