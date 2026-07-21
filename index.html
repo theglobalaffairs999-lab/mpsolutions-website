@@ -5,65 +5,265 @@
 <meta name='viewport' content='width=device-width,initial-scale=1'>
 <title>MP Solutions</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
-header{background:#0b2f66;color:#fff;padding:20px}
-.container{max-width:1100px;margin:auto;padding:20px}
-nav a{color:#fff;text-decoration:none;margin-right:18px}
-.hero{display:flex;flex-wrap:wrap;align-items:center;gap:30px;padding:40px 0}
-.hero img{width:220px;border-radius:50%}
-.btn{background:#f58220;color:#fff;padding:12px 18px;border-radius:6px;text-decoration:none}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-footer{background:#0b2f66;color:#fff;text-align:center;padding:18px;margin-top:40px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+
+header {
+  background: #0b2f66;
+  color: #fff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #f58220;
+  color: #fff;
+}
+
+nav a.active {
+  background: #f58220;
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  margin: 60px 0;
+  padding: 40px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section h2 {
+  font-size: 32px;
+  color: #0b2f66;
+  margin-bottom: 30px;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 1400px;
+  border-radius: 18px;
+  display: block;
+  margin: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+#about {
+  scroll-margin-top: 100px;
+}
+
+.btn {
+  background: #f58220;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #d66a1a;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+
+.card h3 {
+  color: #0b2f66;
+  margin-bottom: 10px;
+}
+
+footer {
+  background: #0b2f66;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  section h2 {
+    font-size: 24px;
+  }
+}
 </style>
 </head>
 <body>
 <header>
-<div class="container">
-<h1>MP Solutions</h1>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#leaders">Leadership</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
+  <div class="header-container">
+    <h1>MP Solutions</h1>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#leaders" class="nav-link">Leadership</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
 </header>
+
 <div class="container">
-  <section class="hero">
-    <img src="hero-banner.jpg" alt="MP Solutions Hero Banner" style="width:100%;max-width:1400px;border-radius:18px;display:block;margin:auto;">
+  <section id="home" class="hero">
+    <img src="hero-banner.jpg" alt="MP Solutions Hero Banner">
+  </section>
+
+  <section id="about">
+    <h2>About MP Solutions</h2>
+    <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
+    <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Founders:</strong> Chintapalli Prakash & Gopaluni Sai Mahanth</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card"><h3>Political Surveys</h3></div>
+      <div class="card"><h3>Election Campaign Management</h3></div>
+      <div class="card"><h3>Opinion & Exit Polls</h3></div>
+      <div class="card"><h3>Booth Management</h3></div>
+      <div class="card"><h3>Data Analytics</h3></div>
+      <div class="card"><h3>Social Media Campaigns</h3></div>
+      <div class="card"><h3>Political Strategy</h3></div>
+      <div class="card"><h3>Candidate Branding</h3></div>
+    </div>
+  </section>
+
+  <section id="leaders">
+    <h2>Leadership</h2>
+    <p><strong>Founders:</strong> Chintapalli Prakash & Gopaluni Sai Mahanth</p>
+    <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
+    <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank">@pvtltdmp</a></p>
   </section>
 </div>
 
-<section id="services">
- <h2>Our Services</h2>
+<footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 
+<script>
+// Active nav link based on scroll position
+window.addEventListener('scroll', () => {
+  let current = '';
+  const sections = document.querySelectorAll('section');
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 100) {
+      current = section.getAttribute('id');
+    }
+  });
 
-<div class="cards">
-<div class="card"><h3>Political Surveys</h3></div>
-<div class="card"><h3>Election Campaign Management</h3></div>
-<div class="card"><h3>Opinion & Exit Polls</h3></div>
-<div class="card"><h3>Booth Management</h3></div>
-<div class="card"><h3>Data Analytics</h3></div>
-<div class="card"><h3>Social Media Campaigns</h3></div>
-<div class="card"><h3>Political Strategy</h3></div>
-<div class="card"><h3>Candidate Branding</h3></div>
-</div>
-</section>
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').slice(1) === current) {
+      link.classList.add('active');
+    }
+  });
+});
 
-<section id="leaders">
-<h2>Leadership</h2>
-<p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
-</section>
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: theglobalaffairs999@gmail.com</p>
-<p>Offices: Hyderabad | Vijayawada</p>
-<p>Instagram: https://www.instagram.com/pvtltdmp</p>
-</section>
-</div>
-
-<footer> © 2026 MP Solutions. All Rights Reserved.
 </body>
 </html>
