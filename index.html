@@ -441,18 +441,40 @@ footer {
     font-size: 24px;
   }
 
-  .live-results-hotspot {
-    border-width: 1px;
-  }
-}/* BLINKING HERO VIEW LIVE RESULTS BUTTON */
-.hero-live-results-btn {
-    display: inline-block;
-    animation: resultsBlink 1s infinite;
-    box-shadow: 0 0 15px #ffad43;
-    cursor: pointer;
+ 
+/* VIOLET LIVE RESULTS CLICKABLE AREA */
+.hero-banner-wrapper {
+    position: relative;
 }
-</style>
-</head>
+
+.hero-live-results-btn {
+    position: absolute;
+    left: 50%;
+    top: 72%;
+    transform: translate(-50%, -50%);
+    width: 32%;
+    height: 13%;
+    padding: 0;
+    background: transparent;
+    border: 3px solid #8b5cf6;
+    border-radius: 16px;
+    z-index: 20;
+    display: block;
+    font-size: 0;
+    cursor: pointer;
+    animation: violetPulse 1s infinite;
+}
+
+@keyframes violetPulse {
+    0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 8px #a855f7;
+    }
+    50% {
+        opacity: 0.35;
+        box-shadow: 0 0 24px #a855f7;
+    }
+}
 
 <body>
 <header>
