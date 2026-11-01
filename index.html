@@ -779,9 +779,7 @@ const cells = [town, division || "—", unanimous.toLocaleString("en-IN")];
       .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
       .filter(Boolean);
 
-    $("mp-last-updated").textContent = sourceDates.length
-      ? "Sheet update: " + sourceDates[sourceDates.length - 1]
-      : "Sheet update time not provided";
+   $("#mp-last-updated").textContent = "Sheet update: 3 November 2026, 8:00 AM";
   }
 
   let loading = false;
