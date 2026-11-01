@@ -129,7 +129,6 @@ section h2 {
   display: block;
   font-size: 0;
   cursor: pointer;
-  /* Blinking animation removed here */
 }
 
 .live-results-hotspot:focus-visible {
@@ -152,7 +151,7 @@ section h2 {
   background: #d66a1a;
 }
 
-/* Service cards */
+/* Service cards — Completely static without blinking outline */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -164,12 +163,17 @@ section h2 {
   padding: 18px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  border: 1px solid #e0e0e0;
+  outline: none !important;
+  animation: none !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 15px rgba(0,0,0,.15);
+  border-color: #f58220;
+  outline: none !important;
 }
 
 .card h3 {
@@ -250,7 +254,6 @@ section h2 {
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
-  /* Blinking animation removed here */
   box-shadow: 0 0 15px #ffad48;
 }
 
@@ -808,3 +811,4 @@ function smoothScroll(sectionId) {
 
 </body>
 </html>
+        
