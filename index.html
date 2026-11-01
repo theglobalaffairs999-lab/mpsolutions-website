@@ -114,19 +114,7 @@ section h2 {
   box-shadow: 0 4px 15px rgba(0,0,0,.15);
 }
 
-/* Transparent clickable area positioned over VIEW LIVE RESULTS in the banner */
-.live-results-hotspot {
-  position: absolute;
-  left: 55%;
-  top: 65%;
-  width: 35%;
-  height: 13%;
-  z-index: 10;
-  display: block;
-  cursor: pointer;
-  border: 2px solid rgba(255,255,255,.9);
-  border-radius: 8px;
-  animation: resultsBlink 1s infinite;
+
 }
 
 .live-results-hotspot:focus-visible {
@@ -456,6 +444,12 @@ footer {
   .live-results-hotspot {
     border-width: 1px;
   }
+}/* BLINKING HERO VIEW LIVE RESULTS BUTTON */
+.hero-live-results-btn {
+    display: inline-block;
+    animation: resultsBlink 1s infinite;
+    box-shadow: 0 0 15px #ffad43;
+    cursor: pointer;
 }
 </style>
 </head>
@@ -481,7 +475,9 @@ footer {
       <img
         src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
         alt="MP Solutions Hero Banner">
-      
+      <a href="#live-results" class="hero-live-results-btn">
+  VIEW LIVE RESULTS →
+</a>
     </div>
 
     <div class="banner-nav-buttons">
