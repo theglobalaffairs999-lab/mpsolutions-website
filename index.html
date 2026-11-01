@@ -536,7 +536,9 @@ footer {
         <p>
           Town-wise Results | Party-wise Performance | Division-wise Tracking
         </p>
-
+<p style="margin-top:10px;font-weight:bold;color:#ffd700;">
+  ELECTION RESULTS LIVE FROM 8:00 AM | 3 NOVEMBER 2026
+</p>
         <span class="mp-election-button">
           VIEW LIVE RESULTS →
         </span>
@@ -598,15 +600,15 @@ footer {
       <table class="mp-results-table">
         <thead>
           <tr>
-            <th>Town</th>
-            <th>Divisions</th>
-            <th>TDP</th>
-            <th>YSRCP</th>
-            <th>JSP</th>
-            <th>BJP</th>
-            <th>Others</th>
-            <th>Status</th>
-          </tr>
+          <th>Town</th>
+<th>Divisions</th>
+<th>Unanimous</th>
+<th>TDP</th>
+<th>YSRCP</th>
+<th>JSP</th>
+<th>BJP</th>
+<th>Others</th>
+<th>Status</th>
         </thead>
         <tbody id="mp-results-body">
           <tr>
@@ -715,7 +717,8 @@ footer {
 
     const townIndex = index("town");
     const divisionIndex = index("divisions");
-    const statusIndex = index("status");
+    const statusIndex = index("status"); 
+    const unanimousIndex = index("unanimous");
     const updatedIndex = index("lastupdated");
 
     if (townIndex < 0) {
@@ -740,8 +743,8 @@ footer {
       const tr = document.createElement("tr");
       const town = row[townIndex] || "—";
       const division = divisionIndex >= 0 ? row[divisionIndex] : "";
-      const cells = [town, division || "—"];
-
+     const unanimous = unanimousIndex >= 0 ? numberValue(row[unanimousIndex]) : 0;
+const cells = [town, division || "—", unanimous.toLocaleString("en-IN")];
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
