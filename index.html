@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MP Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP Solutions - AP Municipal Elections 2026</title>
+
+<!-- External Google Font for Modern Typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -17,19 +22,21 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background: #f4f7fb;
   color: #222;
+  line-height: 1.6;
 }
 
+/* Header & Navigation Styling */
 header {
   background: #0b2f66;
   color: #fff;
-  padding: 20px 0;
+  padding: 16px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
 
 .header-container {
@@ -42,34 +49,32 @@ header {
 }
 
 header h1 {
-  font-size: 28px;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   margin: 0;
 }
 
 nav {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
 }
 
 nav a:hover,
 nav a.active {
   background: #f58220;
   color: #fff;
-}
-
-nav a.active {
-  border-bottom: 3px solid #fff;
 }
 
 .container {
@@ -79,10 +84,10 @@ nav a.active {
 }
 
 section {
-  margin: 60px 0;
-  padding: 40px 0;
+  margin: 40px 0;
+  padding: 30px 0;
   border-bottom: 1px solid #e0e0e0;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 90px;
 }
 
 section:last-child {
@@ -90,15 +95,17 @@ section:last-child {
 }
 
 section h2 {
-  font-size: 32px;
+  font-size: 30px;
   color: #0b2f66;
-  margin-bottom: 30px;
+  font-weight: 700;
+  margin-bottom: 24px;
 }
 
+/* Hero Section */
 .hero {
   display: block;
-  padding: 20px 0;
-  margin-top: 20px;
+  padding: 10px 0;
+  margin-top: 10px;
 }
 
 .hero-banner-wrapper {
@@ -110,8 +117,8 @@ section h2 {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.12);
 }
 
 .hero-live-results-btn {
@@ -131,62 +138,12 @@ section h2 {
   cursor: pointer;
 }
 
-.live-results-hotspot:focus-visible {
-  outline: 3px solid #f58220;
-  outline-offset: 3px;
-}
-
-.btn {
-  background: #f58220;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 15px;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #d66a1a;
-}
-
-/* Service cards — Completely static without blinking outline */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: #fff;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  border: 1px solid #e0e0e0;
-  outline: none !important;
-  animation: none !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,.15);
-  border-color: #f58220;
-  outline: none !important;
-}
-
-.card h3 {
-  color: #0b2f66;
-  margin-bottom: 10px;
-}
-
 .banner-nav-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 18px;
   width: 100%;
-  gap: 10px;
+  gap: 12px;
 }
 
 .banner-nav-btn {
@@ -194,10 +151,10 @@ section h2 {
   color: #fff;
   padding: 12px 24px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   transition: background 0.3s ease;
   flex: 1;
 }
@@ -206,114 +163,175 @@ section h2 {
   background: #d66a1a;
 }
 
-/* Election Desk promotion */
+/* ELECTION DESK PROMOTIONAL BANNER WITH BLINKING OUTER LAYER */
 .mp-election-promo {
-  background: linear-gradient(120deg,#101f43,#193c70);
-  padding: 0; /* padding moved to inner link for full clickable area */
-  margin: 25px auto;
-  text-align: center;
-  border-top: 4px solid #f28c28;
-  border-bottom: 4px solid #f28c28;
-  border-radius: 10px;
+  position: relative;
+  margin: 40px auto;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(16, 31, 67, 0.92), rgba(25, 60, 112, 0.95)),
+              url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
   overflow: hidden;
+  /* Blinking outer layer shadow animation applied to wrapper */
+  animation: electionOuterBlink 1.5s infinite ease-in-out;
+  transition: transform 0.3s ease;
 }
 
+.mp-election-promo:hover {
+  transform: translateY(-2px);
+}
+
+/* Outer Layer Pulsing Animation */
+@keyframes electionOuterBlink {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.9), 0 0 25px rgba(168, 85, 247, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.2), 0 0 5px rgba(168, 85, 247, 0.1);
+  }
+}
+
+/* Entire banner wrapped in a clickable anchor */
 .mp-election-link {
   display: block;
-  padding: 35px 15px;
+  padding: 40px 20px;
   text-decoration: none;
   color: white;
-  transition: background 0.3s ease;
-}
-
-.mp-election-link:hover {
-  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  cursor: pointer;
 }
 
 .mp-election-inner {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
-  color: white;
 }
 
 .mp-election-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: #ffbd66;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 14px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
 .mp-election-inner h2 {
-  color: #fff;
-  font-size: clamp(24px,4vw,38px);
-  margin: 15px 0;
+  color: #ffffff;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  margin: 12px 0;
+  letter-spacing: -0.5px;
 }
 
 .mp-election-inner h3 {
   color: #ffad48;
-  font-size: clamp(17px,3vw,25px);
-  margin-bottom: 12px;
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
 .mp-election-inner p {
-  line-height: 1.7;
-  color: #fff;
+  font-size: 16px;
+  color: #e2e8f0;
+  margin-bottom: 20px;
 }
 
 .mp-election-button {
   display: inline-block;
-  margin: 15px 0;
-  padding: 14px 26px;
+  margin: 10px 0 16px;
+  padding: 14px 30px;
   background: #f28c28;
   color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  box-shadow: 0 0 15px #ffad48;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(242, 140, 40, 0.4);
+  transition: background 0.3s ease;
 }
 
-.mp-election-button:hover {
+.mp-election-link:hover .mp-election-button {
   background: #d87512;
 }
 
 .mp-election-inner small {
   display: block;
-  color: #d8e2f4;
+  color: #cbd5e1;
+  font-size: 13px;
+  letter-spacing: 0.5px;
 }
 
 .mp-blink-dot {
-  display: inline-block;
   width: 10px;
   height: 10px;
   background: #28df80;
   border-radius: 50%;
+  box-shadow: 0 0 8px #28df80;
 }
 
-/* Live results dashboard */
+/* Service Cards — Completely Static Layout (No Blinking Outlines) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  border: 1px solid #e2e8f0;
+  outline: none !important;
+  animation: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.1);
+  border-color: #cbd5e1;
+}
+
+.card h3 {
+  color: #0b2f66;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Live Results Dashboard */
 #live-results {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   color: #17233d;
-  padding: 22px 12px;
+  padding: 20px 0;
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 40px auto;
 }
 
 .mp-results-heading {
   background: #10234b;
   color: white;
   text-align: center;
-  padding: 28px 15px;
-  border-radius: 12px;
+  padding: 32px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
 }
 
 .mp-results-heading h1 {
   color: white;
-  font-size: clamp(22px, 4vw, 34px);
-  margin: 14px 0 8px;
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  margin: 12px 0 8px;
 }
 
 .mp-results-heading p {
   margin: 0;
   color: #d9e3f5;
+  font-size: 15px;
 }
 
 .mp-live-indicator {
@@ -336,13 +354,19 @@ section h2 {
 }
 
 #mp-refresh {
-  background: #ed8b25;
+  background: #f58220;
   border: none;
-  padding: 11px 17px;
+  padding: 10px 20px;
   color: white;
   border-radius: 6px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 14px;
   cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+#mp-refresh:hover {
+  background: #d66a1a;
 }
 
 #mp-refresh:disabled {
@@ -353,25 +377,28 @@ section h2 {
 .mp-party-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
 .mp-party-card {
   border: 1px solid #e1e5ed;
-  padding: 18px 10px;
+  padding: 20px 12px;
   border-radius: 10px;
   text-align: center;
   background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
 .mp-party-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-size: 15px;
   color: #0b2f66;
+  font-weight: 700;
 }
 
 .mp-party-card strong {
-  font-size: 29px;
+  font-size: 28px;
+  color: #17233d;
 }
 
 .mp-results-info {
@@ -381,8 +408,9 @@ section h2 {
 
 .mp-table-wrap {
   overflow-x: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
 }
 
 .mp-results-table {
@@ -395,22 +423,25 @@ section h2 {
 .mp-results-table th {
   background: #10234b;
   color: white;
-  padding: 14px 10px;
+  padding: 14px 12px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .mp-results-table td {
-  padding: 13px 10px;
+  padding: 14px 12px;
   border-bottom: 1px solid #e5e5e5;
+  font-size: 15px;
 }
 
 .mp-results-table tbody tr:nth-child(even) {
-  background: #f5f7fb;
+  background: #f8fafc;
 }
 
 .mp-disclaimer {
   margin-top: 22px;
   font-size: 13px;
-  color: #666;
+  color: #64748b;
   line-height: 1.6;
 }
 
@@ -418,24 +449,25 @@ footer {
   background: #0b2f66;
   color: #fff;
   text-align: center;
-  padding: 30px 20px;
+  padding: 28px 20px;
   margin-top: 40px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
   }
 
   nav {
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
   }
 
   nav a {
     font-size: 14px;
-    padding: 7px 9px;
+    padding: 6px 10px;
   }
 
   section h2 {
@@ -444,10 +476,6 @@ footer {
 
   .banner-nav-buttons {
     flex-direction: column;
-  }
-
-  .banner-nav-btn {
-    padding: 12px 18px;
   }
 
   .mp-party-cards {
@@ -481,7 +509,8 @@ footer {
     <div class="hero-banner-wrapper">
       <img
         src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
-        alt="MP Solutions Hero Banner">
+        alt="MP Solutions Hero Banner"
+        onerror="this.onerror=null; this.src='https://placehold.co/1100x400/0b2f66/ffffff?text=MP+Solutions+Election+Strategy';">
       <a href="#live-results" class="hero-live-results-btn">
         VIEW LIVE RESULTS →
       </a>
@@ -493,7 +522,7 @@ footer {
     </div>
   </section>
 
-  <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
+  <!-- MP SOLUTIONS ELECTION DESK PROMOTION WITH BLINKING OUTER LAYER -->
   <section id="election-desk" class="mp-election-promo">
     <a href="#live-results" class="mp-election-link">
       <div class="mp-election-inner">
@@ -505,8 +534,7 @@ footer {
         <h2>AP MUNICIPAL ELECTIONS 2026</h2>
         <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
         <p>
-          Town-wise Results | Party-wise Performance |
-          Division-wise Tracking
+          Town-wise Results | Party-wise Performance | Division-wise Tracking
         </p>
 
         <span class="mp-election-button">
@@ -521,8 +549,8 @@ footer {
   <section id="about">
     <h2>About MP Solutions</h2>
     <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
-    <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
-    <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
+    <p style="margin-top: 8px;"><strong>Location:</strong> Hyderabad | Vijayawada</p>
+    <p style="margin-top: 4px;"><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
   </section>
 
   <section id="services">
@@ -542,7 +570,7 @@ footer {
   <section id="leaders">
     <h2>Leadership</h2>
     <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
-    <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
+    <p style="margin-top: 8px;">With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
   </section>
 
   <!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
@@ -599,13 +627,14 @@ footer {
   <section id="contact">
     <h2>Contact</h2>
     <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
-    <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
+    <p style="margin-top: 4px;"><strong>Offices:</strong> Hyderabad | Vijayawada</p>
+    <p style="margin-top: 4px;"><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
   </section>
 </div>
 
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 
+<!-- Live Results CSV Fetch Script -->
 <script>
 (() => {
   const CSV_URL =
@@ -798,6 +827,7 @@ footer {
 </script>
 
 <script>
+// Active nav indicator on scroll
 window.addEventListener("scroll", () => {
   let current = "";
   const sections = document.querySelectorAll("section");
