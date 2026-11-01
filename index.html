@@ -129,34 +129,12 @@ section h2 {
   display: block;
   font-size: 0;
   cursor: pointer;
-  animation: violetPulse 1s infinite;
-}
-
-@keyframes violetPulse {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 8px #a855f7;
-  }
-  50% {
-    opacity: 0.35;
-    box-shadow: 0 0 24px #a855f7;
-  }
+  /* Blinking animation removed here */
 }
 
 .live-results-hotspot:focus-visible {
   outline: 3px solid #f58220;
   outline-offset: 3px;
-}
-
-@keyframes resultsBlink {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 8px orange;
-  }
-  50% {
-    opacity: .35;
-    box-shadow: 0 0 20px gold;
-  }
 }
 
 .btn {
@@ -174,7 +152,7 @@ section h2 {
   background: #d66a1a;
 }
 
-/* Service cards — static layout with subtle lift effect on hover */
+/* Service cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -187,7 +165,6 @@ section h2 {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: none !important; /* Prevents any blinking or pulsing */
 }
 
 .card:hover {
@@ -273,7 +250,7 @@ section h2 {
   font-weight: bold;
   text-decoration: none;
   border-radius: 6px;
-  animation: resultsBlink 0.7s infinite;
+  /* Blinking animation removed here */
   box-shadow: 0 0 15px #ffad48;
 }
 
@@ -292,11 +269,6 @@ section h2 {
   height: 10px;
   background: #28df80;
   border-radius: 50%;
-  animation: mpElectionBlink 1s infinite;
-}
-
-@keyframes mpElectionBlink {
-  50% { opacity: .2; }
 }
 
 /* Live results dashboard */
