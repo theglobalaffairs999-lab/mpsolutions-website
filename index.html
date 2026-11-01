@@ -209,12 +209,25 @@ section h2 {
 /* Election Desk promotion */
 .mp-election-promo {
   background: linear-gradient(120deg,#101f43,#193c70);
-  padding: 35px 15px;
+  padding: 0; /* padding moved to inner link for full clickable area */
   margin: 25px auto;
   text-align: center;
   border-top: 4px solid #f28c28;
   border-bottom: 4px solid #f28c28;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.mp-election-link {
+  display: block;
+  padding: 35px 15px;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.mp-election-link:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .mp-election-inner {
@@ -243,6 +256,7 @@ section h2 {
 
 .mp-election-inner p {
   line-height: 1.7;
+  color: #fff;
 }
 
 .mp-election-button {
@@ -481,25 +495,27 @@ footer {
 
   <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
   <section id="election-desk" class="mp-election-promo">
-    <div class="mp-election-inner">
-      <div class="mp-election-label">
-        <span class="mp-blink-dot"></span>
-        MP SOLUTIONS ELECTION DESK
+    <a href="#live-results" class="mp-election-link">
+      <div class="mp-election-inner">
+        <div class="mp-election-label">
+          <span class="mp-blink-dot"></span>
+          MP SOLUTIONS ELECTION DESK
+        </div>
+
+        <h2>AP MUNICIPAL ELECTIONS 2026</h2>
+        <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
+        <p>
+          Town-wise Results | Party-wise Performance |
+          Division-wise Tracking
+        </p>
+
+        <span class="mp-election-button">
+          VIEW LIVE RESULTS →
+        </span>
+
+        <small>Political Strategy | Survey &amp; Analytics</small>
       </div>
-
-      <h2>AP MUNICIPAL ELECTIONS 2026</h2>
-      <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
-      <p>
-        Town-wise Results | Party-wise Performance |
-        Division-wise Tracking
-      </p>
-
-      <a href="#live-results" class="mp-election-button">
-        VIEW LIVE RESULTS →
-      </a>
-
-      <small>Political Strategy | Survey &amp; Analytics</small>
-    </div>
+    </a>
   </section>
 
   <section id="about">
@@ -811,4 +827,3 @@ function smoothScroll(sectionId) {
 
 </body>
 </html>
-        
