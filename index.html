@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MP Solutions - AP Municipal Elections 2026</title>
-
-<!-- External Google Font for Modern Typography -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MP Solutions</title>
 
 <style>
 * {
@@ -22,21 +17,19 @@ html {
 }
 
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background: #f4f7fb;
   color: #222;
-  line-height: 1.6;
 }
 
-/* Header & Navigation Styling */
 header {
   background: #0b2f66;
   color: #fff;
-  padding: 16px 0;
+  padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 
 .header-container {
@@ -49,32 +42,34 @@ header {
 }
 
 header h1 {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-size: 28px;
   margin: 0;
 }
 
 nav {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
-  padding: 8px 14px;
-  border-radius: 6px;
-  transition: all 0.25s ease;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
   background: #f58220;
   color: #fff;
+}
+
+nav a.active {
+  border-bottom: 3px solid #fff;
 }
 
 .container {
@@ -84,10 +79,10 @@ nav a.active {
 }
 
 section {
-  margin: 40px 0;
-  padding: 30px 0;
+  margin: 60px 0;
+  padding: 40px 0;
   border-bottom: 1px solid #e0e0e0;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 100px;
 }
 
 section:last-child {
@@ -95,17 +90,15 @@ section:last-child {
 }
 
 section h2 {
-  font-size: 30px;
+  font-size: 32px;
   color: #0b2f66;
-  font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 }
 
-/* Hero Section */
 .hero {
   display: block;
-  padding: 10px 0;
-  margin-top: 10px;
+  padding: 20px 0;
+  margin-top: 20px;
 }
 
 .hero-banner-wrapper {
@@ -117,8 +110,8 @@ section h2 {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.12);
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.15);
 }
 
 .hero-live-results-btn {
@@ -138,12 +131,62 @@ section h2 {
   cursor: pointer;
 }
 
+.live-results-hotspot:focus-visible {
+  outline: 3px solid #f58220;
+  outline-offset: 3px;
+}
+
+.btn {
+  background: #f58220;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #d66a1a;
+}
+
+/* Service cards — Completely static without blinking outline */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  border: 1px solid #e0e0e0;
+  outline: none !important;
+  animation: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,.15);
+  border-color: #f58220;
+  outline: none !important;
+}
+
+.card h3 {
+  color: #0b2f66;
+  margin-bottom: 10px;
+}
+
 .banner-nav-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 18px;
+  margin-top: 20px;
   width: 100%;
-  gap: 12px;
+  gap: 10px;
 }
 
 .banner-nav-btn {
@@ -151,10 +194,10 @@ section h2 {
   color: #fff;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   transition: background 0.3s ease;
   flex: 1;
 }
@@ -163,174 +206,114 @@ section h2 {
   background: #d66a1a;
 }
 
-/* ELECTION DESK PROMOTIONAL BANNER WITH BLINKING OUTER LAYER */
+/* Election Desk promotion */
 .mp-election-promo {
-  position: relative;
-  margin: 40px auto;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(16, 31, 67, 0.92), rgba(25, 60, 112, 0.95)),
-              url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  background: linear-gradient(120deg,#101f43,#193c70);
+  padding: 0; /* padding moved to inner link for full clickable area */
+  margin: 25px auto;
+  text-align: center;
+  border-top: 4px solid #f28c28;
+  border-bottom: 4px solid #f28c28;
+  border-radius: 10px;
   overflow: hidden;
-  animation: electionOuterBlink 1.5s infinite ease-in-out;
-  transition: transform 0.3s ease;
 }
 
-.mp-election-promo:hover {
-  transform: translateY(-2px);
-}
-
-/* Outer Layer Pulsing Animation */
-@keyframes electionOuterBlink {
-  0%, 100% {
-    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.9), 0 0 25px rgba(168, 85, 247, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.2), 0 0 5px rgba(168, 85, 247, 0.1);
-  }
-}
-
-/* Entire banner wrapped in a clickable anchor */
 .mp-election-link {
   display: block;
-  padding: 40px 20px;
+  padding: 35px 15px;
   text-decoration: none;
   color: white;
-  text-align: center;
-  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.mp-election-link:hover {
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .mp-election-inner {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+  color: white;
 }
 
 .mp-election-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   color: #ffbd66;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: bold;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 6px 14px;
-  border-radius: 20px;
-  margin-bottom: 12px;
 }
 
 .mp-election-inner h2 {
-  color: #ffffff;
-  font-size: clamp(26px, 4vw, 40px);
-  font-weight: 800;
-  margin: 12px 0;
-  letter-spacing: -0.5px;
+  color: #fff;
+  font-size: clamp(24px,4vw,38px);
+  margin: 15px 0;
 }
 
 .mp-election-inner h3 {
   color: #ffad48;
-  font-size: clamp(18px, 3vw, 24px);
-  font-weight: 600;
-  margin-bottom: 16px;
+  font-size: clamp(17px,3vw,25px);
+  margin-bottom: 12px;
 }
 
 .mp-election-inner p {
-  font-size: 16px;
-  color: #e2e8f0;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  color: #fff;
 }
 
 .mp-election-button {
   display: inline-block;
-  margin: 10px 0 16px;
-  padding: 14px 30px;
+  margin: 15px 0;
+  padding: 14px 26px;
   background: #f28c28;
   color: white;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(242, 140, 40, 0.4);
-  transition: background 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #ffad48;
 }
 
-.mp-election-link:hover .mp-election-button {
+.mp-election-button:hover {
   background: #d87512;
 }
 
 .mp-election-inner small {
   display: block;
-  color: #cbd5e1;
-  font-size: 13px;
-  letter-spacing: 0.5px;
+  color: #d8e2f4;
 }
 
 .mp-blink-dot {
+  display: inline-block;
   width: 10px;
   height: 10px;
   background: #28df80;
   border-radius: 50%;
-  box-shadow: 0 0 8px #28df80;
 }
 
-/* Service Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #fff;
-  padding: 24px 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
-  border: 1px solid #e2e8f0;
-  outline: none !important;
-  animation: none !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.1);
-  border-color: #cbd5e1;
-}
-
-.card h3 {
-  color: #0b2f66;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* Live Results Dashboard */
+/* Live results dashboard */
 #live-results {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   color: #17233d;
-  padding: 20px 0;
+  padding: 22px 12px;
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 60px auto;
 }
 
 .mp-results-heading {
   background: #10234b;
   color: white;
   text-align: center;
-  padding: 32px 20px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  padding: 28px 15px;
+  border-radius: 12px;
 }
 
 .mp-results-heading h1 {
   color: white;
-  font-size: clamp(24px, 4vw, 34px);
-  font-weight: 800;
-  margin: 12px 0 8px;
+  font-size: clamp(22px, 4vw, 34px);
+  margin: 14px 0 8px;
 }
 
 .mp-results-heading p {
   margin: 0;
   color: #d9e3f5;
-  font-size: 15px;
 }
 
 .mp-live-indicator {
@@ -353,19 +336,13 @@ section h2 {
 }
 
 #mp-refresh {
-  background: #f58220;
+  background: #ed8b25;
   border: none;
-  padding: 10px 20px;
+  padding: 11px 17px;
   color: white;
   border-radius: 6px;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.25s ease;
-}
-
-#mp-refresh:hover {
-  background: #d66a1a;
 }
 
 #mp-refresh:disabled {
@@ -376,28 +353,25 @@ section h2 {
 .mp-party-cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+  gap: 12px;
 }
 
 .mp-party-card {
   border: 1px solid #e1e5ed;
-  padding: 20px 12px;
+  padding: 18px 10px;
   border-radius: 10px;
   text-align: center;
   background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
 .mp-party-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-size: 15px;
   color: #0b2f66;
-  font-weight: 700;
 }
 
 .mp-party-card strong {
-  font-size: 28px;
-  color: #17233d;
+  font-size: 29px;
 }
 
 .mp-results-info {
@@ -407,9 +381,8 @@ section h2 {
 
 .mp-table-wrap {
   overflow-x: auto;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .mp-results-table {
@@ -422,25 +395,22 @@ section h2 {
 .mp-results-table th {
   background: #10234b;
   color: white;
-  padding: 14px 12px;
-  font-weight: 600;
-  font-size: 15px;
+  padding: 14px 10px;
 }
 
 .mp-results-table td {
-  padding: 14px 12px;
+  padding: 13px 10px;
   border-bottom: 1px solid #e5e5e5;
-  font-size: 15px;
 }
 
 .mp-results-table tbody tr:nth-child(even) {
-  background: #f8fafc;
+  background: #f5f7fb;
 }
 
 .mp-disclaimer {
   margin-top: 22px;
   font-size: 13px;
-  color: #64748b;
+  color: #666;
   line-height: 1.6;
 }
 
@@ -448,25 +418,24 @@ footer {
   background: #0b2f66;
   color: #fff;
   text-align: center;
-  padding: 28px 20px;
+  padding: 30px 20px;
   margin-top: 40px;
-  font-size: 14px;
 }
 
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
-    gap: 14px;
+    gap: 15px;
   }
 
   nav {
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
   }
 
   nav a {
     font-size: 14px;
-    padding: 6px 10px;
+    padding: 7px 9px;
   }
 
   section h2 {
@@ -475,6 +444,10 @@ footer {
 
   .banner-nav-buttons {
     flex-direction: column;
+  }
+
+  .banner-nav-btn {
+    padding: 12px 18px;
   }
 
   .mp-party-cards {
@@ -508,8 +481,7 @@ footer {
     <div class="hero-banner-wrapper">
       <img
         src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
-        alt="MP Solutions Hero Banner"
-        onerror="this.onerror=null; this.src='https://placehold.co/1100x400/0b2f66/ffffff?text=MP+Solutions+Election+Strategy';">
+        alt="MP Solutions Hero Banner">
       <a href="#live-results" class="hero-live-results-btn">
         VIEW LIVE RESULTS →
       </a>
@@ -521,7 +493,7 @@ footer {
     </div>
   </section>
 
-  <!-- MP SOLUTIONS ELECTION DESK PROMOTION -->
+  <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
   <section id="election-desk" class="mp-election-promo">
     <a href="#live-results" class="mp-election-link">
       <div class="mp-election-inner">
@@ -533,11 +505,10 @@ footer {
         <h2>AP MUNICIPAL ELECTIONS 2026</h2>
         <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
         <p>
-          Town-wise Results | Party-wise Performance | Division-wise Tracking
+          Town-wise Results | Party-wise Performance |
+          Division-wise Tracking
         </p>
-        <p style="margin-top:10px;font-weight:bold;color:#ffd700;">
-          ELECTION RESULTS LIVE FROM 8:00 AM | 3 NOVEMBER 2026
-        </p>
+
         <span class="mp-election-button">
           VIEW LIVE RESULTS →
         </span>
@@ -550,8 +521,8 @@ footer {
   <section id="about">
     <h2>About MP Solutions</h2>
     <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
-    <p style="margin-top: 8px;"><strong>Location:</strong> Hyderabad | Vijayawada</p>
-    <p style="margin-top: 4px;"><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
+    <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
   </section>
 
   <section id="services">
@@ -571,7 +542,7 @@ footer {
   <section id="leaders">
     <h2>Leadership</h2>
     <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
-    <p style="margin-top: 8px;">With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
+    <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
   </section>
 
   <!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
@@ -601,7 +572,6 @@ footer {
           <tr>
             <th>Town</th>
             <th>Divisions</th>
-            <th>Unanimous</th>
             <th>TDP</th>
             <th>YSRCP</th>
             <th>JSP</th>
@@ -612,7 +582,7 @@ footer {
         </thead>
         <tbody id="mp-results-body">
           <tr>
-            <td colspan="9">Loading election data...</td>
+            <td colspan="8">Loading election data...</td>
           </tr>
         </tbody>
       </table>
@@ -629,14 +599,13 @@ footer {
   <section id="contact">
     <h2>Contact</h2>
     <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
-    <p style="margin-top: 4px;"><strong>Offices:</strong> Hyderabad | Vijayawada</p>
-    <p style="margin-top: 4px;"><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
+    <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
   </section>
 </div>
 
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 
-<!-- Live Results CSV Fetch Script -->
 <script>
 (() => {
   const CSV_URL =
@@ -717,8 +686,7 @@ footer {
 
     const townIndex = index("town");
     const divisionIndex = index("divisions");
-    const statusIndex = index("status"); 
-    const unanimousIndex = index("unanimous");
+    const statusIndex = index("status");
     const updatedIndex = index("lastupdated");
 
     if (townIndex < 0) {
@@ -743,15 +711,13 @@ footer {
       const tr = document.createElement("tr");
       const town = row[townIndex] || "—";
       const division = divisionIndex >= 0 ? row[divisionIndex] : "";
-      const unanimous = unanimousIndex >= 0 ? numberValue(row[unanimousIndex]) : 0;
-      
-      const cells = [town, division || "—", (unanimous ?? 0).toLocaleString("en-IN")];
+      const cells = [town, division || "—"];
 
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
         if (value !== null) totals[p.key] += value;
-        cells.push(value == null ? "--" : value.toLocaleString("en-IN"));
+        cells.push(value === null ? "—" : value.toLocaleString("en-IN"));
       });
 
       cells.forEach(value => {
@@ -772,12 +738,18 @@ footer {
       const card = makeElement("div", "mp-party-card");
       card.appendChild(makeElement("h3", "", p.name));
       card.appendChild(makeElement(
-        "strong", "", (totals[p.key] ?? 0).toLocaleString("en-IN")
+        "strong", "", totals[p.key].toLocaleString("en-IN")
       ));
       cards.appendChild(card);
     });
 
-    $("#mp-last-updated").textContent = "Sheet update: 3 November 2026, 8:00 AM";
+    const sourceDates = records
+      .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
+      .filter(Boolean);
+
+    $("mp-last-updated").textContent = sourceDates.length
+      ? "Sheet update: " + sourceDates[sourceDates.length - 1]
+      : "Sheet update time not provided";
   }
 
   let loading = false;
@@ -826,7 +798,6 @@ footer {
 </script>
 
 <script>
-// Active nav indicator on scroll
 window.addEventListener("scroll", () => {
   let current = "";
   const sections = document.querySelectorAll("section");
