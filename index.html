@@ -114,7 +114,33 @@ section h2 {
   box-shadow: 0 4px 15px rgba(0,0,0,.15);
 }
 
+.hero-live-results-btn {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  transform: translate(-50%, -50%);
+  width: 32%;
+  height: 13%;
+  padding: 0;
+  background: transparent;
+  border: 3px solid #8b5cf6;
+  border-radius: 16px;
+  z-index: 20;
+  display: block;
+  font-size: 0;
+  cursor: pointer;
+  animation: violetPulse 1s infinite;
+}
 
+@keyframes violetPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #a855f7;
+  }
+  50% {
+    opacity: 0.35;
+    box-shadow: 0 0 24px #a855f7;
+  }
 }
 
 .live-results-hotspot:focus-visible {
@@ -244,9 +270,9 @@ section h2 {
   color: white;
   font-weight: bold;
   text-decoration: none;
- border-radius: 6px;
-animation: resultsBlink 0.7s infinite;
-box-shadow: 0 0 15px #ffad48;;
+  border-radius: 6px;
+  animation: resultsBlink 0.7s infinite;
+  box-shadow: 0 0 15px #ffad48;
 }
 
 .mp-election-button:hover {
@@ -440,41 +466,9 @@ footer {
   .mp-party-card strong {
     font-size: 24px;
   }
-
- 
-/* VIOLET LIVE RESULTS CLICKABLE AREA */
-.hero-banner-wrapper {
-    position: relative;
 }
-
-.hero-live-results-btn {
-    position: absolute;
-    left: 50%;
-    top: 72%;
-    transform: translate(-50%, -50%);
-    width: 32%;
-    height: 13%;
-    padding: 0;
-    background: transparent;
-    border: 3px solid #8b5cf6;
-    border-radius: 16px;
-    z-index: 20;
-    display: block;
-    font-size: 0;
-    cursor: pointer;
-    animation: violetPulse 1s infinite;
-}
-
-@keyframes violetPulse {
-    0%, 100% {
-        opacity: 1;
-        box-shadow: 0 0 8px #a855f7;
-    }
-    50% {
-        opacity: 0.35;
-        box-shadow: 0 0 24px #a855f7;
-    }
-}
+</style>
+</head>
 
 <body>
 <header>
@@ -498,8 +492,8 @@ footer {
         src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
         alt="MP Solutions Hero Banner">
       <a href="#live-results" class="hero-live-results-btn">
-  VIEW LIVE RESULTS →
-</a>
+        VIEW LIVE RESULTS →
+      </a>
     </div>
 
     <div class="banner-nav-buttons">
@@ -643,7 +637,6 @@ footer {
     return node;
   }
 
-  // CSV parser: supports commas and quotes inside cells.
   function parseCSV(text) {
     const rows = [];
     let row = [];
@@ -745,7 +738,6 @@ footer {
       tbody.appendChild(tr);
     });
 
-    // Party-wise aggregate cards
     const cards = $("mp-party-cards");
     cards.replaceChildren();
 
@@ -813,7 +805,6 @@ footer {
 </script>
 
 <script>
-// Active navigation link based on scroll position
 window.addEventListener("scroll", () => {
   let current = "";
   const sections = document.querySelectorAll("section");
@@ -833,7 +824,6 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// Smooth scrolling for banner navigation buttons
 function smoothScroll(sectionId) {
   const target = document.getElementById(sectionId);
   if (target) {
