@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MP Solutions</title>
+
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -43,7 +48,8 @@ header h1 {
 
 nav {
   display: flex;
-  gap: 30px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -56,14 +62,13 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
   background: #f58220;
   color: #fff;
 }
 
 nav a.active {
-  background: #f58220;
-  color: #fff;
   border-bottom: 3px solid #fff;
 }
 
@@ -77,6 +82,7 @@ section {
   margin: 60px 0;
   padding: 40px 0;
   border-bottom: 1px solid #e0e0e0;
+  scroll-margin-top: 100px;
 }
 
 section:last-child {
@@ -90,24 +96,53 @@ section h2 {
 }
 
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 30px;
-  padding: 40px 0;
+  display: block;
+  padding: 20px 0;
+  margin-top: 20px;
 }
 
-.hero img {
+.hero-banner-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 1400px;
-  border-radius: 18px;
+}
+
+.hero-banner-wrapper img {
   display: block;
-  margin: auto;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
   box-shadow: 0 4px 15px rgba(0,0,0,.15);
 }
 
-#about {
-  scroll-margin-top: 100px;
+/* Transparent clickable area positioned over VIEW LIVE RESULTS in the banner */
+.live-results-hotspot {
+  position: absolute;
+  left: 55%;
+  top: 65%;
+  width: 35%;
+  height: 13%;
+  z-index: 10;
+  display: block;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,.9);
+  border-radius: 8px;
+  animation: resultsBlink 1s infinite;
+}
+
+.live-results-hotspot:focus-visible {
+  outline: 3px solid #f58220;
+  outline-offset: 3px;
+}
+
+@keyframes resultsBlink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px orange;
+  }
+  50% {
+    opacity: .35;
+    box-shadow: 0 0 20px gold;
+  }
 }
 
 .btn {
@@ -174,126 +209,7 @@ section h2 {
   background: #d66a1a;
 }
 
-footer {
-  background: #0b2f66;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  section h2 {
-    font-size: 24px;
-  }
-
-  .banner-nav-buttons {
-    flex-direction: column;
-  }
-
-  .banner-nav-btn {
-    padding: 12px 18px;
-  }
-}
-</style>
-</head>
-<body>
-<header>
-  <div class="header-container">
-    <h1>MP Solutions</h1>
-    <nav>
-      <a href="#home" class="nav-link active">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#leaders" class="nav-link">Leadership</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="#live-results" class="nav-link">Live Results</a>
-   <div class="container">
-<section id="home" class="hero">
-
-  <div class="hero-banner-wrapper">
-    <img
-      src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
-      alt="MP Solutions Hero Banner">
-
-    <a href="#election-desk"
-       class="live-results-hotspot"
-       aria-label="View live election results">
-    </a>
-  </div>
-
-  <div class="banner-nav-buttons">
-    <button class="banner-nav-btn" onclick="smoothScroll('contact')">← Previous</button>
-    <button class="banner-nav-btn" onclick="smoothScroll('about')">Next →</button>
-  </div>
-
-</section>
-    <div class="hero-banner-wrapper">
-      <img
-        src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
-        alt="MP Solutions Hero Banner">
-
-      <!-- Clickable VIEW LIVE RESULTS area -->
-      <a href="#election-desk"
-         class="live-results-hotspot"
-         aria-label="View live election results"
-         title="View live results">
-      </a>
-    </div>
-
-    <div class="banner-nav-buttons">
-      <button class="banner-nav-btn" onclick="smoothScroll('contact')">← Previous</button>
-      <button class="banner-nav-btn" onclick="smoothScroll('about')">Next →</button>
-    </div>
-
-  </section>
-</div>
-
-<!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
-<section id="election-desk" class="mp-election-promo">
-  <div class="mp-election-inner">
-
-    <div class="mp-election-label">
-      <span class="mp-blink-dot"></span>
-      MP SOLUTIONS ELECTION DESK
-    </div>
-
-    <h2>AP MUNICIPAL ELECTIONS 2026</h2>
-
-    <h3>LIVE RESULTS & COUNTING UPDATES</h3>
-    <p>
-      Town-wise Results | Party-wise Performance |
-      Division-wise Tracking
-    </p>
-
-    <a href="#live-results" class="mp-election-button">
-      VIEW LIVE RESULTS →
-    </a>
-
-    <small>Political Strategy | Survey & Analytics</small>
-
-  </div>
-</section>
-  <section id="about">
-    <h2>About MP Solutions</h2>
-    <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
-    <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
-    <p><strong>Founders:</strong> Chintapalli Prakash & Gopaluni Sai Mahanth</p>
-  </section>
-
-
-<style>
+/* Election Desk promotion */
 .mp-election-promo {
   background: linear-gradient(120deg,#101f43,#193c70);
   padding: 35px 15px;
@@ -317,6 +233,7 @@ footer {
 }
 
 .mp-election-inner h2 {
+  color: #fff;
   font-size: clamp(24px,4vw,38px);
   margin: 15px 0;
 }
@@ -324,6 +241,7 @@ footer {
 .mp-election-inner h3 {
   color: #ffad48;
   font-size: clamp(17px,3vw,25px);
+  margin-bottom: 12px;
 }
 
 .mp-election-inner p {
@@ -357,121 +275,19 @@ footer {
   background: #28df80;
   border-radius: 50%;
   animation: mpElectionBlink 1s infinite;
-}.hero-banner-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.hero-banner-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.live-results-hotspot {
-  position: absolute;
-  left: 55%;
-  top: 65%;
-  width: 35%;
-  height: 13%;
-  z-index: 10;
-  cursor: pointer;
-  border: 2px solid white;
-  border-radius: 8px;
-  animation: resultsBlink 1s infinite;
-}
-
-@keyframes resultsBlink {
-  0%, 100% { opacity: 1; box-shadow: 0 0 8px orange; }
-  50% { opacity: .35; box-shadow: 0 0 20px gold; }
 }
 
 @keyframes mpElectionBlink {
   50% { opacity: .2; }
 }
-</style>
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card"><h3>Political Surveys</h3></div>
-      <div class="card"><h3>Election Campaign Management</h3></div>
-      <div class="card"><h3>Opinion & Exit Polls</h3></div>
-      <div class="card"><h3>Booth Management</h3></div>
-      <div class="card"><h3>Data Analytics</h3></div>
-      <div class="card"><h3>Social Media Campaigns</h3></div>
-      <div class="card"><h3>Political Strategy</h3></div>
-      <div class="card"><h3>Candidate Branding</h3></div>
-    </div>
-  </section>
 
-  <section id="leaders">
-    <h2>Leadership</h2>
-    <p><strong>Founders:</strong> Chintapalli Prakash & Gopaluni Sai Mahanth</p>
-    <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
-  </section>
-
-<!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
-<section id="live-results">
-
-  <div class="mp-results-heading">
-    <span class="mp-live-indicator"></span>
-    LIVE ELECTION TRACKER
-    <h1>AP MUNICIPAL ELECTIONS 2026</h1>
-    <p>Town-wise election results and party-wise updates</p>
-  </div>
-
-  <div class="mp-results-toolbar">
-    <span id="mp-status">Connecting to results...</span>
-    <button id="mp-refresh" type="button">
-      ↻ Refresh Results
-    </button>
-  </div>
-
-  <div class="mp-party-cards" id="mp-party-cards"></div>
-
-  <div class="mp-results-info">
-    <strong>Constituency / Town-wise Results</strong>
-    <span id="mp-last-updated">Waiting for data...</span>
-  </div>
-
-  <div class="mp-table-wrap">
-    <table class="mp-results-table">
-      <thead>
-        <tr>
-          <th>Town</th>
-          <th>Divisions</th>
-          <th>TDP</th>
-          <th>YSRCP</th>
-          <th>JSP</th>
-          <th>BJP</th>
-          <th>Others</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody id="mp-results-body">
-        <tr>
-          <td colspan="8">Loading election data...</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p class="mp-disclaimer">
-    Disclaimer: This is an unofficial election data tracker
-    maintained by MP Solutions. Figures are based on the
-    data entered in the tracker. Final results are subject
-    to declaration by the competent State Election Commission.
-  </p>
-
-</section>
-
-<style>
-#mp-live-results {
+/* Live results dashboard */
+#live-results {
   font-family: Arial, sans-serif;
   color: #17233d;
   padding: 22px 12px;
   max-width: 1200px;
-  margin: auto;
+  margin: 60px auto;
 }
 
 .mp-results-heading {
@@ -483,6 +299,7 @@ footer {
 }
 
 .mp-results-heading h1 {
+  color: white;
   font-size: clamp(22px, 4vw, 34px);
   margin: 14px 0 8px;
 }
@@ -528,7 +345,7 @@ footer {
 
 .mp-party-cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
 }
 
@@ -543,6 +360,7 @@ footer {
 .mp-party-card h3 {
   margin: 0 0 10px;
   font-size: 15px;
+  color: #0b2f66;
 }
 
 .mp-party-card strong {
@@ -589,7 +407,42 @@ footer {
   line-height: 1.6;
 }
 
-@media(max-width:650px) {
+footer {
+  background: #0b2f66;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 7px 9px;
+  }
+
+  section h2 {
+    font-size: 24px;
+  }
+
+  .banner-nav-buttons {
+    flex-direction: column;
+  }
+
+  .banner-nav-btn {
+    padding: 12px 18px;
+  }
+
   .mp-party-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -597,8 +450,157 @@ footer {
   .mp-party-card strong {
     font-size: 24px;
   }
+
+  .live-results-hotspot {
+    border-width: 1px;
+  }
 }
 </style>
+</head>
+
+<body>
+<header>
+  <div class="header-container">
+    <h1>MP Solutions</h1>
+    <nav aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#leaders" class="nav-link">Leadership</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#live-results" class="nav-link">Live Results</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <section id="home" class="hero">
+    <div class="hero-banner-wrapper">
+      <img
+        src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
+        alt="MP Solutions Hero Banner">
+      <a href="#election-desk"
+         class="live-results-hotspot"
+         aria-label="View live election results"
+         title="View live results"></a>
+    </div>
+
+    <div class="banner-nav-buttons">
+      <button class="banner-nav-btn" type="button" onclick="smoothScroll('contact')">← Previous</button>
+      <button class="banner-nav-btn" type="button" onclick="smoothScroll('about')">Next →</button>
+    </div>
+  </section>
+
+  <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
+  <section id="election-desk" class="mp-election-promo">
+    <div class="mp-election-inner">
+      <div class="mp-election-label">
+        <span class="mp-blink-dot"></span>
+        MP SOLUTIONS ELECTION DESK
+      </div>
+
+      <h2>AP MUNICIPAL ELECTIONS 2026</h2>
+      <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
+      <p>
+        Town-wise Results | Party-wise Performance |
+        Division-wise Tracking
+      </p>
+
+      <a href="#live-results" class="mp-election-button">
+        VIEW LIVE RESULTS →
+      </a>
+
+      <small>Political Strategy | Survey &amp; Analytics</small>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About MP Solutions</h2>
+    <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
+    <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card"><h3>Political Surveys</h3></div>
+      <div class="card"><h3>Election Campaign Management</h3></div>
+      <div class="card"><h3>Opinion &amp; Exit Polls</h3></div>
+      <div class="card"><h3>Booth Management</h3></div>
+      <div class="card"><h3>Data Analytics</h3></div>
+      <div class="card"><h3>Social Media Campaigns</h3></div>
+      <div class="card"><h3>Political Strategy</h3></div>
+      <div class="card"><h3>Candidate Branding</h3></div>
+    </div>
+  </section>
+
+  <section id="leaders">
+    <h2>Leadership</h2>
+    <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
+    <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
+  </section>
+
+  <!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
+  <section id="live-results">
+    <div class="mp-results-heading">
+      <span class="mp-live-indicator"></span>
+      LIVE ELECTION TRACKER
+      <h1>AP MUNICIPAL ELECTIONS 2026</h1>
+      <p>Town-wise election results and party-wise updates</p>
+    </div>
+
+    <div class="mp-results-toolbar">
+      <span id="mp-status">Connecting to results...</span>
+      <button id="mp-refresh" type="button">↻ Refresh Results</button>
+    </div>
+
+    <div class="mp-party-cards" id="mp-party-cards"></div>
+
+    <div class="mp-results-info">
+      <strong>Constituency / Town-wise Results</strong>
+      <span id="mp-last-updated">Waiting for data...</span>
+    </div>
+
+    <div class="mp-table-wrap">
+      <table class="mp-results-table">
+        <thead>
+          <tr>
+            <th>Town</th>
+            <th>Divisions</th>
+            <th>TDP</th>
+            <th>YSRCP</th>
+            <th>JSP</th>
+            <th>BJP</th>
+            <th>Others</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="mp-results-body">
+          <tr>
+            <td colspan="8">Loading election data...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mp-disclaimer">
+      Disclaimer: This is an unofficial election data tracker
+      maintained by MP Solutions. Figures are based on the
+      data entered in the tracker. Final results are subject
+      to declaration by the competent State Election Commission.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
+    <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
+  </section>
+</div>
+
+<footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 
 <script>
 (() => {
@@ -690,9 +692,7 @@ footer {
 
     const records = rows.slice(1)
       .filter(row => row[townIndex])
-      .filter(row =>
-        !/13\s*corporations/i.test(row[townIndex])
-      );
+      .filter(row => !/13\s*corporations/i.test(row[townIndex]));
 
     if (!records.length) {
       throw new Error("No town-wise data available.");
@@ -706,20 +706,13 @@ footer {
 
     records.forEach(row => {
       const tr = document.createElement("tr");
-
       const town = row[townIndex] || "—";
-      const division = divisionIndex >= 0
-        ? row[divisionIndex] : "";
-
-      const cells = [
-        town,
-        division || "—"
-      ];
+      const division = divisionIndex >= 0 ? row[divisionIndex] : "";
+      const cells = [town, division || "—"];
 
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
-
         if (value !== null) totals[p.key] += value;
         cells.push(value === null ? "—" : value.toLocaleString("en-IN"));
       });
@@ -752,10 +745,9 @@ footer {
       .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
       .filter(Boolean);
 
-    $("mp-last-updated").textContent =
-      sourceDates.length
-        ? "Sheet update: " + sourceDates[sourceDates.length - 1]
-        : "Sheet update time not provided";
+    $("mp-last-updated").textContent = sourceDates.length
+      ? "Sheet update: " + sourceDates[sourceDates.length - 1]
+      : "Sheet update time not provided";
   }
 
   let loading = false;
@@ -769,10 +761,7 @@ footer {
 
     try {
       const url = CSV_URL + "&_=" + Date.now();
-
-      const response = await fetch(url, {
-        cache: "no-store"
-      });
+      const response = await fetch(url, { cache: "no-store" });
 
       if (!response.ok) {
         throw new Error("Google Sheets returned HTTP " + response.status);
@@ -793,8 +782,7 @@ footer {
 
     } catch (error) {
       console.error("MP Results Error:", error);
-      $("mp-status").textContent =
-        "Update failed: " + error.message;
+      $("mp-status").textContent = "Update failed: " + error.message;
     } finally {
       loading = false;
       $("mp-refresh").disabled = false;
@@ -802,61 +790,37 @@ footer {
   }
 
   $("mp-refresh").addEventListener("click", refreshResults);
-
   refreshResults();
   setInterval(refreshResults, REFRESH_INTERVAL);
-
 })();
 </script>
-   </section>
-<section id="contact">   
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
-    <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank">@pvtltdmp</a></p>
-  </section>
-</div>
-
-<footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 
 <script>
-// Active nav link based on scroll position
-window.addEventListener('scroll', () => {
-  let current = '';
-  const sections = document.querySelectorAll('section');
-  
+// Active navigation link based on scroll position
+window.addEventListener("scroll", () => {
+  let current = "";
+  const sections = document.querySelectorAll("section");
+
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute('id');
+    if (window.pageYOffset >= sectionTop - 120) {
+      current = section.getAttribute("id");
     }
   });
 
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href').slice(1) === current) {
-      link.classList.add('active');
-    }
-  });
-});
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.classList.toggle(
+      "active",
+      link.getAttribute("href").slice(1) === current
+    );
   });
 });
 
-// Smooth scroll function for banner nav buttons
+// Smooth scrolling for banner navigation buttons
 function smoothScroll(sectionId) {
   const target = document.getElementById(sectionId);
   if (target) {
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
 </script>
