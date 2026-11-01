@@ -171,7 +171,6 @@ section h2 {
   background: linear-gradient(135deg, rgba(16, 31, 67, 0.92), rgba(25, 60, 112, 0.95)),
               url('https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
   overflow: hidden;
-  /* Blinking outer layer shadow animation applied to wrapper */
   animation: electionOuterBlink 1.5s infinite ease-in-out;
   transition: transform 0.3s ease;
 }
@@ -273,7 +272,7 @@ section h2 {
   box-shadow: 0 0 8px #28df80;
 }
 
-/* Service Cards — Completely Static Layout (No Blinking Outlines) */
+/* Service Cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -522,7 +521,7 @@ footer {
     </div>
   </section>
 
-  <!-- MP SOLUTIONS ELECTION DESK PROMOTION WITH BLINKING OUTER LAYER -->
+  <!-- MP SOLUTIONS ELECTION DESK PROMOTION -->
   <section id="election-desk" class="mp-election-promo">
     <a href="#live-results" class="mp-election-link">
       <div class="mp-election-inner">
@@ -536,9 +535,9 @@ footer {
         <p>
           Town-wise Results | Party-wise Performance | Division-wise Tracking
         </p>
-<p style="margin-top:10px;font-weight:bold;color:#ffd700;">
-  ELECTION RESULTS LIVE FROM 8:00 AM | 3 NOVEMBER 2026
-</p>
+        <p style="margin-top:10px;font-weight:bold;color:#ffd700;">
+          ELECTION RESULTS LIVE FROM 8:00 AM | 3 NOVEMBER 2026
+        </p>
         <span class="mp-election-button">
           VIEW LIVE RESULTS →
         </span>
@@ -600,19 +599,20 @@ footer {
       <table class="mp-results-table">
         <thead>
           <tr>
-          <th>Town</th>
-<th>Divisions</th>
-<th>Unanimous</th>
-<th>TDP</th>
-<th>YSRCP</th>
-<th>JSP</th>
-<th>BJP</th>
-<th>Others</th>
-<th>Status</th>
+            <th>Town</th>
+            <th>Divisions</th>
+            <th>Unanimous</th>
+            <th>TDP</th>
+            <th>YSRCP</th>
+            <th>JSP</th>
+            <th>BJP</th>
+            <th>Others</th>
+            <th>Status</th>
+          </tr>
         </thead>
         <tbody id="mp-results-body">
           <tr>
-            <td colspan="8">Loading election data...</td>
+            <td colspan="9">Loading election data...</td>
           </tr>
         </tbody>
       </table>
@@ -743,13 +743,15 @@ footer {
       const tr = document.createElement("tr");
       const town = row[townIndex] || "—";
       const division = divisionIndex >= 0 ? row[divisionIndex] : "";
-     const unanimous = unanimousIndex >= 0 ? numberValue(row[unanimousIndex]) : 0;
-const cells = [town, division || "—",(unanimous ?? 0).toLocaleString("en-IN")
+      const unanimous = unanimousIndex >= 0 ? numberValue(row[unanimousIndex]) : 0;
+      
+      const cells = [town, division || "—", (unanimous ?? 0).toLocaleString("en-IN")];
+
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
         if (value !== null) totals[p.key] += value;
-       cells.push(value == null ? "--" : value.toLocaleString("en-IN"));
+        cells.push(value == null ? "--" : value.toLocaleString("en-IN"));
       });
 
       cells.forEach(value => {
@@ -770,16 +772,12 @@ const cells = [town, division || "—",(unanimous ?? 0).toLocaleString("en-IN")
       const card = makeElement("div", "mp-party-card");
       card.appendChild(makeElement("h3", "", p.name));
       card.appendChild(makeElement(
-        "strong", "",(totals[p.key] ?? 0).toLocaleString("en-IN")
+        "strong", "", (totals[p.key] ?? 0).toLocaleString("en-IN")
       ));
       cards.appendChild(card);
     });
 
-    const sourceDates = records
-      .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
-      .filter(Boolean);
-
-   $("#mp-last-updated").textContent = "Sheet update: 3 November 2026, 8:00 AM";
+    $("#mp-last-updated").textContent = "Sheet update: 3 November 2026, 8:00 AM";
   }
 
   let loading = false;
