@@ -259,13 +259,406 @@ footer {
     <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
   </section>
 
- <section id="live-results">
-  <h2>Live Results</h2>
-  <p>Live updates from official APSEC results. Unofficial tracker by MP Solutions. Final results are declared only by the State Election Commission.</p>
-<iframewidth="100%" height="650" style="border:0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS39D8wQFNiYJmrxh9oP3z36XWXVPY5hWxU5sr8107cFXLCzzyQzG1j2qDy9uIpn_moCID_e0ohND_e/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe></section>
+<!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
+<section id="live-results">
 
-<section id="contact">
-      
+  <div class="mp-results-heading">
+    <span class="mp-live-indicator"></span>
+    LIVE ELECTION TRACKER
+    <h1>AP MUNICIPAL ELECTIONS 2026</h1>
+    <p>Town-wise election results and party-wise updates</p>
+  </div>
+
+  <div class="mp-results-toolbar">
+    <span id="mp-status">Connecting to results...</span>
+    <button id="mp-refresh" type="button">
+      ↻ Refresh Results
+    </button>
+  </div>
+
+  <div class="mp-party-cards" id="mp-party-cards"></div>
+
+  <div class="mp-results-info">
+    <strong>Constituency / Town-wise Results</strong>
+    <span id="mp-last-updated">Waiting for data...</span>
+  </div>
+
+  <div class="mp-table-wrap">
+    <table class="mp-results-table">
+      <thead>
+        <tr>
+          <th>Town</th>
+          <th>Divisions</th>
+          <th>TDP</th>
+          <th>YSRCP</th>
+          <th>JSP</th>
+          <th>BJP</th>
+          <th>Others</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="mp-results-body">
+        <tr>
+          <td colspan="8">Loading election data...</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="mp-disclaimer">
+    Disclaimer: This is an unofficial election data tracker
+    maintained by MP Solutions. Figures are based on the
+    data entered in the tracker. Final results are subject
+    to declaration by the competent State Election Commission.
+  </p>
+
+</section>
+
+<style>
+#mp-live-results {
+  font-family: Arial, sans-serif;
+  color: #17233d;
+  padding: 22px 12px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mp-results-heading {
+  background: #10234b;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+  border-radius: 12px;
+}
+
+.mp-results-heading h1 {
+  font-size: clamp(22px, 4vw, 34px);
+  margin: 14px 0 8px;
+}
+
+.mp-results-heading p {
+  margin: 0;
+  color: #d9e3f5;
+}
+
+.mp-live-indicator {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #24d17e;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.mp-results-toolbar,
+.mp-results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+#mp-refresh {
+  background: #ed8b25;
+  border: none;
+  padding: 11px 17px;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#mp-refresh:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.mp-party-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.mp-party-card {
+  border: 1px solid #e1e5ed;
+  padding: 18px 10px;
+  border-radius: 10px;
+  text-align: center;
+  background: white;
+}
+
+.mp-party-card h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.mp-party-card strong {
+  font-size: 29px;
+}
+
+.mp-results-info {
+  border-bottom: 2px solid #10234b;
+  padding-bottom: 12px;
+}
+
+.mp-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.mp-results-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.mp-results-table th {
+  background: #10234b;
+  color: white;
+  padding: 14px 10px;
+}
+
+.mp-results-table td {
+  padding: 13px 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.mp-results-table tbody tr:nth-child(even) {
+  background: #f5f7fb;
+}
+
+.mp-disclaimer {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media(max-width:650px) {
+  .mp-party-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mp-party-card strong {
+    font-size: 24px;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const CSV_URL =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vS39D8wQFNiYJmrxh9oP3z36XWXVPY5hWxU5sr8107cFXLCzzyQzG1j2qDy9uIpn_moCID_e0ohND_e/pub?gid=0&single=true&output=csv";
+
+  const REFRESH_INTERVAL = 60000;
+
+  const parties = [
+    { key: "tdp", name: "TDP" },
+    { key: "ysrcp", name: "YSRCP" },
+    { key: "jsp", name: "JSP" },
+    { key: "bjp", name: "BJP" },
+    { key: "others", name: "Others" }
+  ];
+
+  const $ = id => document.getElementById(id);
+
+  function makeElement(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  // CSV parser: supports commas and quotes inside cells.
+  function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let quoted = false;
+
+    text = text.replace(/^\uFEFF/, "");
+
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      const next = text[i + 1];
+
+      if (char === '"' && quoted && next === '"') {
+        cell += '"';
+        i++;
+      } else if (char === '"') {
+        quoted = !quoted;
+      } else if (char === "," && !quoted) {
+        row.push(cell.trim());
+        cell = "";
+      } else if ((char === "\n" || char === "\r") && !quoted) {
+        if (char === "\r" && next === "\n") i++;
+        row.push(cell.trim());
+        if (row.some(value => value !== "")) rows.push(row);
+        row = [];
+        cell = "";
+      } else {
+        cell += char;
+      }
+    }
+
+    row.push(cell.trim());
+    if (row.some(value => value !== "")) rows.push(row);
+
+    return rows;
+  }
+
+  function numberValue(value) {
+    if (!value || !value.trim()) return null;
+    const n = Number(value.replace(/,/g, ""));
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function renderDashboard(rows) {
+    if (rows.length < 2) {
+      throw new Error("No election records found.");
+    }
+
+    const headers = rows[0].map(h =>
+      h.toLowerCase().replace(/[^a-z0-9]/g, "")
+    );
+
+    const index = key => headers.indexOf(key);
+
+    const townIndex = index("town");
+    const divisionIndex = index("divisions");
+    const statusIndex = index("status");
+    const updatedIndex = index("lastupdated");
+
+    if (townIndex < 0) {
+      throw new Error("Town column is missing.");
+    }
+
+    const records = rows.slice(1)
+      .filter(row => row[townIndex])
+      .filter(row =>
+        !/13\s*corporations/i.test(row[townIndex])
+      );
+
+    if (!records.length) {
+      throw new Error("No town-wise data available.");
+    }
+
+    const totals = {};
+    parties.forEach(p => totals[p.key] = 0);
+
+    const tbody = $("mp-results-body");
+    tbody.replaceChildren();
+
+    records.forEach(row => {
+      const tr = document.createElement("tr");
+
+      const town = row[townIndex] || "—";
+      const division = divisionIndex >= 0
+        ? row[divisionIndex] : "";
+
+      const cells = [
+        town,
+        division || "—"
+      ];
+
+      parties.forEach(p => {
+        const col = index(p.key);
+        const value = col >= 0 ? numberValue(row[col]) : null;
+
+        if (value !== null) totals[p.key] += value;
+        cells.push(value === null ? "—" : value.toLocaleString("en-IN"));
+      });
+
+      cells.forEach(value => {
+        tr.appendChild(makeElement("td", "", value));
+      });
+
+      const status = statusIndex >= 0
+        ? (row[statusIndex] || "Pending") : "Pending";
+
+      tr.appendChild(makeElement("td", "", status));
+      tbody.appendChild(tr);
+    });
+
+    // Party-wise aggregate cards
+    const cards = $("mp-party-cards");
+    cards.replaceChildren();
+
+    parties.forEach(p => {
+      const card = makeElement("div", "mp-party-card");
+      card.appendChild(makeElement("h3", "", p.name));
+      card.appendChild(makeElement(
+        "strong", "", totals[p.key].toLocaleString("en-IN")
+      ));
+      cards.appendChild(card);
+    });
+
+    const sourceDates = records
+      .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
+      .filter(Boolean);
+
+    $("mp-last-updated").textContent =
+      sourceDates.length
+        ? "Sheet update: " + sourceDates[sourceDates.length - 1]
+        : "Sheet update time not provided";
+  }
+
+  let loading = false;
+
+  async function refreshResults() {
+    if (loading) return;
+
+    loading = true;
+    $("mp-refresh").disabled = true;
+    $("mp-status").textContent = "Refreshing results...";
+
+    try {
+      const url = CSV_URL + "&_=" + Date.now();
+
+      const response = await fetch(url, {
+        cache: "no-store"
+      });
+
+      if (!response.ok) {
+        throw new Error("Google Sheets returned HTTP " + response.status);
+      }
+
+      const csv = await response.text();
+
+      if (!csv || csv.trim().startsWith("<")) {
+        throw new Error("Published CSV unavailable. Check sheet publishing.");
+      }
+
+      const rows = parseCSV(csv);
+      renderDashboard(rows);
+
+      $("mp-status").textContent = "Connected • Data loaded successfully";
+      $("mp-last-updated").textContent +=
+        " | Website refresh: " + new Date().toLocaleTimeString();
+
+    } catch (error) {
+      console.error("MP Results Error:", error);
+      $("mp-status").textContent =
+        "Update failed: " + error.message;
+    } finally {
+      loading = false;
+      $("mp-refresh").disabled = false;
+    }
+  }
+
+  $("mp-refresh").addEventListener("click", refreshResults);
+
+  refreshResults();
+  setInterval(refreshResults, REFRESH_INTERVAL);
+
+})();
+</script>
+   </section>
+<section id="contact">   
     <h2>Contact</h2>
     <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
     <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
