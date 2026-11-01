@@ -219,33 +219,59 @@ footer {
       <a href="#leaders" class="nav-link">Leadership</a>
       <a href="#contact" class="nav-link">Contact</a>
       <a href="#live-results" class="nav-link">Live Results</a>
-    </nav>
-  </div>
-</header>
+   <div class="container">
+<section id="home" class="hero">
 
-<div class="container">
-  <section id="home" class="hero">
-    <img src="WhatsApp Image 2026-11-01 at 10.50.55 AM.jpeg" alt="MP Solutions Hero Banner">
+  <div class="hero-banner-wrapper">
+    <img
+      src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
+      alt="MP Solutions Hero Banner">
+
+    <a href="#election-desk"
+       class="live-results-hotspot"
+       aria-label="View live election results">
+    </a>
+  </div>
+
+  <div class="banner-nav-buttons">
+    <button class="banner-nav-btn" onclick="smoothScroll('contact')">← Previous</button>
+    <button class="banner-nav-btn" onclick="smoothScroll('about')">Next →</button>
+  </div>
+
+</section>
+    <div class="hero-banner-wrapper">
+      <img
+        src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
+        alt="MP Solutions Hero Banner">
+
+      <!-- Clickable VIEW LIVE RESULTS area -->
+      <a href="#election-desk"
+         class="live-results-hotspot"
+         aria-label="View live election results"
+         title="View live results">
+      </a>
+    </div>
+
     <div class="banner-nav-buttons">
       <button class="banner-nav-btn" onclick="smoothScroll('contact')">← Previous</button>
       <button class="banner-nav-btn" onclick="smoothScroll('about')">Next →</button>
     </div>
+
   </section>
+</div>
+
 <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
 <section id="election-desk" class="mp-election-promo">
   <div class="mp-election-inner">
 
     <div class="mp-election-label">
       <span class="mp-blink-dot"></span>
-      <a href="#election-desk" class="view-results-btn">
-  VIEW RESULTS<button></button>
-</a>
+      MP SOLUTIONS ELECTION DESK
     </div>
 
     <h2>AP MUNICIPAL ELECTIONS 2026</h2>
 
     <h3>LIVE RESULTS & COUNTING UPDATES</h3>
-
     <p>
       Town-wise Results | Party-wise Performance |
       Division-wise Tracking
@@ -331,6 +357,33 @@ footer {
   background: #28df80;
   border-radius: 50%;
   animation: mpElectionBlink 1s infinite;
+}.hero-banner-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-banner-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.live-results-hotspot {
+  position: absolute;
+  left: 55%;
+  top: 65%;
+  width: 35%;
+  height: 13%;
+  z-index: 10;
+  cursor: pointer;
+  border: 2px solid white;
+  border-radius: 8px;
+  animation: resultsBlink 1s infinite;
+}
+
+@keyframes resultsBlink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px orange; }
+  50% { opacity: .35; box-shadow: 0 0 20px gold; }
 }
 
 @keyframes mpElectionBlink {
