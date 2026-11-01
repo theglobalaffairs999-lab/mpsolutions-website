@@ -744,7 +744,7 @@ footer {
       const town = row[townIndex] || "—";
       const division = divisionIndex >= 0 ? row[divisionIndex] : "";
      const unanimous = unanimousIndex >= 0 ? numberValue(row[unanimousIndex]) : 0;
-const cells = [town, division || "—", unanimous.toLocaleString("en-IN")];
+const cells = [town, division || "—",(unanimous ?? 0).toLocaleString("en-IN")
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
@@ -770,7 +770,7 @@ const cells = [town, division || "—", unanimous.toLocaleString("en-IN")];
       const card = makeElement("div", "mp-party-card");
       card.appendChild(makeElement("h3", "", p.name));
       card.appendChild(makeElement(
-        "strong", "", totals[p.key].toLocaleString("en-IN")
+        "strong", "",(totals[p.key] ?? 0).toLocaleString("en-IN")
       ));
       cards.appendChild(card);
     });
