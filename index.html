@@ -749,7 +749,7 @@ const cells = [town, division || "—",(unanimous ?? 0).toLocaleString("en-IN")
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
         if (value !== null) totals[p.key] += value;
-        cells.push(value === null ? "—" : value.toLocaleString("en-IN"));
+       cells.push(value == null ? "--" : value.toLocaleString("en-IN"));
       });
 
       cells.forEach(value => {
