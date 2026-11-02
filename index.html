@@ -3,447 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MP Solutions</title>
-
+<title>MP Solutions | AP Municipal Elections 2026 Live Results</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #222;
-}
-
-header {
-  background: #0b2f66;
-  color: #fff;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-}
-
-.header-container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 28px;
-  margin: 0;
-}
-
-nav {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-nav a:hover,
-nav a.active {
-  background: #f58220;
-  color: #fff;
-}
-
-nav a.active {
-  border-bottom: 3px solid #fff;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
-
-section {
-  margin: 60px 0;
-  padding: 40px 0;
-  border-bottom: 1px solid #e0e0e0;
-  scroll-margin-top: 100px;
-}
-
-section:last-child {
-  border-bottom: none;
-}
-
-section h2 {
-  font-size: 32px;
-  color: #0b2f66;
-  margin-bottom: 30px;
-}
-
-.hero {
-  display: block;
-  padding: 20px 0;
-  margin-top: 20px;
-}
-
-.hero-banner-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.hero-banner-wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 4px 15px rgba(0,0,0,.15);
-}
-
-.hero-live-results-btn {
-  position: absolute;
-  left: 50%;
-  top: 72%;
-  transform: translate(-50%, -50%);
-  width: 32%;
-  height: 13%;
-  padding: 0;
-  background: transparent;
-  border: 3px solid #8b5cf6;
-  border-radius: 16px;
-  z-index: 20;
-  display: block;
-  font-size: 0;
-  cursor: pointer;
-  /* Blinking animation removed here */
-}
-
-.live-results-hotspot:focus-visible {
-  outline: 3px solid #f58220;
-  outline-offset: 3px;
-}
-
-.btn {
-  background: #f58220;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 15px;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #d66a1a;
-}
-
-/* Service cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
-}
-
-.card {
-  background: #fff;
-  padding: 18px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0,0,0,.15);
-}
-
-.card h3 {
-  color: #0b2f66;
-  margin-bottom: 10px;
-}
-
-.banner-nav-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 100%;
-  gap: 10px;
-}
-
-.banner-nav-btn {
-  background: #f58220;
-  color: #fff;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  flex: 1;
-}
-
-.banner-nav-btn:hover {
-  background: #d66a1a;
-}
-
-/* Election Desk promotion */
-.mp-election-promo {
-  background: linear-gradient(120deg,#101f43,#193c70);
-  padding: 35px 15px;
-  margin: 25px auto;
-  text-align: center;
-  border-top: 4px solid #f28c28;
-  border-bottom: 4px solid #f28c28;
-  border-radius: 10px;
-}
-
-.mp-election-inner {
-  max-width: 1000px;
-  margin: auto;
-  color: white;
-}
-
-.mp-election-label {
-  color: #ffbd66;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.mp-election-inner h2 {
-  color: #fff;
-  font-size: clamp(24px,4vw,38px);
-  margin: 15px 0;
-}
-
-.mp-election-inner h3 {
-  color: #ffad48;
-  font-size: clamp(17px,3vw,25px);
-  margin-bottom: 12px;
-}
-
-.mp-election-inner p {
-  line-height: 1.7;
-}
-
-.mp-election-button {
-  display: inline-block;
-  margin: 15px 0;
-  padding: 14px 26px;
-  background: #f28c28;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  /* Blinking animation removed here */
-  box-shadow: 0 0 15px #ffad48;
-}
-
-.mp-election-button:hover {
-  background: #d87512;
-}
-
-.mp-election-inner small {
-  display: block;
-  color: #d8e2f4;
-}
-
-.mp-blink-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #28df80;
-  border-radius: 50%;
-}
-
-/* Live results dashboard */
-#live-results {
-  font-family: Arial, sans-serif;
-  color: #17233d;
-  padding: 22px 12px;
-  max-width: 1200px;
-  margin: 60px auto;
-}
-
-.mp-results-heading {
-  background: #10234b;
-  color: white;
-  text-align: center;
-  padding: 28px 15px;
-  border-radius: 12px;
-}
-
-.mp-results-heading h1 {
-  color: white;
-  font-size: clamp(22px, 4vw, 34px);
-  margin: 14px 0 8px;
-}
-
-.mp-results-heading p {
-  margin: 0;
-  color: #d9e3f5;
-}
-
-.mp-live-indicator {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  background: #24d17e;
-  border-radius: 50%;
-  margin-right: 7px;
-}
-
-.mp-results-toolbar,
-.mp-results-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 20px 0;
-}
-
-#mp-refresh {
-  background: #ed8b25;
-  border: none;
-  padding: 11px 17px;
-  color: white;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#mp-refresh:disabled {
-  opacity: .6;
-  cursor: wait;
-}
-
-.mp-party-cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-}
-
-.mp-party-card {
-  border: 1px solid #e1e5ed;
-  padding: 18px 10px;
-  border-radius: 10px;
-  text-align: center;
-  background: white;
-}
-
-.mp-party-card h3 {
-  margin: 0 0 10px;
-  font-size: 15px;
-  color: #0b2f66;
-}
-
-.mp-party-card strong {
-  font-size: 29px;
-}
-
-.mp-results-info {
-  border-bottom: 2px solid #10234b;
-  padding-bottom: 12px;
-}
-
-.mp-table-wrap {
-  overflow-x: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.mp-results-table {
-  width: 100%;
-  min-width: 760px;
-  border-collapse: collapse;
-  text-align: center;
-}
-
-.mp-results-table th {
-  background: #10234b;
-  color: white;
-  padding: 14px 10px;
-}
-
-.mp-results-table td {
-  padding: 13px 10px;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.mp-results-table tbody tr:nth-child(even) {
-  background: #f5f7fb;
-}
-
-.mp-disclaimer {
-  margin-top: 22px;
-  font-size: 13px;
-  color: #666;
-  line-height: 1.6;
-}
-
-footer {
-  background: #0b2f66;
-  color: #fff;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  nav a {
-    font-size: 14px;
-    padding: 7px 9px;
-  }
-
-  section h2 {
-    font-size: 24px;
-  }
-
-  .banner-nav-buttons {
-    flex-direction: column;
-  }
-
-  .banner-nav-btn {
-    padding: 12px 18px;
-  }
-
-  .mp-party-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mp-party-card strong {
-    font-size: 24px;
-  }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
+header{background:#0b2f66;color:#fff;padding:20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.header-container{max-width:1100px;margin:auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:28px;margin:0}
+nav{display:flex;gap:12px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-size:16px;font-weight:500;padding:8px 12px;border-radius:4px;transition:all .3s}
+nav a:hover,nav a.active{background:#f58220;color:#fff}
+nav a.active{border-bottom:3px solid #fff}
+.container{max-width:1100px;margin:auto;padding:20px}
+section{margin:60px 0;padding:40px 0;border-bottom:1px solid #e0e0e0;scroll-margin-top:100px}
+section:last-child{border-bottom:none}
+section h2{font-size:32px;color:#0b2f66;margin-bottom:30px}
+.hero{display:block;padding:20px 0;margin-top:20px}
+.hero-banner-wrapper{position:relative;width:100%}
+.hero-banner-wrapper img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.15)}
+.hero-live-results-btn{position:absolute;left:50%;top:72%;transform:translate(-50%,-50%);width:32%;height:13%;padding:0;background:transparent;border:3px solid #8b5cf6;border-radius:16px;z-index:20;display:block;font-size:0;cursor:pointer}
+.hero-live-results-btn:focus-visible{outline:3px solid #f58220;outline-offset:3px}
+.btn{background:#f58220;color:#fff;padding:12px 18px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:15px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#fff;padding:18px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1);border:1px solid #e0e0e0;outline:none!important;animation:none!important;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 4px 15px rgba(0,0,0,.15);border-color:#f58220}
+.card h3{color:#0b2f66;margin-bottom:10px}
+.banner-nav-buttons{display:flex;justify-content:space-between;margin-top:20px;width:100%;gap:10px}
+.banner-nav-btn{background:#f58220;color:#fff;padding:12px 24px;border:0;border-radius:6px;cursor:pointer;font-size:16px;font-weight:500;flex:1}
+.mp-election-promo{background:linear-gradient(120deg,#101f43,#193c70);padding:0;margin:25px auto;text-align:center;border-top:4px solid #f28c28;border-bottom:4px solid #f28c28;border-radius:10px;overflow:hidden}
+.mp-election-link{display:block;padding:35px 15px;text-decoration:none;color:white}
+.mp-election-link:hover{background:rgba(255,255,255,.05)}
+.mp-election-inner{max-width:1000px;margin:auto;color:white}
+.mp-election-label{color:#ffbd66;font-weight:bold;letter-spacing:2px}
+.mp-election-inner h2{color:#fff;font-size:clamp(24px,4vw,38px);margin:15px 0}
+.mp-election-inner h3{color:#ffad48;font-size:clamp(17px,3vw,25px);margin-bottom:12px}
+.mp-election-inner p{line-height:1.7;color:#fff}
+.mp-election-button{display:inline-block;margin:15px 0;padding:14px 26px;background:#f28c28;color:white;font-weight:bold;border-radius:6px;box-shadow:0 0 15px #ffad48}
+.mp-election-inner small{display:block;color:#d8e2f4}
+.mp-blink-dot,.mp-live-indicator{display:inline-block;width:10px;height:10px;background:#28df80;border-radius:50%}
+#live-results{font-family:Arial,sans-serif;color:#17233d;padding:22px 12px;max-width:1200px;margin:60px auto}
+.mp-results-heading{background:#10234b;color:white;text-align:center;padding:28px 15px;border-radius:12px}
+.mp-results-heading h1{color:white;font-size:clamp(22px,4vw,34px);margin:14px 0 8px}
+.mp-results-heading p{margin:0;color:#d9e3f5}
+.mp-results-toolbar,.mp-results-info{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:20px 0}
+#mp-refresh{background:#ed8b25;border:0;padding:11px 17px;color:white;border-radius:6px;font-weight:bold;cursor:pointer}
+#mp-refresh:disabled{opacity:.6;cursor:wait}
+.mp-summary-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.mp-summary-card,.mp-party-card{border:1px solid #e1e5ed;padding:18px 10px;border-radius:10px;text-align:center;background:white}
+.mp-summary-card span{display:block;color:#596579;font-size:13px;margin-bottom:8px}
+.mp-summary-card strong{font-size:25px;color:#10234b}
+.mp-party-cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.mp-party-card h3{margin:0 0 10px;font-size:15px;color:#0b2f66}
+.mp-party-card strong{font-size:26px}
+.mp-party-card small{display:block;color:#667085;margin-top:6px}
+.mp-results-info{border-bottom:2px solid #10234b;padding-bottom:12px}
+.mp-filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.mp-filter-bar input,.mp-filter-bar select{min-width:180px;flex:1;padding:11px 12px;border:1px solid #cbd3df;border-radius:6px;background:#fff;font-size:14px}
+.mp-table-wrap{overflow-x:auto;border:1px solid #ddd;border-radius:8px;background:#fff;-webkit-overflow-scrolling:touch}
+.mp-results-table{width:100%;min-width:1050px;border-collapse:collapse;text-align:center}
+.mp-results-table th{background:#10234b;color:white;padding:14px 10px;white-space:nowrap}
+.mp-results-table td{padding:13px 10px;border-bottom:1px solid #e5e5e5;white-space:nowrap}
+.mp-results-table tbody tr:nth-child(even){background:#f5f7fb}
+.mp-empty{padding:20px!important;color:#667085}
+.mp-disclaimer{margin-top:22px;font-size:13px;color:#666;line-height:1.6}
+footer{background:#0b2f66;color:#fff;text-align:center;padding:30px 20px;margin-top:40px}
+@media(max-width:768px){
+.header-container{flex-direction:column;gap:15px}
+nav{justify-content:center;gap:8px}
+nav a{font-size:14px;padding:7px 9px}
+section h2{font-size:24px}
+.banner-nav-buttons{flex-direction:column}
+.banner-nav-btn{padding:12px 18px}
+.mp-party-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mp-summary-cards{grid-template-columns:1fr}
+.mp-party-card strong{font-size:23px}
 }
 </style>
 </head>
-
 <body>
 <header>
   <div class="header-container">
@@ -458,54 +95,35 @@ footer {
     </nav>
   </div>
 </header>
-
 <div class="container">
   <section id="home" class="hero">
     <div class="hero-banner-wrapper">
-      <img
-        src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg"
-        alt="MP Solutions Hero Banner">
-      <a href="#live-results" class="hero-live-results-btn">
-        VIEW LIVE RESULTS →
-      </a>
+      <img src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg" alt="MP Solutions Hero Banner">
+      <a href="#live-results" class="hero-live-results-btn" aria-label="View live results">VIEW LIVE RESULTS →</a>
     </div>
-
     <div class="banner-nav-buttons">
       <button class="banner-nav-btn" type="button" onclick="smoothScroll('contact')">← Previous</button>
       <button class="banner-nav-btn" type="button" onclick="smoothScroll('about')">Next →</button>
     </div>
   </section>
-
-  <!-- MP SOLUTIONS AP MUNICIPAL ELECTION PROMOTION -->
   <section id="election-desk" class="mp-election-promo">
-    <div class="mp-election-inner">
-      <div class="mp-election-label">
-        <span class="mp-blink-dot"></span>
-        MP SOLUTIONS ELECTION DESK
+    <a href="#live-results" class="mp-election-link">
+      <div class="mp-election-inner">
+        <div class="mp-election-label"><span class="mp-blink-dot"></span> MP SOLUTIONS ELECTION DESK</div>
+        <h2>AP MUNICIPAL ELECTIONS 2026</h2>
+        <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
+        <p>ULB-wise Results | Party-wise Performance | Division-wise Tracking</p>
+        <span class="mp-election-button">VIEW LIVE RESULTS →</span>
+        <small>Political Strategy | Survey &amp; Analytics</small>
       </div>
-
-      <h2>AP MUNICIPAL ELECTIONS 2026</h2>
-      <h3>LIVE RESULTS &amp; COUNTING UPDATES</h3>
-      <p>
-        Town-wise Results | Party-wise Performance |
-        Division-wise Tracking
-      </p>
-
-      <a href="#live-results" class="mp-election-button">
-        VIEW LIVE RESULTS →
-      </a>
-
-      <small>Political Strategy | Survey &amp; Analytics</small>
-    </div>
+    </a>
   </section>
-
   <section id="about">
     <h2>About MP Solutions</h2>
     <p>MP Solutions India is a leading political consulting and election strategy firm specializing in comprehensive election management, strategic polling, and data-driven campaign analytics.</p>
     <p><strong>Location:</strong> Hyderabad | Vijayawada</p>
     <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
   </section>
-
   <section id="services">
     <h2>Our Services</h2>
     <div class="cards">
@@ -519,292 +137,201 @@ footer {
       <div class="card"><h3>Candidate Branding</h3></div>
     </div>
   </section>
-
   <section id="leaders">
     <h2>Leadership</h2>
     <p><strong>Founders:</strong> Chintapalli Prakash &amp; Gopaluni Sai Mahanth</p>
     <p>With years of experience in political consulting and election strategy, our leadership team brings expertise and innovation to every project.</p>
   </section>
-
-  <!-- MP SOLUTIONS LIVE RESULTS DASHBOARD -->
   <section id="live-results">
     <div class="mp-results-heading">
-      <span class="mp-live-indicator"></span>
-      LIVE ELECTION TRACKER
+      <span class="mp-live-indicator"></span> LIVE ELECTION TRACKER
       <h1>AP MUNICIPAL ELECTIONS 2026</h1>
-      <p>Town-wise election results and party-wise updates</p>
+      <p>All notified ULBs | Town-wise turnout | Party-wise results and updates</p>
     </div>
-
     <div class="mp-results-toolbar">
-      <span id="mp-status">Connecting to results...</span>
+      <span id="mp-status" role="status">Connecting to results...</span>
       <button id="mp-refresh" type="button">↻ Refresh Results</button>
     </div>
-
+    <div class="mp-summary-cards">
+      <div class="mp-summary-card"><span>ULBs Listed</span><strong id="mp-town-count">—</strong></div>
+      <div class="mp-summary-card"><span>Total Divisions / Wards Listed</span><strong id="mp-division-total">—</strong></div>
+      <div class="mp-summary-card"><span>Unanimous Divisions / Wards</span><strong id="mp-unanimous-total">—</strong></div>
+    </div>
     <div class="mp-party-cards" id="mp-party-cards"></div>
-
     <div class="mp-results-info">
-      <strong>Constituency / Town-wise Results</strong>
+      <strong>ULB-wise Results</strong>
       <span id="mp-last-updated">Waiting for data...</span>
     </div>
-
+    <div class="mp-filter-bar">
+      <input id="mp-search" type="search" placeholder="Search ULB or district..." aria-label="Search ULB or district">
+      <select id="mp-status-filter" aria-label="Filter by status">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="entered">Figures entered</option>
+      </select>
+    </div>
     <div class="mp-table-wrap">
       <table class="mp-results-table">
-        <thead>
-          <tr>
-            <th>Town</th>
-            <th>Divisions</th>
-            <th>TDP</th>
-            <th>YSRCP</th>
-            <th>JSP</th>
-            <th>BJP</th>
-            <th>Others</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="mp-results-body">
-          <tr>
-            <td colspan="8">Loading election data...</td>
-          </tr>
-        </tbody>
+        <thead><tr>
+          <th>ULB</th><th>Type</th><th>District</th><th>Wards / Divisions</th><th>Unanimous</th>
+          <th>TDP</th><th>YSRCP</th><th>JSP</th><th>BJP</th><th>Others</th><th>Status</th>
+        </tr></thead>
+        <tbody id="mp-results-body"><tr><td colspan="11" class="mp-empty">Loading election data...</td></tr></tbody>
       </table>
     </div>
-
-    <p class="mp-disclaimer">
-      Disclaimer: This is an unofficial election data tracker
-      maintained by MP Solutions. Figures are based on the
-      data entered in the tracker. Final results are subject
-      to declaration by the competent State Election Commission.
-    </p>
+    <p class="mp-disclaimer">Disclaimer: This is an unofficial election data tracker maintained by MP Solutions. Figures are based on the data entered in the tracker. Final results are subject to declaration by the competent State Election Commission.</p>
   </section>
-
   <section id="contact">
     <h2>Contact</h2>
     <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
     <p><strong>Offices:</strong> Hyderabad | Vijayawada</p>
-    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color: #f58220; text-decoration: none;" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/pvtltdmp" style="color:#f58220;text-decoration:none" target="_blank" rel="noopener noreferrer">@pvtltdmp</a></p>
   </section>
 </div>
-
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
-
 <script>
 (() => {
-  const CSV_URL =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=128678238&single=true&output=csv";
-
+  const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=128678238&single=true&output=csv";
   const REFRESH_INTERVAL = 60000;
-
   const parties = [
-    { key: "tdp", name: "TDP" },
-    { key: "ysrcp", name: "YSRCP" },
-    { key: "jsp", name: "JSP" },
-    { key: "bjp", name: "BJP" },
-    { key: "others", name: "Others" }
+    {key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},
+    {key:"jsp",name:"JSP"},{key:"bjp",name:"BJP"},{key:"others",name:"Others"}
   ];
-
   const $ = id => document.getElementById(id);
-
-  function makeElement(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text !== undefined) node.textContent = text;
-    return node;
-  }
+  let allRecords = [];
 
   function parseCSV(text) {
-    const rows = [];
-    let row = [];
-    let cell = "";
-    let quoted = false;
-
-    text = text.replace(/^\uFEFF/, "");
-
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      const next = text[i + 1];
-
-      if (char === '"' && quoted && next === '"') {
-        cell += '"';
-        i++;
-      } else if (char === '"') {
-        quoted = !quoted;
-      } else if (char === "," && !quoted) {
-        row.push(cell.trim());
-        cell = "";
-      } else if ((char === "\n" || char === "\r") && !quoted) {
-        if (char === "\r" && next === "\n") i++;
-        row.push(cell.trim());
-        if (row.some(value => value !== "")) rows.push(row);
-        row = [];
-        cell = "";
-      } else {
-        cell += char;
-      }
+    const rows=[]; let row=[]; let cell=""; let quoted=false;
+    text=text.replace(/^\uFEFF/,"");
+    for(let i=0;i<text.length;i++){
+      const ch=text[i], next=text[i+1];
+      if(ch==='"' && quoted && next==='"'){cell+='"';i++;}
+      else if(ch==='"'){quoted=!quoted;}
+      else if(ch==="," && !quoted){row.push(cell.trim());cell="";}
+      else if((ch==="\n"||ch==="\r")&&!quoted){
+        if(ch==="\r"&&next==="\n")i++;
+        row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);
+        row=[];cell="";
+      } else cell+=ch;
     }
-
-    row.push(cell.trim());
-    if (row.some(value => value !== "")) rows.push(row);
-
+    row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);
     return rows;
   }
-
-  function numberValue(value) {
-    if (!value || !value.trim()) return null;
-    const n = Number(value.replace(/,/g, ""));
-    return Number.isFinite(n) ? n : null;
+  function numberValue(value){
+    if(value===null||value===undefined)return null;
+    const cleaned=String(value).trim().replace(/,/g,"");
+    if(cleaned===""||cleaned==="-"||cleaned.startsWith("#")||cleaned.startsWith("="))return null;
+    const n=Number(cleaned);return Number.isFinite(n)?n:null;
   }
-
-  function renderDashboard(rows) {
-    if (rows.length < 2) {
-      throw new Error("No election records found.");
-    }
-
-    const headers = rows[0].map(h =>
-      h.toLowerCase().replace(/[^a-z0-9]/g, "")
-    );
-
-    const index = key => headers.indexOf(key);
-
-    const townIndex = index("town");
-    const divisionIndex = index("divisions");
-    const statusIndex = index("status");
-    const updatedIndex = index("lastupdated");
-
-    if (townIndex < 0) {
-      throw new Error("Town column is missing.");
-    }
-
-    const records = rows.slice(1)
-      .filter(row => row[townIndex])
-      .filter(row => !/13\s*corporations/i.test(row[townIndex]));
-
-    if (!records.length) {
-      throw new Error("No town-wise data available.");
-    }
-
-    const totals = {};
-    parties.forEach(p => totals[p.key] = 0);
-
-    const tbody = $("mp-results-body");
-    tbody.replaceChildren();
-
-    records.forEach(row => {
-      const tr = document.createElement("tr");
-      const town = row[townIndex] || "—";
-      const division = divisionIndex >= 0 ? row[divisionIndex] : "";
-      const cells = [town, division || "—"];
-
-      parties.forEach(p => {
-        const col = index(p.key);
-        const value = col >= 0 ? numberValue(row[col]) : null;
-        if (value !== null) totals[p.key] += value;
-        cells.push(value === null ? "—" : value.toLocaleString("en-IN"));
-      });
-
-      cells.forEach(value => {
-        tr.appendChild(makeElement("td", "", value));
-      });
-
-      const status = statusIndex >= 0
-        ? (row[statusIndex] || "Pending") : "Pending";
-
-      tr.appendChild(makeElement("td", "", status));
-      tbody.appendChild(tr);
+  function cell(row,idx){return idx>=0?(row[idx]??""):"";}
+  function renderPartyCards(totals,hasData){
+    const wrap=$("mp-party-cards");wrap.replaceChildren();
+    parties.forEach(p=>{
+      const card=document.createElement("div");card.className="mp-party-card";
+      const h=document.createElement("h3");h.textContent=p.name;
+      const strong=document.createElement("strong");strong.textContent=hasData[p.key]?totals[p.key].toLocaleString("en-IN"):"—";
+      const small=document.createElement("small");small.textContent=hasData[p.key]?"Entered figures":"No party results entered";
+      card.append(h,strong,small);wrap.appendChild(card);
     });
-
-    const cards = $("mp-party-cards");
-    cards.replaceChildren();
-
-    parties.forEach(p => {
-      const card = makeElement("div", "mp-party-card");
-      card.appendChild(makeElement("h3", "", p.name));
-      card.appendChild(makeElement(
-        "strong", "", totals[p.key].toLocaleString("en-IN")
-      ));
-      cards.appendChild(card);
+  }
+  function renderRows(){
+    const query=$("mp-search").value.trim().toLowerCase();
+    const statusFilter=$("mp-status-filter").value;
+    const filtered=allRecords.filter(r=>{
+      const matchesSearch=[r.town,r.type,r.district].some(v=>v.toLowerCase().includes(query));
+      const entered=r.partyValues.some(v=>v!==null)||r.unanimous!==null;
+      const matchesStatus=!statusFilter||(statusFilter==="entered"?entered:!entered);
+      return matchesSearch&&matchesStatus;
     });
-
-    const sourceDates = records
-      .map(row => updatedIndex >= 0 ? row[updatedIndex] : "")
-      .filter(Boolean);
-
-    $("mp-last-updated").textContent = sourceDates.length
-      ? "Sheet update: " + sourceDates[sourceDates.length - 1]
-      : "Sheet update time not provided";
-  }
-
-  let loading = false;
-
-  async function refreshResults() {
-    if (loading) return;
-
-    loading = true;
-    $("mp-refresh").disabled = true;
-    $("mp-status").textContent = "Refreshing results...";
-
-    try {
-      const url = CSV_URL + "&_=" + Date.now();
-      const response = await fetch(url, { cache: "no-store" });
-
-      if (!response.ok) {
-        throw new Error("Google Sheets returned HTTP " + response.status);
-      }
-
-      const csv = await response.text();
-
-      if (!csv || csv.trim().startsWith("<")) {
-        throw new Error("Published CSV unavailable. Check sheet publishing.");
-      }
-
-      const rows = parseCSV(csv);
-      renderDashboard(rows);
-
-      $("mp-status").textContent = "Connected • Data loaded successfully";
-      $("mp-last-updated").textContent +=
-        " | Website refresh: " + new Date().toLocaleTimeString();
-
-    } catch (error) {
-      console.error("MP Results Error:", error);
-      $("mp-status").textContent = "Update failed: " + error.message;
-    } finally {
-      loading = false;
-      $("mp-refresh").disabled = false;
+    const body=$("mp-results-body");body.replaceChildren();
+    if(!filtered.length){
+      const tr=document.createElement("tr"),td=document.createElement("td");
+      td.colSpan=11;td.className="mp-empty";td.textContent="No matching ULB records.";
+      tr.appendChild(td);body.appendChild(tr);return;
     }
+    filtered.forEach(r=>{
+      const tr=document.createElement("tr");
+      const values=[r.town,r.type||"—",r.district||"—",r.divisions===null?"—":r.divisions.toLocaleString("en-IN"),
+        r.unanimous===null?"—":r.unanimous.toLocaleString("en-IN"),
+        ...r.partyValues.map(v=>v===null?"—":v.toLocaleString("en-IN")),r.status||"Pending"];
+      values.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});
+      body.appendChild(tr);
+    });
   }
-
-  $("mp-refresh").addEventListener("click", refreshResults);
-  refreshResults();
-  setInterval(refreshResults, REFRESH_INTERVAL);
+  function renderDashboard(rows){
+    if(rows.length<2)throw new Error("No election records found.");
+    const headers=rows[0].map(h=>h.toLowerCase().replace(/[^a-z0-9]/g,""));
+    const idx=key=>headers.indexOf(key);
+    const townIdx=idx("town"),typeIdx=idx("ulbtype"),districtIdx=idx("district");
+    const divisionIdx=idx("divisions"),unanimousIdx=idx("unanimous"),statusIdx=idx("status"),updatedIdx=idx("lastupdated");
+    if(townIdx<0)throw new Error("Town column is missing.");
+    const dataRows=rows.slice(1).filter(r=>r[townIdx]&&!/summary|total/i.test(r[townIdx]));
+    if(!dataRows.length)throw new Error("No ULB-wise data available.");
+    const totals={},hasData={};parties.forEach(p=>{totals[p.key]=0;hasData[p.key]=false;});
+    allRecords=dataRows.map(row=>{
+      const partyValues=parties.map(p=>{
+        const v=numberValue(cell(row,idx(p.key)));
+        if(v!==null){totals[p.key]+=v;hasData[p.key]=true;}
+        return v;
+      });
+      const status=cell(row,statusIdx).trim();
+      return {
+        town:cell(row,townIdx),
+        type:cell(row,typeIdx),
+        district:cell(row,districtIdx),
+        divisions:numberValue(cell(row,divisionIdx)),
+        unanimous:numberValue(cell(row,unanimousIdx)),
+        partyValues,
+        status:status||"Pending",
+        updated:cell(row,updatedIdx)
+      };
+    });
+    const divisionTotal=allRecords.reduce((sum,r)=>sum+(r.divisions||0),0);
+    const unanimousTotal=allRecords.reduce((sum,r)=>sum+(r.unanimous||0),0);
+    $("mp-town-count").textContent=allRecords.length.toLocaleString("en-IN");
+    $("mp-division-total").textContent=divisionTotal.toLocaleString("en-IN");
+    $("mp-unanimous-total").textContent=unanimousTotal.toLocaleString("en-IN");
+    renderPartyCards(totals,hasData);
+    const dates=allRecords.map(r=>r.updated).filter(v=>v&&!v.startsWith("#")&&!v.startsWith("="));
+    $("mp-last-updated").textContent=dates.length?"Sheet update: "+dates[dates.length-1]:"Sheet update time not provided";
+    renderRows();
+  }
+  let loading=false;
+  async function refreshResults(){
+    if(loading)return;loading=true;$("mp-refresh").disabled=true;$("mp-status").textContent="Refreshing results...";
+    try{
+      const response=await fetch(CSV_URL+"&_="+Date.now(),{cache:"no-store"});
+      if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);
+      const csv=await response.text();
+      if(!csv||csv.trim().startsWith("<"))throw new Error("Published CSV unavailable. Check sheet publishing.");
+      renderDashboard(parseCSV(csv));
+      $("mp-status").textContent="Connected • Data loaded successfully";
+      $("mp-last-updated").textContent+=" | Website refresh: "+new Date().toLocaleTimeString();
+    }catch(error){
+      console.error("MP Results Error:",error);
+      $("mp-status").textContent="Update failed: "+error.message;
+    }finally{loading=false;$("mp-refresh").disabled=false;}
+  }
+  $("mp-refresh").addEventListener("click",refreshResults);
+  $("mp-search").addEventListener("input",renderRows);
+  $("mp-status-filter").addEventListener("change",renderRows);
+  refreshResults();setInterval(refreshResults,REFRESH_INTERVAL);
 })();
 </script>
-
 <script>
-window.addEventListener("scroll", () => {
-  let current = "";
-  const sections = document.querySelectorAll("section");
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (window.pageYOffset >= sectionTop - 120) {
-      current = section.getAttribute("id");
-    }
+window.addEventListener("scroll",()=>{
+  let current="";
+  document.querySelectorAll("section").forEach(section=>{
+    if(window.pageYOffset>=section.offsetTop-120)current=section.getAttribute("id");
   });
-
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.classList.toggle(
-      "active",
-      link.getAttribute("href").slice(1) === current
-    );
+  document.querySelectorAll(".nav-link").forEach(link=>{
+    link.classList.toggle("active",link.getAttribute("href").slice(1)===current);
   });
 });
-
-function smoothScroll(sectionId) {
-  const target = document.getElementById(sectionId);
-  if (target) {
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function smoothScroll(sectionId){
+  const target=document.getElementById(sectionId);
+  if(target)target.scrollIntoView({behavior:"smooth",block:"start"});
 }
 </script>
-
 </body>
 </html>
