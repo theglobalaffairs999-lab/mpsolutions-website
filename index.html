@@ -572,6 +572,7 @@ footer {
           <tr>
             <th>Town</th>
             <th>Divisions</th>
+            <th>Unanimous</th>
             <th>TDP</th>
             <th>YSRCP</th>
             <th>JSP</th>
@@ -582,7 +583,7 @@ footer {
         </thead>
         <tbody id="mp-results-body">
           <tr>
-            <td colspan="8">Loading election data...</td>
+            <td colspan="9">Loading election data...</td>
           </tr>
         </tbody>
       </table>
@@ -693,6 +694,7 @@ footer {
 
     const townIndex = index("town");
     const divisionIndex = index("divisions");
+    const unanimousIndex = index("unanimous");
     const statusIndex = index("status");
     const updatedIndex = index("lastupdated");
 
@@ -717,9 +719,16 @@ footer {
     records.forEach(row => {
       const tr = document.createElement("tr");
       const town = row[townIndex] || "—";
-      const division = divisionIndex >= 0 ? row[divisionIndex] : "";
-      const cells = [town, division || "—"];
+const division = divisionIndex >= 0 ? row[divisionIndex] : "";
+const unanimous = unanimousIndex >= 0
+    ? numberValue(row[unanimousIndex])
+    : null;
 
+const cells = [
+    town,
+    division || "-",
+    unanimous === null ? "—" : unanimous.toLocaleString("en-IN")
+];
       parties.forEach(p => {
         const col = index(p.key);
         const value = col >= 0 ? numberValue(row[col]) : null;
