@@ -668,8 +668,15 @@ footer {
   }
 
   function numberValue(value) {
-    if (!value || !value.trim()) return null;
-    const n = Number(value.replace(/,/g, ""));
+    if (value === null || value === undefined) return null;
+
+    const cleaned = String(value).trim().replace(/,/g, "");
+
+    if (cleaned === "" || cleaned === "-" || cleaned === "#NAME?") {
+        return null;
+    }
+
+    const n = Number(cleaned);
     return Number.isFinite(n) ? n : null;
   }
 
