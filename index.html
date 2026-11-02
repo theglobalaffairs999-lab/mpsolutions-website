@@ -191,7 +191,9 @@ section h2{font-size:24px}
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 <script>
 (() => {
- const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=1156147755&single=true&output=csv";
+  const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=1156147755&single=true&output=csv";
+  const REFRESH_INTERVAL = 60000;
+  const parties = [
     {key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},
     {key:"jsp",name:"JSP"},{key:"bjp",name:"BJP"},{key:"others",name:"Others"}
   ];
