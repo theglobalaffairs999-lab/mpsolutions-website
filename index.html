@@ -68,6 +68,25 @@ section h2{font-size:32px;color:#0b2f66;margin-bottom:30px}
 .mp-empty{padding:20px!important;color:#667085}
 .mp-disclaimer{margin-top:22px;font-size:13px;color:#666;line-height:1.6}
 footer{background:#0b2f66;color:#fff;text-align:center;padding:30px 20px;margin-top:40px}
+
+/* ULB closure tracker additions */
+#ulb-closure{font-family:Arial,sans-serif;color:#17233d;padding:22px 12px;max-width:1200px;margin:35px auto}
+#ulb-closure-refresh{background:#ed8b25;border:0;padding:11px 17px;color:white;border-radius:6px;font-weight:bold;cursor:pointer}
+#ulb-closure-refresh:disabled{opacity:.6;cursor:wait}
+.ulb-closure-heading{background:#10234b;color:#fff;text-align:center;padding:25px 15px;border-radius:12px}
+.ulb-closure-heading h2{color:#fff!important;margin:10px 0;font-size:clamp(22px,4vw,32px)}
+.ulb-closure-heading p{color:#d9e3f5;margin:0}
+.ulb-closure-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.ulb-closure-card{background:#fff;border:1px solid #e1e5ed;border-radius:10px;padding:18px 10px;text-align:center}
+.ulb-closure-card span{display:block;color:#596579;font-size:13px;margin-bottom:8px}
+.ulb-closure-card strong{font-size:25px;color:#10234b}
+.ulb-closure-list{background:#fff;border:1px solid #e1e5ed;border-radius:10px;padding:18px;margin-top:18px}
+.ulb-closure-list h3{color:#10234b;margin-bottom:12px}
+.ulb-closure-list ul{columns:2;column-gap:30px;padding-left:22px;line-height:1.9}
+.ulb-closure-status{font-weight:bold}
+.ulb-closure-status.completed{color:#16803c}.ulb-closure-status.counting{color:#b77900}.ulb-closure-status.not-started{color:#667085}.ulb-closure-status.error{color:#c62828}
+@media(max-width:600px){.ulb-closure-list ul{columns:1}}
+
 @media(max-width:768px){
 .header-container{flex-direction:column;gap:15px}
 nav{justify-content:center;gap:8px}
@@ -180,6 +199,30 @@ section h2{font-size:24px}
       </table>
     </div>
     <p class="mp-disclaimer">Disclaimer: This is an unofficial election data tracker maintained by MP Solutions. Figures are based on the data entered in the tracker. Final results are subject to declaration by the competent State Election Commission.</p>
+  </section>
+
+  <section id="ulb-closure">
+    <div class="ulb-closure-heading">
+      <span class="mp-live-indicator"></span>
+      <h2>ULB RESULTS CLOSURE TRACKER</h2>
+      <p>Municipality-wise counting progress and completed results</p>
+    </div>
+    <div class="mp-results-toolbar">
+      <span id="ulb-closure-status" role="status">Connecting to closure tracker...</span>
+      <button id="ulb-closure-refresh" type="button">↻ Refresh Closure</button>
+    </div>
+    <div class="ulb-closure-cards">
+      <div class="ulb-closure-card"><span>Total ULBs</span><strong id="ulb-total">—</strong></div>
+      <div class="ulb-closure-card"><span>Results Completed</span><strong id="ulb-completed">—</strong></div>
+      <div class="ulb-closure-card"><span>Counting</span><strong id="ulb-counting">—</strong></div>
+      <div class="ulb-closure-card"><span>Not Started</span><strong id="ulb-not-started">—</strong></div>
+      <div class="ulb-closure-card"><span>Completion</span><strong id="ulb-percent">—</strong></div>
+    </div>
+    <div class="ulb-closure-list">
+      <h3>Completed ULBs</h3>
+      <ul id="ulb-completed-list"><li>Loading completed ULBs...</li></ul>
+    </div>
+    <p class="mp-disclaimer">Closure figures are based on the separately published MP Solutions ULB Closure Tracker.</p>
   </section>
   <section id="contact">
     <h2>Contact</h2>
@@ -318,6 +361,54 @@ section h2{font-size:24px}
   refreshResults();setInterval(refreshResults,REFRESH_INTERVAL);
 })();
 </script>
+
+<script>
+(() => {
+  const CLOSURE_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=2025332960&single=true&output=csv";
+  const $c = id => document.getElementById(id);
+  function parseClosureCSV(text){
+    const rows=[];let row=[],cell="",quoted=false;text=text.replace(/^\uFEFF/,"");
+    for(let i=0;i<text.length;i++){const ch=text[i],next=text[i+1];
+      if(ch==='"'&&quoted&&next==='"'){cell+='"';i++;}
+      else if(ch==='"')quoted=!quoted;
+      else if(ch===','&&!quoted){row.push(cell.trim());cell="";}
+      else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&next==='\n')i++;row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);row=[];cell="";}
+      else cell+=ch;
+    }
+    row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);return rows;
+  }
+  function renderClosure(rows){
+    if(rows.length<2)throw new Error("No closure tracker rows found.");
+    const headers=rows[0].map(h=>h.toLowerCase().replace(/[^a-z0-9]/g,""));
+    const idx=name=>headers.indexOf(name);
+    const town=idx("town"),total=idx("totalwards"),unanimous=idx("unanimousseats"),declared=idx("resultsdeclared"),remaining=idx("remainingwards"),status=idx("resultsclosure");
+    if([town,total,unanimous,declared,remaining,status].some(i=>i<0))throw new Error("One or more expected column headers are missing.");
+    const data=rows.slice(1).filter(r=>r[town]&& !/^(total|summary)$/i.test(r[town]));
+    const completed=data.filter(r=>r[status].trim().toUpperCase()==="RESULTS COMPLETED");
+    const counting=data.filter(r=>r[status].trim().toUpperCase()==="COUNTING");
+    const notStarted=data.filter(r=>r[status].trim().toUpperCase()==="NOT STARTED");
+    $c("ulb-total").textContent=data.length.toLocaleString("en-IN");
+    $c("ulb-completed").textContent=completed.length.toLocaleString("en-IN");
+    $c("ulb-counting").textContent=counting.length.toLocaleString("en-IN");
+    $c("ulb-not-started").textContent=notStarted.length.toLocaleString("en-IN");
+    $c("ulb-percent").textContent=(data.length?(completed.length/data.length*100):0).toFixed(2)+"%";
+    const list=$c("ulb-completed-list");list.replaceChildren();
+    if(!completed.length){const li=document.createElement("li");li.textContent="No ULB results completed yet.";list.appendChild(li);}
+    else completed.forEach(r=>{const li=document.createElement("li");li.textContent=r[town];list.appendChild(li);});
+    $c("ulb-closure-status").textContent="Connected • Closure data loaded successfully";
+  }
+  let closureLoading=false;
+  async function refreshClosure(){
+    if(closureLoading)return;closureLoading=true;$c("ulb-closure-refresh").disabled=true;$c("ulb-closure-status").textContent="Refreshing closure data...";
+    try{const response=await fetch(CLOSURE_CSV_URL+"&_="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);const csv=await response.text();if(!csv||csv.trim().startsWith("<"))throw new Error("Published closure CSV unavailable.");renderClosure(parseClosureCSV(csv));}
+    catch(error){console.error("MP Closure Tracker Error:",error);$c("ulb-closure-status").textContent="Closure update failed: "+error.message;}
+    finally{closureLoading=false;$c("ulb-closure-refresh").disabled=false;}
+  }
+  $c("ulb-closure-refresh").addEventListener("click",refreshClosure);
+  refreshClosure();setInterval(refreshClosure,60000);
+})();
+</script>
+
 <script>
 window.addEventListener("scroll",()=>{
   let current="";
