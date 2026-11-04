@@ -183,8 +183,8 @@ section h2{font-size:24px}
     </div>
     <div class="mp-summary-cards">
       <div class="mp-summary-card"><span>ULBs Listed</span><strong id="mp-town-count">—</strong></div>
-      <div class="mp-summary-card"><span>Total Divisions / Wards Listed</span><strong id="mp-division-total">—</strong></div>
-      <div class="mp-summary-card"><span>Unanimous Divisions / Wards</span><strong id="mp-unanimous-total">—</strong></div>
+      <div class="mp-summary-card"><span>Total Wards</span><strong id="mp-division-total">—</strong></div>
+      <div class="mp-summary-card"><span>Wards Declared</span><strong id="mp-unanimous-total">—</strong></div>
     </div>
     <div class="mp-party-cards" id="mp-party-cards"></div>
     <div class="mp-results-info">
@@ -202,10 +202,10 @@ section h2{font-size:24px}
     <div class="mp-table-wrap">
       <table class="mp-results-table">
         <thead><tr>
-          <th>ULB</th><th>Type</th><th>District</th><th>Wards / Divisions</th><th>Unanimous</th>
-          <th>TDP</th><th>YSRCP</th><th>JSP</th><th>BJP</th><th>Others</th><th>Status</th>
+          <th>ULB</th><th>Type</th><th>Total Wards</th><th>Wards Declared</th>
+          <th>TDP</th><th>YSRCP</th><th>JSP</th><th>BJP</th><th>Others</th><th>Pending</th><th>Party / Control</th><th>Data Status</th>
         </tr></thead>
-        <tbody id="mp-results-body"><tr><td colspan="11" class="mp-empty">Loading election data...</td></tr></tbody>
+        <tbody id="mp-results-body"><tr><td colspan="12" class="mp-empty">Loading election data...</td></tr></tbody>
       </table>
     </div>
     <p class="mp-disclaimer">Disclaimer: This is an unofficial election data tracker maintained by MP Solutions. Figures are based on the data entered in the tracker. Final results are subject to declaration by the competent State Election Commission.</p>
@@ -244,103 +244,41 @@ section h2{font-size:24px}
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 <script>
 (() => {
-  const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=1156147755&single=true&output=csv";
+  const RESULTS_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=16413906&single=true&output=csv";
+  const CLOSURE_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=2025332960&single=true&output=csv";
   const REFRESH_INTERVAL = 60000;
-  const parties = [
-    {key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},
-    {key:"jsp",name:"JSP"},{key:"bjp",name:"BJP"},{key:"others",name:"Others"}
-  ];
+  const parties = [{key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},{key:"jsp",name:"JSP"},{key:"bjp",name:"BJP"},{key:"others",name:"Others"}];
   const $ = id => document.getElementById(id);
   let allRecords = [];
-
+  const clean = v => String(v ?? "").trim();
+  const norm = v => clean(v).toLowerCase().replace(/[^a-z0-9]/g, "");
   function parseCSV(text) {
     const rows=[]; let row=[]; let cell=""; let quoted=false;
-    text=text.replace(/^\uFEFF/,"");
+    text=String(text).replace(/^\uFEFF/, "");
     for(let i=0;i<text.length;i++){
       const ch=text[i], next=text[i+1];
       if(ch==='"' && quoted && next==='"'){cell+='"';i++;}
       else if(ch==='"'){quoted=!quoted;}
-      else if(ch==="," && !quoted){row.push(cell.trim());cell="";}
-      else if((ch==="\n"||ch==="\r")&&!quoted){
-        if(ch==="\r"&&next==="\n")i++;
-        row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);
-        row=[];cell="";
-      } else cell+=ch;
+      else if(ch===',' && !quoted){row.push(cell.trim());cell="";}
+      else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&next==='\n')i++;row.push(cell.trim());if(row.some(x=>x!==""))rows.push(row);row=[];cell="";}
+      else cell+=ch;
     }
-    row.push(cell.trim());if(row.some(v=>v!==""))rows.push(row);
+    row.push(cell.trim());if(row.some(x=>x!==""))rows.push(row);
     return rows;
   }
-  function numberValue(value){
-    if(value===null||value===undefined)return null;
-    const cleaned=String(value).trim().replace(/,/g,"");
-    if(cleaned===""||cleaned==="-"||cleaned.startsWith("#")||cleaned.startsWith("="))return null;
-    const n=Number(cleaned);return Number.isFinite(n)?n:null;
-  }
-  function cell(row,idx){return idx>=0?(row[idx]??""):"";}
-  function renderPartyCards(totals,hasData){
-    const wrap=$("mp-party-cards");wrap.replaceChildren();
-    parties.forEach(p=>{
-      const card=document.createElement("div");card.className="mp-party-card";
-      const h=document.createElement("h3");h.textContent=p.name;
-      const strong=document.createElement("strong");strong.textContent=hasData[p.key]?totals[p.key].toLocaleString("en-IN"):"—";
-      const small=document.createElement("small");small.textContent=hasData[p.key]?"Entered figures":"No party results entered";
-      card.append(h,strong,small);wrap.appendChild(card);
-    });
-  }
-  function renderRows(){
-    const query=$("mp-search").value.trim().toLowerCase();
-    const statusFilter=$("mp-status-filter").value;
-    const filtered=allRecords.filter(r=>{
-      const matchesSearch=[r.town,r.type,r.district].some(v=>v.toLowerCase().includes(query));
-      const entered=r.partyValues.some(v=>v!==null)||r.unanimous!==null;
-      const matchesStatus=!statusFilter||(statusFilter==="entered"?entered:!entered);
-      return matchesSearch&&matchesStatus;
-    });
-    const body=$("mp-results-body");body.replaceChildren();
-    if(!filtered.length){
-      const tr=document.createElement("tr"),td=document.createElement("td");
-      td.colSpan=11;td.className="mp-empty";td.textContent="No matching ULB records.";
-      tr.appendChild(td);body.appendChild(tr);return;
-    }
-    filtered.forEach(r=>{
-      const tr=document.createElement("tr");
-      const values=[r.town,r.type||"—",r.district||"—",r.divisions===null?"—":r.divisions.toLocaleString("en-IN"),
-        r.unanimous===null?"—":r.unanimous.toLocaleString("en-IN"),
-        ...r.partyValues.map(v=>v===null?"—":v.toLocaleString("en-IN")),r.status||"Pending"];
-      values.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});
-      body.appendChild(tr);
-    });
-  }
-  function renderDashboard(rows){
-    if(rows.length<2)throw new Error("No election records found.");
-    const headers=rows[0].map(h=>h.toLowerCase().replace(/[^a-z0-9]/g,""));
-    const idx=key=>headers.indexOf(key);
-    const townIdx=idx("town"),typeIdx=idx("ulbtype"),districtIdx=idx("district");
-    const divisionIdx=idx("divisions"),unanimousIdx=idx("unanimous"),statusIdx=idx("status"),updatedIdx=idx("lastupdated");
-    if(townIdx<0)throw new Error("Town column is missing.");
-    const dataRows=rows.slice(1).filter(r=>r[townIdx]&&!/summary|total/i.test(r[townIdx]));
-    if(!dataRows.length)throw new Error("No ULB-wise data available.");
-    const totals={},hasData={};parties.forEach(p=>{totals[p.key]=0;hasData[p.key]=false;});
-    allRecords=dataRows.map(row=>{
-      const partyValues=parties.map(p=>{
-        const v=numberValue(cell(row,idx(p.key)));
-        if(v!==null){totals[p.key]+=v;hasData[p.key]=true;}
-        return v;
-      });
-      const status=cell(row,statusIdx).trim();
-      return {
-        town:cell(row,townIdx),
-        type:cell(row,typeIdx),
-        district:cell(row,districtIdx),
-        divisions:numberValue(cell(row,divisionIdx)),
-        unanimous:numberValue(cell(row,unanimousIdx)),
-        partyValues,
-        status:status||"Pending",
-        updated:cell(row,updatedIdx)
-      };
-    });
-    const divisionTotal=allRecords.reduce((sum,r)=>sum+(r.divisions||0),0);
-    const unanimousTotal=allRecords.reduce((sum,r)=>sum+(r.unanimous||0),0);
-    $("mp-town-count").textContent=allRecords.length.toLocaleString("en-IN");
-    $("mp-division-total").textContent=divisionTotal.toLocaleString
-  
+  function numberValue(v){if(v===null||v===undefined)return null;const t=clean(v).replace(/,/g,"");if(!t||t==='-'||t.startsWith('#'))return null;const n=Number(t);return Number.isFinite(n)?n:null;}
+  function col(headers, aliases){for(const a of aliases){const i=headers.indexOf(norm(a));if(i>=0)return i;}return -1;}
+  function get(row, i){return i<0?"":clean(row[i]);}
+  async function fetchCSV(url){const response=await fetch(url+"&_="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);const text=await response.text();if(!text.trim()||text.trim().startsWith('<'))throw new Error("Published CSV is unavailable. Check that the Google Sheet tab is published to the web.");return parseCSV(text);}
+  function renderPartyCards(totals, hasData){const wrap=$("mp-party-cards");wrap.replaceChildren();parties.forEach(p=>{const card=document.createElement("div");card.className="mp-party-card";const h=document.createElement("h3");h.textContent=p.name;const strong=document.createElement("strong");strong.textContent=hasData[p.key]?totals[p.key].toLocaleString("en-IN"):"—";const small=document.createElement("small");small.textContent=hasData[p.key]?"Entered figures":"No party results entered";card.append(h,strong,small);wrap.append(card);});}
+  function renderRows(){const query=$("mp-search").value.trim().toLowerCase();const filter=$("mp-status-filter").value;const filtered=allRecords.filter(r=>{const match=[r.ulb,r.type,r.partyControl,r.dataStatus].some(v=>v.toLowerCase().includes(query));const entered=r.declared!==null||r.partyValues.some(v=>v!==null);return match&&(!filter||(filter==="entered"?entered:!entered));});const body=$("mp-results-body");body.replaceChildren();if(!filtered.length){const tr=document.createElement("tr"),td=document.createElement("td");td.colSpan=12;td.className="mp-empty";td.textContent="No matching ULB records.";tr.append(td);body.append(tr);return;}filtered.forEach(r=>{const tr=document.createElement("tr");const vals=[r.ulb,r.type||"—",fmt(r.total),fmt(r.declared),...r.partyValues.map(fmt),fmt(r.pending),r.partyControl||"—",r.dataStatus||"—"];vals.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.append(td);});body.append(tr);});}
+  function fmt(v){return v===null||v===undefined?"—":Number(v).toLocaleString("en-IN");}
+  async function loadResults(){const status=$("mp-status"),button=$("mp-refresh");button.disabled=true;status.textContent="Connecting to results…";try{const rows=await fetchCSV(RESULTS_CSV);if(rows.length<2)throw new Error("No election records found in the published sheet.");const h=rows[0].map(norm);const ix={ulb:col(h,["ULB","Town","Municipality"]),type:col(h,["Type","ULB Type"]),total:col(h,["Total wards","Total ward","Wards"]),declared:col(h,["Wards declared","Declared wards","Declared"]),tdp:col(h,["TDP"]),ysrcp:col(h,["YSRCP","YCP"]),jsp:col(h,["JSP"]),bjp:col(h,["BJP"]),others:col(h,["Others","Independent","Independents"]),pending:col(h,["Pending","Wards pending"]),control:col(h,["Party / control","Party control","Control"]),dataStatus:col(h,["Data status","Status"])};if(ix.ulb<0)throw new Error("Required column 'ULB' was not found. Check the published tab and its header row.");const data=rows.slice(1).filter(r=>get(r,ix.ulb)&&!/^grand total|^total$/i.test(get(r,ix.ulb)));if(!data.length)throw new Error("The sheet has headers but no ULB rows.");const totals={tdp:0,ysrcp:0,jsp:0,bjp:0,others:0},has={tdp:false,ysrcp:false,jsp:false,bjp:false,others:false};allRecords=data.map(r=>{const pv=parties.map(p=>{const n=numberValue(get(r,ix[p.key]));if(n!==null){totals[p.key]+=n;has[p.key]=true;}return n;});return {ulb:get(r,ix.ulb),type:get(r,ix.type),total:numberValue(get(r,ix.total)),declared:numberValue(get(r,ix.declared)),partyValues:pv,pending:numberValue(get(r,ix.pending)),partyControl:get(r,ix.control),dataStatus:get(r,ix.dataStatus)};});const sum=k=>allRecords.reduce((a,r)=>a+(r[k]||0),0);$("mp-town-count").textContent=allRecords.length.toLocaleString("en-IN");$("mp-division-total").textContent=sum("total").toLocaleString("en-IN");$("mp-unanimous-total").textContent=sum("declared").toLocaleString("en-IN");renderPartyCards(totals,has);renderRows();$("mp-last-updated").textContent="Updated: "+new Date().toLocaleString("en-IN");status.textContent="Results loaded successfully · "+allRecords.length+" ULB records";}catch(e){status.textContent="Results unavailable: "+e.message;$("mp-results-body").innerHTML='<tr><td colspan="12" class="mp-empty"></td></tr>';$ ("mp-results-body").querySelector("td").textContent=e.message;}finally{button.disabled=false;}}
+  async function loadClosure(){const status=$("ulb-closure-status"),button=$("ulb-closure-refresh");button.disabled=true;status.textContent="Connecting to closure tracker…";try{const rows=await fetchCSV(CLOSURE_CSV);if(rows.length<2)throw new Error("No closure records found.");const h=rows[0].map(norm);const nameI=col(h,["ULB","Town","Municipality"]),stateI=col(h,["Status","Closure status","Data status"]);if(nameI<0||stateI<0)throw new Error("Closure sheet needs ULB and Status columns. Please confirm its headers.");const records=rows.slice(1).filter(r=>get(r,nameI));const completed=[],counting=[],notStarted=[];records.forEach(r=>{const name=get(r,nameI),st=get(r,stateI).toLowerCase();if(/complete|closed|declared|finished/.test(st))completed.push(name);else if(/count|progress|ongoing/.test(st))counting.push(name);else notStarted.push(name);});const pct=records.length?Math.round(completed.length/records.length*100):0;$("ulb-total").textContent=records.length;$("ulb-completed").textContent=completed.length;$("ulb-counting").textContent=counting.length;$("ulb-not-started").textContent=notStarted.length;$("ulb-percent").textContent=pct+"%";const list=$("ulb-completed-list");list.replaceChildren();if(!completed.length){const li=document.createElement("li");li.textContent="No completed ULBs marked yet.";list.append(li);}else completed.forEach(n=>{const li=document.createElement("li");li.textContent=n;list.append(li);});status.textContent="Closure tracker loaded successfully";}catch(e){status.textContent="Closure tracker unavailable: "+e.message;$("ulb-completed-list").innerHTML="<li></li>";$("ulb-completed-list").firstElementChild.textContent=e.message;}finally{button.disabled=false;}}
+  $("mp-refresh").addEventListener("click",loadResults);$("ulb-closure-refresh").addEventListener("click",loadClosure);$("mp-search").addEventListener("input",renderRows);$("mp-status-filter").addEventListener("change",renderRows);
+  window.smoothScroll=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+  loadResults();loadClosure();setInterval(()=>{loadResults();loadClosure();},REFRESH_INTERVAL);
+})();
+</script>
+</body>
+</html>
