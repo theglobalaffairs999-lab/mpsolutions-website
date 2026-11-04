@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5536774278457465"
+     crossorigin="anonymous"></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZH0NQYS6S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7ZH0NQYS6S');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MP Solutions | AP Municipal Elections 2026 Live Results</title>
@@ -68,6 +78,25 @@ section h2{font-size:32px;color:#0b2f66;margin-bottom:30px}
 .mp-empty{padding:20px!important;color:#667085}
 .mp-disclaimer{margin-top:22px;font-size:13px;color:#666;line-height:1.6}
 footer{background:#0b2f66;color:#fff;text-align:center;padding:30px 20px;margin-top:40px}
+
+/* ULB closure tracker additions */
+#ulb-closure{font-family:Arial,sans-serif;color:#17233d;padding:22px 12px;max-width:1200px;margin:35px auto}
+#ulb-closure-refresh{background:#ed8b25;border:0;padding:11px 17px;color:white;border-radius:6px;font-weight:bold;cursor:pointer}
+#ulb-closure-refresh:disabled{opacity:.6;cursor:wait}
+.ulb-closure-heading{background:#10234b;color:#fff;text-align:center;padding:25px 15px;border-radius:12px}
+.ulb-closure-heading h2{color:#fff!important;margin:10px 0;font-size:clamp(22px,4vw,32px)}
+.ulb-closure-heading p{color:#d9e3f5;margin:0}
+.ulb-closure-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.ulb-closure-card{background:#fff;border:1px solid #e1e5ed;border-radius:10px;padding:18px 10px;text-align:center}
+.ulb-closure-card span{display:block;color:#596579;font-size:13px;margin-bottom:8px}
+.ulb-closure-card strong{font-size:25px;color:#10234b}
+.ulb-closure-list{background:#fff;border:1px solid #e1e5ed;border-radius:10px;padding:18px;margin-top:18px}
+.ulb-closure-list h3{color:#10234b;margin-bottom:12px}
+.ulb-closure-list ul{columns:2;column-gap:30px;padding-left:22px;line-height:1.9}
+.ulb-closure-status{font-weight:bold}
+.ulb-closure-status.completed{color:#16803c}.ulb-closure-status.counting{color:#b77900}.ulb-closure-status.not-started{color:#667085}.ulb-closure-status.error{color:#c62828}
+@media(max-width:600px){.ulb-closure-list ul{columns:1}}
+
 @media(max-width:768px){
 .header-container{flex-direction:column;gap:15px}
 nav{justify-content:center;gap:8px}
@@ -181,6 +210,30 @@ section h2{font-size:24px}
     </div>
     <p class="mp-disclaimer">Disclaimer: This is an unofficial election data tracker maintained by MP Solutions. Figures are based on the data entered in the tracker. Final results are subject to declaration by the competent State Election Commission.</p>
   </section>
+
+  <section id="ulb-closure">
+    <div class="ulb-closure-heading">
+      <span class="mp-live-indicator"></span>
+      <h2>ULB RESULTS CLOSURE TRACKER</h2>
+      <p>Municipality-wise counting progress and completed results</p>
+    </div>
+    <div class="mp-results-toolbar">
+      <span id="ulb-closure-status" role="status">Connecting to closure tracker...</span>
+      <button id="ulb-closure-refresh" type="button">↻ Refresh Closure</button>
+    </div>
+    <div class="ulb-closure-cards">
+      <div class="ulb-closure-card"><span>Total ULBs</span><strong id="ulb-total">—</strong></div>
+      <div class="ulb-closure-card"><span>Results Completed</span><strong id="ulb-completed">—</strong></div>
+      <div class="ulb-closure-card"><span>Counting</span><strong id="ulb-counting">—</strong></div>
+      <div class="ulb-closure-card"><span>Not Started</span><strong id="ulb-not-started">—</strong></div>
+      <div class="ulb-closure-card"><span>Completion</span><strong id="ulb-percent">—</strong></div>
+    </div>
+    <div class="ulb-closure-list">
+      <h3>Completed ULBs</h3>
+      <ul id="ulb-completed-list"><li>Loading completed ULBs...</li></ul>
+    </div>
+    <p class="mp-disclaimer">Closure figures are based on the separately published MP Solutions ULB Closure Tracker.</p>
+  </section>
   <section id="contact">
     <h2>Contact</h2>
     <p><strong>Email:</strong> theglobalaffairs999@gmail.com</p>
@@ -191,7 +244,7 @@ section h2{font-size:24px}
 <footer>© 2026 MP Solutions. All Rights Reserved.</footer>
 <script>
 (() => {
-  const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=1931623282&single=true&output=csv";
+  const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRN0Z0cnGgy1yQKorTCrPJZMVwcO50Ac1_k_kxqf2IWEKet6P9ZG4bhER0cTIlmsXvYFY5MEQpFN6a8/pub?gid=1156147755&single=true&output=csv";
   const REFRESH_INTERVAL = 60000;
   const parties = [
     {key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},
@@ -289,49 +342,5 @@ section h2{font-size:24px}
     const divisionTotal=allRecords.reduce((sum,r)=>sum+(r.divisions||0),0);
     const unanimousTotal=allRecords.reduce((sum,r)=>sum+(r.unanimous||0),0);
     $("mp-town-count").textContent=allRecords.length.toLocaleString("en-IN");
-    $("mp-division-total").textContent=divisionTotal.toLocaleString("en-IN");
-    $("mp-unanimous-total").textContent=unanimousTotal.toLocaleString("en-IN");
-    renderPartyCards(totals,hasData);
-    const dates=allRecords.map(r=>r.updated).filter(v=>v&&!v.startsWith("#")&&!v.startsWith("="));
-    $("mp-last-updated").textContent=dates.length?"Sheet update: "+dates[dates.length-1]:"Sheet update time not provided";
-    renderRows();
-  }
-  let loading=false;
-  async function refreshResults(){
-    if(loading)return;loading=true;$("mp-refresh").disabled=true;$("mp-status").textContent="Refreshing results...";
-    try{
-      const response=await fetch(CSV_URL+"&_="+Date.now(),{cache:"no-store"});
-      if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);
-      const csv=await response.text();
-      if(!csv||csv.trim().startsWith("<"))throw new Error("Published CSV unavailable. Check sheet publishing.");
-      renderDashboard(parseCSV(csv));
-      $("mp-status").textContent="Connected • Data loaded successfully";
-      $("mp-last-updated").textContent+=" | Website refresh: "+new Date().toLocaleTimeString();
-    }catch(error){
-      console.error("MP Results Error:",error);
-      $("mp-status").textContent="Update failed: "+error.message;
-    }finally{loading=false;$("mp-refresh").disabled=false;}
-  }
-  $("mp-refresh").addEventListener("click",refreshResults);
-  $("mp-search").addEventListener("input",renderRows);
-  $("mp-status-filter").addEventListener("change",renderRows);
-  refreshResults();setInterval(refreshResults,REFRESH_INTERVAL);
-})();
-</script>
-<script>
-window.addEventListener("scroll",()=>{
-  let current="";
-  document.querySelectorAll("section").forEach(section=>{
-    if(window.pageYOffset>=section.offsetTop-120)current=section.getAttribute("id");
-  });
-  document.querySelectorAll(".nav-link").forEach(link=>{
-    link.classList.toggle("active",link.getAttribute("href").slice(1)===current);
-  });
-});
-function smoothScroll(sectionId){
-  const target=document.getElementById(sectionId);
-  if(target)target.scrollIntoView({behavior:"smooth",block:"start"});
-}
-</script>
-</body>
-</html>
+    $("mp-division-total").textContent=divisionTotal.toLocaleString
+  
