@@ -249,35 +249,182 @@ section h2{font-size:24px}
   const REFRESH_INTERVAL = 60000;
   const parties = [{key:"tdp",name:"TDP"},{key:"ysrcp",name:"YSRCP"},{key:"jsp",name:"JSP"},{key:"bjp",name:"BJP"},{key:"others",name:"Others"}];
   const $ = id => document.getElementById(id);
-  let allRecords = [];
   const clean = v => String(v ?? "").trim();
   const norm = v => clean(v).toLowerCase().replace(/[^a-z0-9]/g, "");
+  const fmt = v => v === null || v === undefined ? "—" : Number(v).toLocaleString("en-IN");
+  const timeNow = () => new Date().toLocaleString("en-IN", {day:"numeric", month:"short", hour:"numeric", minute:"2-digit", second:"2-digit"});
+  let allRecords = [];
+
   function parseCSV(text) {
-    const rows=[]; let row=[]; let cell=""; let quoted=false;
-    text=String(text).replace(/^\uFEFF/, "");
-    for(let i=0;i<text.length;i++){
-      const ch=text[i], next=text[i+1];
-      if(ch==='"' && quoted && next==='"'){cell+='"';i++;}
-      else if(ch==='"'){quoted=!quoted;}
-      else if(ch===',' && !quoted){row.push(cell.trim());cell="";}
-      else if((ch==='\n'||ch==='\r')&&!quoted){if(ch==='\r'&&next==='\n')i++;row.push(cell.trim());if(row.some(x=>x!==""))rows.push(row);row=[];cell="";}
-      else cell+=ch;
+    const rows = []; let row = []; let cell = ""; let quoted = false;
+    text = String(text).replace(/^﻿/, "");
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i], next = text[i + 1];
+      if (ch === '"' && quoted && next === '"') { cell += '"'; i++; }
+      else if (ch === '"') { quoted = !quoted; }
+      else if (ch === "," && !quoted) { row.push(cell.trim()); cell = ""; }
+      else if ((ch === "\n" || ch === "\r") && !quoted) {
+        if (ch === "\r" && next === "\n") i++;
+        row.push(cell.trim()); if (row.some(x => x !== "")) rows.push(row); row = []; cell = "";
+      } else cell += ch;
     }
-    row.push(cell.trim());if(row.some(x=>x!==""))rows.push(row);
+    row.push(cell.trim()); if (row.some(x => x !== "")) rows.push(row);
     return rows;
   }
-  function numberValue(v){if(v===null||v===undefined)return null;const t=clean(v).replace(/,/g,"");if(!t||t==='-'||t.startsWith('#'))return null;const n=Number(t);return Number.isFinite(n)?n:null;}
-  function col(headers, aliases){for(const a of aliases){const i=headers.indexOf(norm(a));if(i>=0)return i;}return -1;}
-  function get(row, i){return i<0?"":clean(row[i]);}
-  async function fetchCSV(url){const response=await fetch(url+"&_="+Date.now(),{cache:"no-store"});if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);const text=await response.text();if(!text.trim()||text.trim().startsWith('<'))throw new Error("Published CSV is unavailable. Check that the Google Sheet tab is published to the web.");return parseCSV(text);}
-  function renderPartyCards(totals, hasData){const wrap=$("mp-party-cards");wrap.replaceChildren();parties.forEach(p=>{const card=document.createElement("div");card.className="mp-party-card";const h=document.createElement("h3");h.textContent=p.name;const strong=document.createElement("strong");strong.textContent=hasData[p.key]?totals[p.key].toLocaleString("en-IN"):"—";const small=document.createElement("small");small.textContent=hasData[p.key]?"Entered figures":"No party results entered";card.append(h,strong,small);wrap.append(card);});}
-  function renderRows(){const query=$("mp-search").value.trim().toLowerCase();const filter=$("mp-status-filter").value;const filtered=allRecords.filter(r=>{const match=[r.ulb,r.type,r.partyControl,r.dataStatus].some(v=>v.toLowerCase().includes(query));const entered=r.declared!==null||r.partyValues.some(v=>v!==null);return match&&(!filter||(filter==="entered"?entered:!entered));});const body=$("mp-results-body");body.replaceChildren();if(!filtered.length){const tr=document.createElement("tr"),td=document.createElement("td");td.colSpan=12;td.className="mp-empty";td.textContent="No matching ULB records.";tr.append(td);body.append(tr);return;}filtered.forEach(r=>{const tr=document.createElement("tr");const vals=[r.ulb,r.type||"—",fmt(r.total),fmt(r.declared),...r.partyValues.map(fmt),fmt(r.pending),r.partyControl||"—",r.dataStatus||"—"];vals.forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.append(td);});body.append(tr);});}
-  function fmt(v){return v===null||v===undefined?"—":Number(v).toLocaleString("en-IN");}
-  async function loadResults(){const status=$("mp-status"),button=$("mp-refresh");button.disabled=true;status.textContent="Connecting to results…";try{const rows=await fetchCSV(RESULTS_CSV);if(rows.length<2)throw new Error("No election records found in the published sheet.");const h=rows[0].map(norm);const ix={ulb:col(h,["ULB","Town","Municipality"]),type:col(h,["Type","ULB Type"]),total:col(h,["Total wards","Total ward","Wards"]),declared:col(h,["Wards declared","Declared wards","Declared"]),tdp:col(h,["TDP"]),ysrcp:col(h,["YSRCP","YCP"]),jsp:col(h,["JSP"]),bjp:col(h,["BJP"]),others:col(h,["Others","Independent","Independents"]),pending:col(h,["Pending","Wards pending"]),control:col(h,["Party / control","Party control","Control"]),dataStatus:col(h,["Data status","Status"])};if(ix.ulb<0)throw new Error("Required column 'ULB' was not found. Check the published tab and its header row.");const data=rows.slice(1).filter(r=>get(r,ix.ulb)&&!/^grand total|^total$/i.test(get(r,ix.ulb)));if(!data.length)throw new Error("The sheet has headers but no ULB rows.");const totals={tdp:0,ysrcp:0,jsp:0,bjp:0,others:0},has={tdp:false,ysrcp:false,jsp:false,bjp:false,others:false};allRecords=data.map(r=>{const pv=parties.map(p=>{const n=numberValue(get(r,ix[p.key]));if(n!==null){totals[p.key]+=n;has[p.key]=true;}return n;});return {ulb:get(r,ix.ulb),type:get(r,ix.type),total:numberValue(get(r,ix.total)),declared:numberValue(get(r,ix.declared)),partyValues:pv,pending:numberValue(get(r,ix.pending)),partyControl:get(r,ix.control),dataStatus:get(r,ix.dataStatus)};});const sum=k=>allRecords.reduce((a,r)=>a+(r[k]||0),0);$("mp-town-count").textContent=allRecords.length.toLocaleString("en-IN");$("mp-division-total").textContent=sum("total").toLocaleString("en-IN");$("mp-unanimous-total").textContent=sum("declared").toLocaleString("en-IN");renderPartyCards(totals,has);renderRows();$("mp-last-updated").textContent="Updated: "+new Date().toLocaleString("en-IN");status.textContent="Results loaded successfully · "+allRecords.length+" ULB records";}catch(e){status.textContent="Results unavailable: "+e.message;$("mp-results-body").innerHTML='<tr><td colspan="12" class="mp-empty"></td></tr>';$ ("mp-results-body").querySelector("td").textContent=e.message;}finally{button.disabled=false;}}
-  async function loadClosure(){const status=$("ulb-closure-status"),button=$("ulb-closure-refresh");button.disabled=true;status.textContent="Connecting to closure tracker…";try{const rows=await fetchCSV(CLOSURE_CSV);if(rows.length<2)throw new Error("No closure records found.");const h=rows[0].map(norm);const nameI=col(h,["ULB","Town","Municipality"]),stateI=col(h,["Status","Closure status","Data status"]);if(nameI<0||stateI<0)throw new Error("Closure sheet needs ULB and Status columns. Please confirm its headers.");const records=rows.slice(1).filter(r=>get(r,nameI));const completed=[],counting=[],notStarted=[];records.forEach(r=>{const name=get(r,nameI),st=get(r,stateI).toLowerCase();if(/complete|closed|declared|finished/.test(st))completed.push(name);else if(/count|progress|ongoing/.test(st))counting.push(name);else notStarted.push(name);});const pct=records.length?Math.round(completed.length/records.length*100):0;$("ulb-total").textContent=records.length;$("ulb-completed").textContent=completed.length;$("ulb-counting").textContent=counting.length;$("ulb-not-started").textContent=notStarted.length;$("ulb-percent").textContent=pct+"%";const list=$("ulb-completed-list");list.replaceChildren();if(!completed.length){const li=document.createElement("li");li.textContent="No completed ULBs marked yet.";list.append(li);}else completed.forEach(n=>{const li=document.createElement("li");li.textContent=n;list.append(li);});status.textContent="Closure tracker loaded successfully";}catch(e){status.textContent="Closure tracker unavailable: "+e.message;$("ulb-completed-list").innerHTML="<li></li>";$("ulb-completed-list").firstElementChild.textContent=e.message;}finally{button.disabled=false;}}
-  $("mp-refresh").addEventListener("click",loadResults);$("ulb-closure-refresh").addEventListener("click",loadClosure);$("mp-search").addEventListener("input",renderRows);$("mp-status-filter").addEventListener("change",renderRows);
-  window.smoothScroll=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
-  loadResults();loadClosure();setInterval(()=>{loadResults();loadClosure();},REFRESH_INTERVAL);
+  // A blank cell stays blank. It is never counted as zero.
+  function numberValue(v) {
+    const t = clean(v).replace(/,/g, "");
+    if (!t || t === "-" || t.startsWith("#")) return null;
+    const n = Number(t);
+    return Number.isFinite(n) ? n : null;
+  }
+  function col(headers, aliases) {
+    for (const a of aliases) { const i = headers.indexOf(norm(a)); if (i >= 0) return i; }
+    return -1;
+  }
+  const get = (row, i) => i < 0 ? "" : clean(row[i]);
+
+  async function fetchCSV(url) {
+    const response = await fetch(url + "&_=" + Date.now(), {cache: "no-store"});
+    if (!response.ok) throw new Error("Google Sheets returned HTTP " + response.status);
+    const text = await response.text();
+    if (!text.trim() || text.trim().startsWith("<")) throw new Error("Published CSV is unavailable. Check that the Google Sheet tab is published to the web.");
+    return parseCSV(text);
+  }
+
+  function renderPartyCards(totals, hasData) {
+    const wrap = $("mp-party-cards"); wrap.replaceChildren();
+    parties.forEach(p => {
+      const card = document.createElement("div"); card.className = "mp-party-card";
+      const h = document.createElement("h3"); h.textContent = p.name;
+      const strong = document.createElement("strong"); strong.textContent = hasData[p.key] ? totals[p.key].toLocaleString("en-IN") : "—";
+      const small = document.createElement("small"); small.textContent = hasData[p.key] ? "Wards won" : "No party results entered";
+      card.append(h, strong, small); wrap.append(card);
+    });
+  }
+
+  function renderRows() {
+    const query = $("mp-search").value.trim().toLowerCase();
+    const filter = $("mp-status-filter").value;
+    const filtered = allRecords.filter(r => {
+      const match = [r.ulb, r.type, r.partyControl, r.dataStatus].some(v => v.toLowerCase().includes(query));
+      const entered = r.declared !== null || r.partyValues.some(v => v !== null);
+      return match && (!filter || (filter === "entered" ? entered : !entered));
+    });
+    const body = $("mp-results-body"); body.replaceChildren();
+    if (!filtered.length) {
+      const tr = document.createElement("tr"), td = document.createElement("td");
+      td.colSpan = 12; td.className = "mp-empty"; td.textContent = "No matching ULB records.";
+      tr.append(td); body.append(tr); return;
+    }
+    filtered.forEach(r => {
+      const tr = document.createElement("tr");
+      [r.ulb, r.type || "—", fmt(r.total), fmt(r.declared), ...r.partyValues.map(fmt), fmt(r.pending), r.partyControl || "—", r.dataStatus || "—"]
+        .forEach(v => { const td = document.createElement("td"); td.textContent = v; tr.append(td); });
+      body.append(tr);
+    });
+  }
+
+  async function loadResults() {
+    const status = $("mp-status"), button = $("mp-refresh");
+    button.disabled = true; status.textContent = "Connecting to results…";
+    try {
+      const rows = await fetchCSV(RESULTS_CSV);
+      if (rows.length < 2) throw new Error("No election records found in the published sheet.");
+      const h = rows[0].map(norm);
+      const ix = {
+        ulb: col(h, ["ULB", "Town", "Municipality"]), type: col(h, ["Type", "ULB Type"]),
+        total: col(h, ["Total wards", "Total ward", "Wards", "Divisions"]),
+        declared: col(h, ["Wards declared", "Declared wards", "Declared", "Results declared"]),
+        tdp: col(h, ["TDP"]), ysrcp: col(h, ["YSRCP", "YCP"]), jsp: col(h, ["JSP"]), bjp: col(h, ["BJP"]),
+        others: col(h, ["Others", "Independent", "Independents"]), pending: col(h, ["Pending", "Wards pending"]),
+        control: col(h, ["Party / control", "Winning party / control", "Party control", "Control"]),
+        dataStatus: col(h, ["Data status", "Status"])
+      };
+      if (ix.ulb < 0) throw new Error("Required column 'ULB' was not found. Check the published tab and its header row.");
+      const data = rows.slice(1).filter(r => get(r, ix.ulb) && !/^(grand )?total/i.test(get(r, ix.ulb)));
+      if (!data.length) throw new Error("The sheet has headers but no ULB rows.");
+      const totals = {tdp: 0, ysrcp: 0, jsp: 0, bjp: 0, others: 0}, has = {tdp: false, ysrcp: false, jsp: false, bjp: false, others: false};
+      let wardTotal = 0, declaredTotal = 0, anyDeclared = false;
+      allRecords = data.map(r => {
+        const pv = parties.map(p => {
+          const n = numberValue(get(r, ix[p.key]));
+          if (n !== null) { totals[p.key] += n; has[p.key] = true; }
+          return n;
+        });
+        const total = numberValue(get(r, ix.total)), declared = numberValue(get(r, ix.declared));
+        if (total !== null) wardTotal += total;
+        if (declared !== null) { declaredTotal += declared; anyDeclared = true; }
+        return {ulb: get(r, ix.ulb), type: get(r, ix.type), total, declared, partyValues: pv,
+                pending: numberValue(get(r, ix.pending)), partyControl: get(r, ix.control), dataStatus: get(r, ix.dataStatus)};
+      });
+      $("mp-town-count").textContent = allRecords.length.toLocaleString("en-IN");
+      $("mp-division-total").textContent = wardTotal ? wardTotal.toLocaleString("en-IN") : "—";
+      $("mp-unanimous-total").textContent = anyDeclared ? declaredTotal.toLocaleString("en-IN") : "—";
+      renderPartyCards(totals, has);
+      renderRows();
+      const t = timeNow();
+      status.textContent = "Results loaded";
+      $("mp-last-updated").textContent = "Last updated: " + t;
+    } catch (err) {
+      status.textContent = "Could not load results: " + (err && err.message ? err.message : "connection failed") + (allRecords.length ? " Showing the figures loaded earlier." : "");
+      if (!allRecords.length) {
+        const body = $("mp-results-body"); body.replaceChildren();
+        const tr = document.createElement("tr"), td = document.createElement("td");
+        td.colSpan = 12; td.className = "mp-empty"; td.textContent = "Results are unavailable right now. No figures are shown until the connection works.";
+        tr.append(td); body.append(tr);
+      }
+    } finally { button.disabled = false; }
+  }
+
+  async function loadClosure() {
+    const status = $("ulb-closure-status"), button = $("ulb-closure-refresh");
+    button.disabled = true; status.textContent = "Connecting to closure tracker…"; status.className = "";
+    try {
+      const rows = await fetchCSV(CLOSURE_CSV);
+      if (rows.length < 2) throw new Error("No closure records found.");
+      const h = rows[0].map(norm);
+      const ix = {town: col(h, ["Town", "ULB"]), closure: col(h, ["Results Closure", "Closure", "Status"]), won: col(h, ["Won Party", "Winning party"])};
+      if (ix.town < 0 || ix.closure < 0) throw new Error("The closure tab is missing the Town or Results Closure column.");
+      const data = rows.slice(1).filter(r => get(r, ix.town));
+      let completed = 0, counting = 0, notStarted = 0; const done = [];
+      data.forEach(r => {
+        const s = get(r, ix.closure).toUpperCase();
+        if (s.includes("COMPLETED")) { completed++; done.push({town: get(r, ix.town), won: get(r, ix.won)}); }
+        else if (s.includes("NOT STARTED")) notStarted++;
+        else counting++;
+      });
+      $("ulb-total").textContent = data.length;
+      $("ulb-completed").textContent = completed;
+      $("ulb-counting").textContent = counting;
+      $("ulb-not-started").textContent = notStarted;
+      $("ulb-percent").textContent = data.length ? Math.round((completed / data.length) * 100) + "%" : "—";
+      const list = $("ulb-completed-list"); list.replaceChildren();
+      if (!done.length) { const li = document.createElement("li"); li.textContent = "No ULB is marked completed yet."; list.append(li); }
+      done.forEach(d => { const li = document.createElement("li"); li.textContent = d.town + (d.won ? " – " + d.won : ""); list.append(li); });
+      status.textContent = "Closure tracker updated: " + timeNow();
+      status.className = "ulb-closure-status completed";
+    } catch (err) {
+      status.textContent = "Could not load the closure tracker: " + (err && err.message ? err.message : "connection failed");
+      status.className = "ulb-closure-status error";
+    } finally { button.disabled = false; }
+  }
+
+  window.smoothScroll = function (id) {
+    const el = $(id); if (el) el.scrollIntoView({behavior: "smooth"});
+  };
+
+  function start() {
+    $("mp-refresh").addEventListener("click", loadResults);
+    $("ulb-closure-refresh").addEventListener("click", loadClosure);
+    $("mp-search").addEventListener("input", renderRows);
+    $("mp-status-filter").addEventListener("change", renderRows);
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach(a => a.addEventListener("click", () => { links.forEach(x => x.classList.remove("active")); a.classList.add("active"); }));
+    loadResults(); loadClosure();
+    setInterval(() => { if (!document.hidden) { loadResults(); loadClosure(); } }, REFRESH_INTERVAL);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
 </script>
 </body>
