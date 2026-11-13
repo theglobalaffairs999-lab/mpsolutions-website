@@ -112,6 +112,10 @@ h2{font-size:clamp(1.7rem,4.4vw,2.6rem);font-weight:700;letter-spacing:-.01em}
 .proof b{display:block;font:800 clamp(1.5rem,3.6vw,2.1rem)/1 var(--display);color:var(--orange)}
 .proof span{font-size:.9rem;color:#CBD6EA}
 
+.latest-card{display:block;margin-top:20px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:8px;padding:20px;text-decoration:none;color:var(--ink);max-width:760px}
+.latest-card:hover{border-color:var(--navy)}
+.latest-tag{display:block;font-size:.82rem;color:var(--slate);font-weight:600}
+.latest-card b{display:block;font:700 1.25rem/1.25 var(--display);color:var(--navy);margin:6px 0}
 /* Services */
 .services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin-top:28px;border-top:2px solid var(--navy)}
 .svc{border-bottom:1px solid var(--line)}
@@ -254,6 +258,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <a href="#about">About</a>
       <a href="#leaders">Leadership</a>
       <a href="#media-summit">Media Summit</a>
+      <a href="/articles/">Articles</a>
       <a href="#contact">Contact</a>
       <a href="#live-results" class="nav__cta">Live results</a>
     </nav>
@@ -300,6 +305,18 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
         <li><b>10K+</b><span>People reached</span></li>
         <li><b>5+</b><span>Campaigns supported</span></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="band band--mist" id="latest">
+    <div class="wrap">
+      <h2>Latest analysis</h2>
+      <a class="latest-card" href="/articles/ap-municipal-elections-2026-results.html">
+        <span class="latest-tag">Election results · 13 Nov 2026</span>
+        <b>AP Municipal Elections 2026: TDP wins two-thirds of all wards</b>
+        <span>Party-wise results for all 100 urban local bodies, the 13 corporation mayors, and what the verdict shows.</span>
+      </a>
+      <p style="margin-top:14px"><a href="/articles/">All articles →</a></p>
     </div>
   </section>
 
@@ -454,7 +471,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 </main>
 
 <footer><div class="wrap">
-<nav aria-label="Footer"><a href="/about.html">About us</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial policy</a><a href="/privacy-policy.html">Privacy policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms &amp; conditions</a><a href="/sitemap.xml">Sitemap</a></nav>
+<nav aria-label="Footer"><a href="/articles/">Articles</a><a href="/about.html">About us</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial policy</a><a href="/privacy-policy.html">Privacy policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms &amp; conditions</a><a href="/sitemap.xml">Sitemap</a></nav>
 <div class="row"><span>© 2026 MP Solutions. All rights reserved.</span><span>Understanding voters. Shaping victories.</span></div>
 </div></footer>
 
