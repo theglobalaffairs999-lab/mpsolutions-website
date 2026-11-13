@@ -20,8 +20,19 @@
 <meta property="og:description" content="Political consulting, surveys and election strategy. Live AP Municipal Elections 2026 results.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mpsolutionsindia.com/">
+<meta property="og:image" content="https://mpsolutionsindia.com/og-image.jpg">
+<meta property="og:site_name" content="MP Solutions">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B2147">
-<link rel="icon" href="mp-logo.png" type="image/png">
+<link rel="icon" href="/mp-logo.png" type="image/png">
+<link rel="apple-touch-icon" href="/mp-logo.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://mpsolutionsindia.com/#org","name":"MP Solutions","alternateName":"MP Solutions India","url":"https://mpsolutionsindia.com/","logo":"https://mpsolutionsindia.com/mp-logo.png","slogan":"Understanding voters. Shaping victories.","email":"theglobalaffairs999@gmail.com","sameAs":["https://www.instagram.com/pvtltdmp"],"areaServed":["Andhra Pradesh","Telangana"],"founder":[{"@type":"Person","name":"Chintapalli Prakash"},{"@type":"Person","name":"Gopaluni Sai Mahanth"}],"location":[{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressRegion":"Telangana","addressCountry":"IN"}},{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Vijayawada","addressRegion":"Andhra Pradesh","addressCountry":"IN"}}]},
+ {"@type":"WebSite","@id":"https://mpsolutionsindia.com/#website","url":"https://mpsolutionsindia.com/","name":"MP Solutions","publisher":{"@id":"https://mpsolutionsindia.com/#org"},"inLanguage":"en-IN"},
+ {"@type":"Dataset","name":"AP Urban Local Body Elections 2026 results tracker","description":"Unofficial party-wise ward tallies and mayor or chairperson party for every municipal corporation, municipality and nagar panchayat in Andhra Pradesh, compiled from media reports.","url":"https://mpsolutionsindia.com/#live-results","creator":{"@id":"https://mpsolutionsindia.com/#org"},"license":"https://mpsolutionsindia.com/terms.html","spatialCoverage":"Andhra Pradesh, India","temporalCoverage":"2026"}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -196,8 +207,10 @@ details.done ul{columns:3;column-gap:28px;padding:0 16px 16px 34px;line-height:1
 a.contact__card:hover{background:var(--orange);border-color:var(--orange);color:#1A1205}
 .contact__card span{display:block;font-size:.86rem;opacity:.85}
 .contact__card b{display:block;font:700 1.08rem/1.3 var(--display);margin-top:4px;overflow-wrap:anywhere}
-footer{background:var(--navy-deep);color:#B9C5DB;padding:22px 0;font-size:.9rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+footer{background:var(--navy-deep);color:#B9C5DB;padding:26px 0;font-size:.9rem}
+footer .wrap{display:block}
+footer nav{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:12px}footer nav a{color:#E6ECF7;text-decoration:none;padding:4px 0}footer nav a:hover{text-decoration:underline}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .to-top{position:fixed;right:16px;bottom:16px;z-index:90;width:48px;height:48px;border-radius:50%;border:0;background:var(--orange);color:#1A1205;font-size:1.2rem;font-weight:700;box-shadow:0 6px 16px rgba(3,10,28,.3);display:none}
 .to-top.is-on{display:block}
 
@@ -232,7 +245,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <header class="top">
   <div class="wrap top__in">
     <a class="brand" href="#home">
-      <img src="mp-logo.png" alt="" onerror="this.remove()">
+      <img src="/mp-logo.png" alt="" width="42" height="42">
       <span>MP Solutions<small>Janam to Janadesh</small></span>
     </a>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
@@ -250,7 +263,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <main>
   <section class="banner" id="home">
     <div class="wrap">
-      <img src="WhatsApp%20Image%202026-11-01%20at%2010.50.55%20AM.jpeg" alt="MP Solutions. Understanding voters. Shaping victories. Janam to Janadesh. Co-founders Chintapalli Prakash and Gopaluni Sai Mahanth." width="1600" height="1500">
+      <img src="banner.jpg" alt="MP Solutions. Understanding voters. Shaping victories. Janam to Janadesh. Co-founders Chintapalli Prakash and Gopaluni Sai Mahanth." width="1536" height="452" fetchpriority="high" decoding="async">
     </div>
   </section>
 
@@ -320,6 +333,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <p>Rajahmundry municipality (division-level work)</p>
           <p>Kalluru mandal, Sattupalli constituency</p>
         </div>
+        <p><a href="/about.html">Read more about MP Solutions and our editorial policy</a></p>
       </div>
       <div class="why">
         <h3>Why campaigns choose us</h3>
@@ -406,7 +420,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
           <tbody id="mp-results-body"><tr><td colspan="12" class="mp-empty">Loading election data…</td></tr></tbody>
         </table>
       </div>
-      <p class="disclaimer">This is an unofficial tracker maintained by MP Solutions from media reports. Final results are those declared by the Andhra Pradesh State Election Commission.</p>
+      <p class="disclaimer">This is an unofficial tracker maintained by MP Solutions from media reports. Final results are those declared by the Andhra Pradesh State Election Commission. Read our <a href="/disclaimer.html">disclaimer</a> and <a href="/editorial-policy.html">editorial policy</a>.</p>
 
       <div class="closure-head" id="ulb-closure">
         <h3>Results closure tracker</h3>
@@ -433,13 +447,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <div class="contact__grid">
         <a class="contact__card" href="mailto:theglobalaffairs999@gmail.com?subject=Enquiry%20from%20mpsolutionsindia.com"><span>Email us</span><b>theglobalaffairs999@gmail.com</b></a>
         <a class="contact__card" href="https://www.instagram.com/pvtltdmp" target="_blank" rel="noopener noreferrer"><span>Message us on Instagram</span><b>@pvtltdmp</b></a>
-        <div class="contact__card"><span>Offices</span><b>Hyderabad and Vijayawada</b></div>
+        <a class="contact__card" href="/contact.html"><span>Offices</span><b>Hyderabad and Vijayawada</b></a>
       </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 MP Solutions. All rights reserved.</span><span>Understanding voters. Shaping victories.</span></div></footer>
+<footer><div class="wrap">
+<nav aria-label="Footer"><a href="/about.html">About us</a><a href="/contact.html">Contact</a><a href="/editorial-policy.html">Editorial policy</a><a href="/privacy-policy.html">Privacy policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/terms.html">Terms &amp; conditions</a><a href="/sitemap.xml">Sitemap</a></nav>
+<div class="row"><span>© 2026 MP Solutions. All rights reserved.</span><span>Understanding voters. Shaping victories.</span></div>
+</div></footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">

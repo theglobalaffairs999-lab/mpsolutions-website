@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index-old.html
+
+Sitemap: https://mpsolutionsindia.com/sitemap.xml
