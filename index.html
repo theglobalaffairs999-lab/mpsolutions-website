@@ -396,6 +396,21 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
     </div>
   </section>
 
+  <section class="band" id="fieldwork">
+    <div class="wrap">
+      <h2>On the ground: 2024 election exit poll</h2>
+      <p class="lede">On polling day of the 2024 Andhra Pradesh Assembly and Lok Sabha elections (13 May 2024), our co-founder Gopaluni Sai Mahanth worked as a field surveyor on an exit poll conducted for a Telugu media organisation in Markapuram mandal, Prakasam district. Photos were taken outside polling stations; faces of voters are blurred or left out.</p>
+      <div class="sims-grid" id="field-grid">
+        <button type="button"><img src="field-2024-1.jpg" alt="Gopaluni Sai Mahanth with inked finger after voting, polling day 13 May 2024" loading="lazy" width="900" height="1080"></button>
+        <button type="button"><img src="field-2024-2.jpg" alt="Voters queueing at polling station No. 22 on 13 May 2024" loading="lazy" width="900" height="1080"></button>
+        <button type="button"><img src="field-2024-3.jpg" alt="Polling station at a model primary school, Markapuram mandal" loading="lazy" width="900" height="1080"></button>
+        <button type="button"><img src="field-2024-4.jpg" alt="Field surveyor outside a polling station school during the 2024 elections" loading="lazy" width="900" height="1080"></button>
+        <button type="button"><img src="field-2024-5.jpg" alt="At the Mandal Parishad primary school, Bodapadu, Markapuram mandal, Prakasam district" loading="lazy" width="900" height="1080"></button>
+        <button type="button"><img src="field-2024-6.jpg" alt="Exit poll fieldwork in Markapuram on polling day 2024" loading="lazy" width="900" height="1080"></button>
+      </div>
+    </div>
+  </section>
+
   <section class="band" id="live-results">
     <div class="wrap">
       <div class="results-head">
@@ -685,7 +700,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
     }));
 
     // Photo viewer
-    const shots = Array.from(document.querySelectorAll("#sims-grid img")), box = $("lightbox"), big = $("lb-img");
+    const shots = Array.from(document.querySelectorAll("#sims-grid img, #field-grid img")), box = $("lightbox"), big = $("lb-img");
     let at = 0;
     const show = i => { at = (i + shots.length) % shots.length; big.src = shots[at].src; big.alt = shots[at].alt; box.classList.add("is-open"); };
     const hide = () => box.classList.remove("is-open");
