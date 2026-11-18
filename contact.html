@@ -52,6 +52,14 @@ main.article .meta{color:var(--slate);font-size:.9rem;margin-bottom:22px}
 .contact-grid a,.contact-grid div{display:block;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:8px;padding:18px;text-decoration:none;color:var(--ink);background:#fff}
 .contact-grid span{display:block;font-size:.85rem;color:var(--slate)}.contact-grid b{display:block;font:700 1.05rem/1.3 var(--display);color:var(--navy);margin-top:4px;overflow-wrap:anywhere}
 .btn{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border-radius:6px;background:var(--orange);color:#1A1205;font-weight:600;text-decoration:none}
+.form{background:var(--mist);border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:8px;padding:clamp(18px,4vw,28px);margin:22px 0}
+.form h2{margin-top:0!important}.form .row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 16px}
+.form label{display:block;font-weight:600;color:var(--navy);font-size:.95rem;margin:12px 0 6px}
+.form input,.form select,.form textarea{width:100%;min-height:48px;padding:12px 14px;border:1px solid #BFC7D5;border-radius:6px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+.form textarea{min-height:110px;resize:vertical}.form button{margin-top:18px;border:0;cursor:pointer;font:600 1rem var(--body);width:100%;justify-content:center}
+.form .note{font-size:.85rem;color:var(--slate);margin-top:10px}.form .msg{margin-top:14px;padding:12px 14px;border-radius:6px;font-weight:600;display:none}
+.form .msg.ok{display:block;background:#E6F4EA;color:#1E5631}.form .msg.err{display:block;background:#FDECEA;color:#8A1C14}
+.hp{position:absolute;left:-9999px}#enquiry{scroll-margin-top:76px}
 footer{background:var(--navy-deep);color:#B9C5DB;padding:26px 0;font-size:.9rem}
 footer .wrap{max-width:1160px}
 footer nav{display:flex;flex-wrap:wrap;gap:4px 18px;margin-bottom:12px}footer nav a{color:#E6ECF7;text-decoration:none}footer nav a:hover{text-decoration:underline}
@@ -75,6 +83,28 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
     <a href="https://www.instagram.com/pvtltdmp" target="_blank" rel="noopener noreferrer"><span>Instagram</span><b>@pvtltdmp</b></a>
     <div><span>Offices</span><b>Hyderabad, Telangana<br>Vijayawada, Andhra Pradesh</b></div>
     </div>
+
+    <form class="form" id="enquiry" action="https://formsubmit.co/theglobalaffairs999@gmail.com" method="POST">
+    <h2>Send an enquiry / సంప్రదించండి</h2>
+    <p>Fill this form and we will reply on WhatsApp or phone within two working days. మీ వివరాలు ఇవ్వండి, మేము రెండు రోజుల్లో సంప్రదిస్తాం.</p>
+    <input type="hidden" name="_subject" value="New enquiry from mpsolutionsindia.com">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://mpsolutionsindia.com/contact.html?sent=1">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="row2">
+    <div><label for="f-name">Name / పేరు</label><input id="f-name" name="Name" required autocomplete="name"></div>
+    <div><label for="f-phone">Phone or WhatsApp / ఫోన్ నంబర్</label><input id="f-phone" name="Phone" type="tel" inputmode="numeric" pattern="[0-9+ ]{10,14}" required autocomplete="tel"></div>
+    <div><label for="f-place">Village / Ward / Constituency / ఊరు</label><input id="f-place" name="Place" required></div>
+    <div><label for="f-post">Contesting for / పోటీ చేసే పదవి</label><select id="f-post" name="Post"><option>Sarpanch</option><option>Ward member</option><option>MPTC / ZPTC</option><option>Municipal ward / Corporator</option><option>MLA / MP</option><option>Not contesting / Other</option></select></div>
+    </div>
+    <label for="f-need">What do you need? / మీకు ఏ సేవ కావాలి?</label>
+    <select id="f-need" name="Requirement"><option>Campaign videos and social media</option><option>Posters and election symbol kit</option><option>Voter survey</option><option>Booth management</option><option>Full campaign strategy</option><option>Correction or editorial query</option><option>Other</option></select>
+    <label for="f-msg">Message (optional) / వివరాలు</label><textarea id="f-msg" name="Message"></textarea>
+    <button class="btn" type="submit">Send enquiry / పంపండి</button>
+    <div class="msg" id="f-status" role="status"></div>
+    <p class="note">Your details are used only to reply to this enquiry and are never shared. See our <a href="/privacy-policy.html">privacy policy</a>.</p>
+    </form>
     <h2>Campaign and survey enquiries</h2>
     <p>Email us with the constituency or local body, the election date, and what you need (survey, booth management, strategy, social media or a full campaign). We reply within two working days with what we can do, the timeline and the cost.</p>
     <h2>Corrections and editorial queries</h2>
@@ -89,5 +119,10 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 <div class="row"><span>© 2026 MP Solutions. All rights reserved.</span><span>Understanding voters. Shaping victories.</span></div>
 </div></footer>
 <script>(()=>{const n=document.getElementById("nav"),b=document.getElementById("menu-btn");b.addEventListener("click",()=>{const o=n.classList.toggle("is-open");b.setAttribute("aria-expanded",o);b.textContent=o?"Close":"Menu"})})();</script>
+<script>(()=>{const f=document.getElementById("enquiry"),st=document.getElementById("f-status");if(!f)return;
+const ok=()=>{st.className="msg ok";st.textContent="Thank you! Your enquiry has been sent. We will contact you soon. / ధన్యవాదాలు! మేము త్వరలో సంప్రదిస్తాం.";};
+if(location.search.indexOf("sent=1")>-1){ok();f.scrollIntoView();}
+f.addEventListener("submit",e=>{if(!window.fetch)return;e.preventDefault();if(f._honey.value)return;const b=f.querySelector("button");b.disabled=true;b.textContent="Sending...";
+fetch("https://formsubmit.co/ajax/theglobalaffairs999@gmail.com",{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)}).then(r=>r.json()).then(d=>{if(d&&(d.success===true||d.success==="true")){ok();f.reset();if(typeof gtag==="function")gtag("event","generate_lead",{form:"enquiry",post:f.Post?f.Post.value:""});}else throw 0}).catch(()=>{st.className="msg err";st.textContent="Could not send. Please email theglobalaffairs999@gmail.com";}).finally(()=>{b.disabled=false;b.textContent="Send enquiry / పంపండి";});});})();</script>
 </body>
 </html>
