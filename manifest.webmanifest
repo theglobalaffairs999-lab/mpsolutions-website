@@ -1,0 +1,23 @@
+{
+ "name": "MP Solutions Election Desk",
+ "short_name": "MP Solutions",
+ "description": "Andhra Pradesh election data, results and analysis in English and Telugu.",
+ "start_url": "/?source=app",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#0B2147",
+ "theme_color": "#0B2147",
+ "icons": [
+  {
+   "src": "/assets/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/assets/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  }
+ ]
+}
