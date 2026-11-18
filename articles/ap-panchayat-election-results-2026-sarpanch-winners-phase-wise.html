@@ -76,6 +76,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 .nav.is-open{display:flex}.nav a{padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.1)}}
 </style>
 <style>.langbar{display:flex;gap:8px;margin:0 0 22px}.lang-btn{min-height:44px;padding:8px 18px;border:2px solid #0B2147;border-radius:22px;background:#fff;color:#0B2147;font:600 1rem/1 "Public Sans","Noto Sans Telugu",Arial,sans-serif;cursor:pointer}.lang-btn[aria-pressed=true]{background:#0B2147;color:#fff}[lang=te]{font-family:"Noto Sans Telugu","Public Sans",Arial,sans-serif}[lang=te] p,[lang=te] li{line-height:1.8}.photo{margin:22px 0}.photo img{width:100%;height:auto;border-radius:10px;display:block}.photo figcaption{font-size:.85rem;color:#5B667A;margin-top:6px}.portrait{float:right;width:min(42%,220px);margin:4px 0 12px 18px}.portrait img{width:100%;height:auto;border-radius:10px;display:block}.portrait figcaption{font-size:.8rem;color:#5B667A;margin-top:4px}h2{clear:both}.page-head .h-te{font-family:"Noto Sans Telugu",Arial,sans-serif}</style>
+<link rel="stylesheet" href="/assets/article.css">
 </head>
 <body>
 <header class="top"><div class="wrap top__in">
@@ -226,5 +227,6 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 </div></footer>
 <script>(()=>{const n=document.getElementById("nav"),b=document.getElementById("menu-btn");b.addEventListener("click",()=>{const o=n.classList.toggle("is-open");b.setAttribute("aria-expanded",o);b.textContent=o?"Close":"Menu"})})();</script>
 <script>(()=>{const bs=document.querySelectorAll(".lang-btn");function set(l){document.querySelectorAll(".lang-block").forEach(e=>{e.hidden=e.dataset.lang!==l});bs.forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));document.documentElement.lang=l==="te"?"te":"en-IN";try{localStorage.setItem("mp_lang",l)}catch(e){}}bs.forEach(b=>b.addEventListener("click",()=>{set(b.dataset.lang);window.scrollTo({top:0,behavior:"smooth"})}));let l=new URLSearchParams(location.search).get("lang");if(!l){try{l=localStorage.getItem("mp_lang")}catch(e){}}if(l==="te")set("te")})();</script>
+<script src="/assets/article.js" defer></script>
 </body>
 </html>

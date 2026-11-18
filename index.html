@@ -117,6 +117,21 @@ h2{font-size:clamp(1.7rem,4.4vw,2.6rem);font-weight:700;letter-spacing:-.01em}
 .latest-card:hover{border-color:var(--navy)}
 .latest-tag{display:block;font-size:.82rem;color:var(--slate);font-weight:600}
 .latest-card b{display:block;font:700 1.25rem/1.25 var(--display);color:var(--navy);margin:6px 0}
+/* Election strip + latest grid */
+.estrip{background:#071634;border-bottom:1px solid rgba(255,255,255,.12);color:#fff}
+.estrip a{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;padding:12px 0;color:#fff;text-decoration:none;font-size:.95rem}
+.estrip .live{display:inline-flex;align-items:center;gap:6px;background:#C62828;color:#fff;font:700 .72rem/1 var(--body);letter-spacing:.08em;padding:5px 8px;border-radius:4px}
+.estrip .live i{width:7px;height:7px;border-radius:50%;background:#fff;animation:esp 1.4s infinite}
+@keyframes esp{50%{opacity:.25}}
+.estrip b{font-family:var(--display)}.estrip .cd{color:#F9B36B;font-weight:700}.estrip .go{margin-left:auto;color:#F9B36B;font-weight:700;white-space:nowrap}
+@media(max-width:700px){.estrip .go{margin-left:0}}
+@media(prefers-reduced-motion:reduce){.estrip .live i{animation:none}}
+#latest .wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+#latest h2,#latest .wrap>p{grid-column:1/-1}
+#latest .latest-card{margin-top:0;max-width:none;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+#latest .latest-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(11,33,71,.1)}
+#latest .latest-card:first-of-type{grid-column:1/-1;background:#0B2147;border-color:#0B2147;border-left-color:#F58220;color:#D5DEEE}
+#latest .latest-card:first-of-type b{color:#fff;font-size:1.5rem}#latest .latest-card:first-of-type .latest-tag{color:#F9B36B}
 /* Services */
 .services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin-top:28px;border-top:2px solid var(--navy)}
 .svc{border-bottom:1px solid var(--line)}
@@ -267,6 +282,13 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 </header>
 
 <main>
+<div class="estrip"><div class="wrap"><a href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html" id="estrip">
+<span class="live"><i></i>LIVE</span><b>AP Panchayat Elections 2026</b><span class="cd" id="estrip-cd">Polling 26 Nov · 29 Nov · 2 Dec</span><span class="go">Results tracker →</span></a></div></div>
+<script>(function(){var el=document.getElementById("estrip-cd");if(!el)return;var ph=[["Phase 1","2026-11-26"],["Phase 2","2026-11-29"],["Phase 3","2026-12-02"]],now=new Date(),t="";
+for(var i=0;i<ph.length;i++){var d=new Date(ph[i][1]+"T07:00:00+05:30"),end=new Date(ph[i][1]+"T23:59:00+05:30");
+if(now<d){var days=Math.ceil((d-now)/864e5);t=ph[i][0]+" polling "+(days<=1?"tomorrow":"in "+days+" days")+" · "+d.toLocaleDateString("en-IN",{day:"numeric",month:"short",timeZone:"Asia/Kolkata"});break}
+if(now<=end){t=ph[i][0]+" polling today · counting from 2 pm";break}}
+if(!t)t="All phases polled · see results";el.textContent=t})();</script>
   <section class="hero">
     <div class="wrap hero__grid">
       <div>

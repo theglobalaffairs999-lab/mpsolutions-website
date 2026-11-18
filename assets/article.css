@@ -1,0 +1,14 @@
+.mp-progress{position:fixed;top:0;left:0;height:3px;width:0;background:#F58220;z-index:1000;transition:width .1s linear}
+.mp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:6px 0 18px}
+.mp-read{font-size:.88rem;color:#5B667A;font-weight:600}
+.mp-share{display:flex;flex-wrap:wrap;gap:8px}
+.mp-share a,.mp-share button{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:20px;border:1px solid #DCE1EA;background:#fff;color:#0B2147;font:600 .88rem/1 "Public Sans","Noto Sans Telugu",Arial,sans-serif;text-decoration:none;cursor:pointer}
+.mp-share a:hover,.mp-share button:hover{border-color:#0B2147}
+.mp-share .wa{background:#1F8F4E;border-color:#1F8F4E;color:#fff}
+.mp-share svg{width:16px;height:16px;flex:none}
+.mp-toc{background:#F3F5F9;border:1px solid #DCE1EA;border-radius:8px;padding:12px 16px;margin:0 0 22px}
+.mp-toc summary{cursor:pointer;font-weight:700;color:#0B2147;min-height:28px}
+.mp-toc ol{margin:10px 0 4px;padding-left:20px}.mp-toc li{margin:6px 0!important}.mp-toc a{color:#16356B}
+.mp-endshare{margin:30px 0 8px;padding:18px;border-radius:10px;background:#F3F5F9;border:1px solid #DCE1EA}
+.mp-endshare p{margin:0 0 10px!important;font-weight:700;color:#0B2147}
+article h2[id]{scroll-margin-top:76px}
