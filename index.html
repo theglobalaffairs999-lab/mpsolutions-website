@@ -259,6 +259,52 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   .hero__cta .btn{flex:1 1 100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* ===== Professional consultancy refresh (23 Nov 2026) ===== */
+.hero{background:linear-gradient(135deg,#061330 0%,#0B2147 55%,#10306A 100%);padding:clamp(40px,6vw,84px) 0 clamp(44px,6vw,84px)}
+.hero::before{content:"";position:absolute;inset:0;right:0;top:0;width:auto;height:auto;transform:none;opacity:.5;background:radial-gradient(circle at 85% 20%,rgba(245,130,32,.16),transparent 45%),repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 80px)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;top:auto;width:auto;height:4px;transform:none;opacity:1;background:linear-gradient(90deg,var(--orange),rgba(245,130,32,0) 70%)}
+.hero__grid{grid-template-columns:1.25fr .75fr;align-items:center}
+.eyebrow{font:600 .8rem/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:#F9B36B;margin-bottom:16px}
+.eyebrow--dark{color:var(--orange-dark)}
+.hero h1{font-size:clamp(2rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.02em;max-width:20ch;line-height:1.05}
+.hero__text{font-size:1.12rem;max-width:54ch;margin-top:18px;color:#CFDAEE}
+.hero__cta{margin-top:30px}
+.btn{border-radius:4px;letter-spacing:.01em}
+.hero__facts{list-style:none;display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+.hero__facts li{position:relative;padding-left:18px;color:#E6ECF7;font-weight:500;font-size:.95rem}
+.hero__facts li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;background:var(--orange);border-radius:1px;transform:rotate(45deg)}
+.hero__panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:26px 26px 12px;backdrop-filter:blur(4px)}
+.panel__t{font:700 .8rem/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:#F9B36B;margin-bottom:8px}
+.hero__panel ol{list-style:none;counter-reset:s}
+.hero__panel li{counter-increment:s;position:relative;padding:16px 0 16px 50px;border-top:1px solid rgba(255,255,255,.14)}
+.hero__panel li:first-child{border-top:0}
+.hero__panel li::before{content:"0" counter(s);position:absolute;left:0;top:16px;font:800 1.35rem/1 var(--display);color:var(--orange)}
+.hero__panel b{display:block;font:700 1.05rem/1.2 var(--display);color:#fff}
+.hero__panel span{display:block;color:#BFCBE2;font-size:.9rem;margin-top:3px}
+.proof{background:#fff;border-bottom:1px solid var(--line)}
+.proof li{border-left:1px solid var(--line)}
+.proof b{color:var(--navy)}
+.proof span{color:var(--slate);font-weight:500}
+.band h2::after{content:"";display:block;width:56px;height:3px;background:var(--orange);margin-top:14px}
+.contact h2::after{background:var(--orange)}
+.deskrow{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.deskrow .desk{box-shadow:0 12px 34px rgba(11,33,71,.14);border:1px solid var(--line)}
+.deskrow .lede{margin-bottom:0}
+.svc button{font-size:1.1rem}
+.leader,.latest-card,.svc{border-radius:4px}
+.nav a.nav__enq{border:1px solid rgba(255,255,255,.4);margin-left:6px}
+.nav a.nav__enq:hover{background:#fff;color:var(--navy)}
+@media(max-width:1080px){
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--navy-deep);padding:8px var(--gutter) 18px;border-bottom:1px solid rgba(255,255,255,.14)}
+  .nav.is-open{display:flex}
+  .nav a{padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.1);font-size:1.02rem}
+  .nav a.nav__enq{margin:8px 0 0;text-align:center;border:1px solid rgba(255,255,255,.4)}
+  .nav a.nav__cta{margin:10px 0 0;text-align:center;border-bottom:0}
+}
+.deskrow>*,.hero__grid>*{min-width:0}
+@media(max-width:900px){.hero__grid,.deskrow{grid-template-columns:minmax(0,1fr)}.hero::before{right:0;width:auto;opacity:.5}.hero h1{max-width:none}}
 </style>
 <link rel="manifest" href="/manifest.webmanifest">
 </head>
@@ -275,7 +321,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <a href="#about">About</a>
       <a href="#leaders">Leadership</a>
       <a href="#media-summit">Media Summit</a>
-      <a href="/articles/">Articles</a>
+      <a href="/articles/">Articles</a><a href="/contact#enquiry" class="nav__enq">Enquiry</a>
       <a href="#contact">Contact</a>
       <a href="#panchayat-live" class="nav__cta">Live results</a>
     </nav>
@@ -292,15 +338,69 @@ if(now<=end){t=ph[i][0]+" polling today · counting from 2 pm";break}}
 if(!t)t="All phases polled · see results";el.textContent=t})();</script>
   <section class="hero">
     <div class="wrap hero__grid">
-      <div>
+      <div class="hero__copy">
+        <p class="eyebrow">Political consulting · Andhra Pradesh &amp; Telangana</p>
         <h1>Political consulting, surveys and campaign management</h1>
-        <p class="hero__tag">Janam to Janadesh</p>
-        <p class="hero__text">For candidates and parties in Andhra Pradesh and Telangana.</p>
+        <p class="hero__text">Constituency research, voter surveys, booth management and communication, planned around the numbers of your seat and run by a Telugu-speaking field team.</p>
         <div class="hero__cta">
-          <a class="btn btn--solid" href="#contact">Talk to us</a>
-          <a class="btn btn--ghost" href="#services">See our services</a>
+          <a class="btn btn--solid" href="/contact#enquiry">Request a consultation</a>
+          <a class="btn btn--ghost" href="#services">Our services</a>
         </div>
+        <ul class="hero__facts"><li>Booth-level surveys</li><li>Telugu and English</li><li>Confidential engagements</li></ul>
       </div>
+      <aside class="hero__panel" aria-label="How an engagement runs">
+        <p class="panel__t">How an engagement runs</p>
+        <ol>
+          <li><b>Research</b><span>Past results, voter rolls and a ground survey of the seat.</span></li>
+          <li><b>Strategy</b><span>Issues, target booths and a plan with dates and budgets.</span></li>
+          <li><b>Field</b><span>Booth teams, volunteers and daily reporting.</span></li>
+          <li><b>War room</b><span>Media, opponents and polling-day turnout tracked live.</span></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="MP Solutions in numbers">
+    <div class="wrap">
+      <ul>
+        <li><b>10+</b><span>Exit polls conducted</span></li>
+        <li><b>5</b><span>States covered</span></li>
+        <li><b>25+</b><span>Clients served</span></li>
+        <li><b>10K+</b><span>People reached</span></li>
+        <li><b>5+</b><span>Campaigns supported</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="services">
+    <div class="wrap">
+      <h2>What we do for a campaign</h2>
+      <p class="lede">Tap a service to see what it covers.</p>
+      <div class="services" id="services-list">
+        <div class="svc"><button type="button" aria-expanded="false">Political strategy<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A campaign plan built on the constituency's numbers: who decides the seat, which issues move them, and where to spend time and money. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Election campaign management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Day-to-day running of the campaign, from the calendar and events to volunteers, messaging and reporting. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Political surveys<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Door-to-door and phone surveys in Telugu and English that show voter mood, candidate standing and local issues, booth by booth. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Opinion and exit polls<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Sample-based polls before voting and on polling day, with clear reporting of the sample and method. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Booth management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Booth-level teams, voter lists and polling-day turnout tracking, so no supporter is left at home. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Data analytics<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Past results, voter rolls and survey data turned into ward and booth targets the team can act on. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Social media campaigns<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Reels, posters and daily content in Telugu, planned around the campaign calendar and measured for reach. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Candidate branding<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A consistent identity for the candidate: profile, slogans, visuals and the story voters remember. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">War room management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A central team that tracks field reports, media and opponents in real time and responds the same day. <br><a href="#contact">Ask about this service</a></div></div>
+        <div class="svc"><button type="button" aria-expanded="false">Speech and manifesto writing<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Speeches, manifestos and press notes written for the local audience, in Telugu and English. <br><a href="#contact">Ask about this service</a></div></div>
+      </div>
+      <p style="margin-top:20px"><a href="/research-services.html"><strong>Research and data services for candidates, parties and media →</strong></a></p>
+    </div>
+  </section>
+
+  <section class="band band--mist" id="election-desk">
+    <div class="wrap deskrow">
+      <div class="deskrow__text">
+        <p class="eyebrow eyebrow--dark">Election desk</p>
+        <h2>AP local body elections, tracked live</h2>
+        <p class="lede">Gram panchayat counting is on 26 Nov, 29 Nov and 2 Dec. Village results are added from local media reports and marked unofficial until the State Election Commission confirms.</p>
+        <div class="hero__cta"><a class="btn btn--line" href="/panchayat-results">Search your village</a><a class="btn btn--line" href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html">Results tracker</a></div>
+      </div>
+      <div>
       <aside class="desk" aria-label="AP Panchayat Elections 2026 village results">
         <div class="desk__head">
           <p class="desk__title">AP Panchayat Elections 2026</p>
@@ -332,22 +432,11 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
         <ul class="desk__nums" id="desk-nums"></ul>
         <a class="btn btn--line" href="#live-results">See all ULB results</a>
       </aside>
+      </div>
     </div>
   </section>
 
-  <section class="proof" aria-label="MP Solutions in numbers">
-    <div class="wrap">
-      <ul>
-        <li><b>10+</b><span>Exit polls conducted</span></li>
-        <li><b>5</b><span>States covered</span></li>
-        <li><b>25+</b><span>Clients served</span></li>
-        <li><b>10K+</b><span>People reached</span></li>
-        <li><b>5+</b><span>Campaigns supported</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="band band--mist" id="latest">
+  <section class="band" id="latest">
     <div class="wrap">
       <h2>Latest analysis</h2>
       <a class="latest-card" href="/panchayat-results">
@@ -456,26 +545,6 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
         <span>Every Assembly verdict and Chief Minister from NTR's 1983 wave to the NDA's 164 seats in 2024.</span>
       </a>
       <p style="margin-top:14px"><a href="/articles/">All articles →</a></p>
-    </div>
-  </section>
-
-  <section class="band" id="services">
-    <div class="wrap">
-      <h2>What we do for a campaign</h2>
-      <p class="lede">Tap a service to see what it covers.</p>
-      <div class="services" id="services-list">
-        <div class="svc"><button type="button" aria-expanded="false">Political strategy<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A campaign plan built on the constituency's numbers: who decides the seat, which issues move them, and where to spend time and money. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Election campaign management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Day-to-day running of the campaign, from the calendar and events to volunteers, messaging and reporting. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Political surveys<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Door-to-door and phone surveys in Telugu and English that show voter mood, candidate standing and local issues, booth by booth. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Opinion and exit polls<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Sample-based polls before voting and on polling day, with clear reporting of the sample and method. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Booth management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Booth-level teams, voter lists and polling-day turnout tracking, so no supporter is left at home. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Data analytics<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Past results, voter rolls and survey data turned into ward and booth targets the team can act on. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Social media campaigns<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Reels, posters and daily content in Telugu, planned around the campaign calendar and measured for reach. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Candidate branding<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A consistent identity for the candidate: profile, slogans, visuals and the story voters remember. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">War room management<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">A central team that tracks field reports, media and opponents in real time and responds the same day. <br><a href="#contact">Ask about this service</a></div></div>
-        <div class="svc"><button type="button" aria-expanded="false">Speech and manifesto writing<span class="svc__sign" aria-hidden="true"></span></button><div class="svc__body">Speeches, manifestos and press notes written for the local audience, in Telugu and English. <br><a href="#contact">Ask about this service</a></div></div>
-      </div>
-      <p style="margin-top:20px"><a href="/research-services.html"><strong>Research and data services for candidates, parties and media →</strong></a></p>
     </div>
   </section>
 
