@@ -301,7 +301,28 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
           <a class="btn btn--ghost" href="#services">See our services</a>
         </div>
       </div>
-      <aside class="desk" aria-label="AP Municipal Elections 2026 summary">
+      <aside class="desk" aria-label="AP Panchayat Elections 2026 village results">
+        <div class="desk__head">
+          <p class="desk__title">AP Panchayat Elections 2026</p>
+          <span class="live"><i></i>Live</span>
+        </div>
+        <p class="desk__sub" id="pd-sub">Village sarpanch results, filled on counting days</p>
+        <div class="bar" id="pd-bar" role="img" aria-label="Declared villages by party support, unofficial"></div>
+        <ul class="desk__nums" id="pd-nums">
+          <li><b id="pd-n1">0</b><span>Phase 1</span></li>
+          <li><b id="pd-n2">0</b><span>Phase 2</span></li>
+          <li><b id="pd-n3">0</b><span>Phase 3</span></li>
+          <li><b id="pd-nt">0</b><span>Total</span></li>
+          <li><b id="pd-np">0</b><span>Party</span></li>
+        </ul>
+        <p class="desk__sub" id="pd-pt" style="margin:-6px 0 12px;font-size:.8rem">Gram panchayat polls have no party symbols. Party-backed counts appear only where media report them, and stay unofficial until the SEC confirms.</p>
+        <form action="/panchayat-results" method="get" role="search" style="display:flex;gap:8px;margin-bottom:10px">
+          <input name="q" type="search" placeholder="Search your village" aria-label="Search your village" style="flex:1;min-width:0;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit">
+          <button class="btn" type="submit" style="width:auto">Search</button>
+        </form>
+        <a class="btn btn--line" href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html">Phase-wise results tracker</a>
+      </aside>
+      <aside class="desk" hidden aria-label="AP Municipal Elections 2026 summary">
         <div class="desk__head">
           <p class="desk__title">AP Municipal Elections 2026</p>
           <span class="live"><i></i>Election desk</span>
@@ -859,6 +880,19 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start); else start();
 })();
+</script>
+<script>
+(function(){var C={TDP:"#C9A227",JSP:"#9B2447",BJP:"#F58220",YSRCP:"#2F6DB5",Others:"#3A9A5B"};
+function g(i){return document.getElementById(i)}
+function load(){fetch("/assets/panchayat-results.json?_="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+var R=d.rows||[];if(!R.length)return;var c={1:0,2:0,3:0},pt={},np=0;
+R.forEach(function(r){if(c[r.p]!=null)c[r.p]++;if(r.pt){np++;var k=C[r.pt]?r.pt:"Others";pt[k]=(pt[k]||0)+1}});
+g("pd-n1").textContent=c[1];g("pd-n2").textContent=c[2];g("pd-n3").textContent=c[3];g("pd-nt").textContent=R.length;g("pd-np").textContent=np;
+g("pd-sub").textContent=R.length+" village results in"+(d.updated?" · updated "+d.updated:"")+" · unofficial until SEC confirms";
+var b=g("pd-bar");b.replaceChildren();if(np){Object.keys(pt).forEach(function(k){var s=document.createElement("span");s.style.flex=pt[k];s.style.background=C[k];s.title=k+": "+pt[k];b.appendChild(s)});
+g("pd-pt").textContent="Party-backed: "+Object.keys(pt).map(function(k){return k+" "+pt[k]}).join(" · ")+". Unofficial, from media reports."}
+}).catch(function(){})}
+load();setInterval(load,60000)})();
 </script>
 </body>
 </html>
