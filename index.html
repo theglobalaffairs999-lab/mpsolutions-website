@@ -277,7 +277,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
       <a href="#media-summit">Media Summit</a>
       <a href="/articles/">Articles</a>
       <a href="#contact">Contact</a>
-      <a href="#live-results" class="nav__cta">Live results</a>
+      <a href="#panchayat-live" class="nav__cta">Live results</a>
     </nav>
   </div>
 </header>
@@ -333,6 +333,21 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
         <span class="latest-tag">Live from 26 Nov · Search</span>
         <b>Search your village sarpanch result | మీ ఊరి సర్పంచ్ ఫలితం</b>
         <span>Type your village, mandal or district. Filled in on counting days 26 Nov, 29 Nov and 2 Dec from local media reports, marked unofficial until the SEC confirms.</span>
+      </a>
+      <a class="latest-card" href="/articles/ap-panchayat-phase-2-29-november-2026-27-districts-mandals-list-timings.html">
+        <span class="latest-tag">Explainer · Phase 2</span>
+        <b>AP panchayat Phase 2 on 29 November: 27 districts, mandal-wise list and timings</b>
+        <span>Sunday polling in 27 districts. 7 am to 1 pm, counting from 2 pm, re-poll 30 November. Full mandal list. Read in English or తెలుగు.</span>
+      </a>
+      <a class="latest-card" href="/articles/ap-panchayat-phase-3-2-december-2026-25-districts-mandals-list-timings.html">
+        <span class="latest-tag">Explainer · Phase 3</span>
+        <b>AP panchayat Phase 3 on 2 December: 25 districts, mandal-wise list and timings</b>
+        <span>The last phase votes on Wednesday. 7 am to 1 pm, counting from 2 pm, re-poll 3 December. Full mandal list. Read in English or తెలుగు.</span>
+      </a>
+      <a class="latest-card" href="/articles/how-to-check-village-sarpanch-result-ap-panchayat-election-2026.html">
+        <span class="latest-tag">How-to</span>
+        <b>How to check your village sarpanch result: AP panchayat election 2026</b>
+        <span>Search by village, mandal or district, and how to tell unofficial results from SEC-confirmed ones. Read in English or తెలుగు.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-phase-1-26-november-2026-26-districts-201-mandals-timings-results.html">
         <span class="latest-tag">Explainer · Phase 1</span>
@@ -504,11 +519,32 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
     </div>
   </section>
 
+  <section class="band" id="panchayat-live">
+    <div class="wrap">
+      <div class="results-head">
+        <div>
+          <h2>AP Panchayat Elections 2026: village results</h2>
+          <p class="lede">Search your village sarpanch result on counting days. Unofficial until confirmed by the SEC.</p>
+        </div>
+      </div>
+      <form action="/panchayat-results" method="get" class="filter-bar" role="search" style="margin:12px 0">
+        <input name="q" type="search" placeholder="Village or mandal, e.g. Podili" aria-label="Search your village" style="flex:1;min-width:0">
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <div class="summary">
+        <div><span>Phase 1</span><strong>26 Nov</strong></div>
+        <div><span>Phase 2</span><strong>29 Nov</strong></div>
+        <div><span>Phase 3</span><strong>2 Dec</strong></div>
+      </div>
+      <p>Polling 7 am to 1 pm, counting from 2 pm the same day. <a href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html">Phase-wise results tracker</a> · <a href="/articles/how-to-check-village-sarpanch-result-ap-panchayat-election-2026.html">How to check your result</a></p>
+    </div>
+  </section>
+
   <section class="band" id="live-results">
     <div class="wrap">
       <div class="results-head">
         <div>
-          <h2>AP Municipal Elections 2026 results</h2>
+          <h2>AP Municipal Elections 2026 results (tracker)</h2>
           <p class="lede">Party-wise wards and the mayor or chairperson party for every urban local body.</p>
         </div>
       </div>
