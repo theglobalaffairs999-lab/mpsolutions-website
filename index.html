@@ -262,15 +262,15 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 
 /* Simple quick-access tiles + nav fit (23 Nov 2026) */
 .quick{background:#fff;padding:clamp(28px,5vw,48px) 0;border-bottom:1px solid var(--line)}
-.quick h2{font-size:clamp(1.5rem,4.4vw,2.2rem)}
-.quick p.q-sub{color:var(--slate);margin-top:6px;font-size:1.05rem}
-.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
-.qtile{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px 18px;border-radius:12px;text-decoration:none;color:#fff;min-height:132px;box-shadow:0 4px 12px rgba(11,33,71,.12);border:0}
-.qtile i{font-style:normal;font-size:2rem;line-height:1}
-.qtile b{font:800 1.35rem/1.25 var(--display);margin-top:6px}
-.qtile span{font-size:.95rem;opacity:.92;font-weight:500}
-.qtile:hover,.qtile:focus-visible{transform:translateY(-2px);box-shadow:0 8px 20px rgba(11,33,71,.22)}
-.qt1{background:#C62828}.qt2{background:#0B2147}.qt3{background:#0F7A45}.qt4{background:#D96C10}.qt5{background:#16356B}.qt6{background:#6A1B9A}
+.quick h2{font-size:clamp(1.4rem,3.6vw,1.9rem)}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.qtile{position:relative;display:block;padding:18px 44px 18px 20px;border-radius:6px;text-decoration:none;background:#fff;color:var(--navy);border:1px solid var(--line);border-top:3px solid var(--navy)}
+.qtile::after{content:"\2192";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--orange-dark);font-size:1.3rem;font-weight:700}
+.qtile b{display:block;font:700 1.08rem/1.25 var(--display)}
+.qtile span{display:block;margin-top:4px;color:var(--slate);font-size:.92rem}
+.qtile:hover,.qtile:focus-visible{border-color:var(--navy);box-shadow:0 6px 18px rgba(11,33,71,.12)}
+.qtile.qfirst{background:var(--navy);color:#fff;border-color:var(--navy);border-top-color:var(--orange)}
+.qtile.qfirst span{color:#CBD6EA}.qtile.qfirst::after{color:var(--orange)}
 .nav a.nav__enq{border:1px solid rgba(255,255,255,.4);margin-left:6px}
 .nav a.nav__enq:hover{background:#fff;color:var(--navy)}
 @media(max-width:1080px){
@@ -281,7 +281,7 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
   .nav a.nav__enq{margin:8px 0 0;text-align:center}
   .nav a.nav__cta{margin:10px 0 0;text-align:center;border-bottom:0}
 }
-@media(max-width:700px){.qgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.qtile{min-height:120px;padding:16px 14px}.qtile b{font-size:1.2rem}}
+@media(max-width:700px){.qgrid{grid-template-columns:1fr;gap:10px}}
 </style>
 <link rel="manifest" href="/manifest.webmanifest">
 </head>
@@ -361,15 +361,14 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
 
   <section class="quick" aria-label="Quick links">
     <div class="wrap">
-      <h2>మీకు ఏం కావాలి? <span style="font-weight:600;color:var(--slate);font-size:.7em">What do you need?</span></h2>
-      <p class="q-sub">ఒక బటన్ నొక్కండి · Tap one button</p>
+      <h2>Explore</h2>
       <div class="qgrid">
-        <a class="qtile qt1" href="/panchayat-results"><i>🗳️</i><b>మీ ఊరి ఫలితం</b><span>Village sarpanch result</span></a>
-        <a class="qtile qt3" href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html"><i>📊</i><b>ఎన్నికల ఫలితాలు</b><span>Election results</span></a>
-        <a class="qtile qt4" href="/articles/ap-deputy-mayor-vice-chairperson-posts-tdp-jana-sena-bjp-full-list-2026.html"><i>📋</i><b>డిప్యూటీ మేయర్ జాబితా</b><span>Deputy Mayor list</span></a>
-        <a class="qtile qt2" href="/articles/"><i>📰</i><b>వార్తలు, ఆర్టికల్స్</b><span>News and articles</span></a>
-        <a class="qtile qt5" href="#services"><i>🤝</i><b>మా సేవలు</b><span>Our services</span></a>
-        <a class="qtile qt6" href="/contact#enquiry"><i>✉️</i><b>సంప్రదించండి</b><span>Send an enquiry</span></a>
+        <a class="qtile qfirst" href="/panchayat-results"><b>Village sarpanch result</b><span>Search by village, mandal or district</span></a>
+        <a class="qtile" href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html"><b>Election results</b><span>Phase-wise results tracker</span></a>
+        <a class="qtile" href="/articles/ap-deputy-mayor-vice-chairperson-posts-tdp-jana-sena-bjp-full-list-2026.html"><b>Deputy Mayor candidates</b><span>Full list, all parties</span></a>
+        <a class="qtile" href="/articles/"><b>Articles and analysis</b><span>Election data and explainers</span></a>
+        <a class="qtile" href="#services"><b>Our services</b><span>Strategy, surveys and campaigns</span></a>
+        <a class="qtile" href="/contact#enquiry"><b>Enquiry</b><span>Talk to our team</span></a>
       </div>
     </div>
   </section>
@@ -391,93 +390,93 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
       <h2>Latest analysis</h2>
       <a class="latest-card" href="/panchayat-results">
         <span class="latest-tag">Live from 26 Nov · Search</span>
-        <b>Search your village sarpanch result | మీ ఊరి సర్పంచ్ ఫలితం</b>
+        <b>Search your village sarpanch result</b>
         <span>Type your village, mandal or district. Filled in on counting days 26 Nov, 29 Nov and 2 Dec from local media reports, marked unofficial until the SEC confirms.</span>
       </a>
       <a class="latest-card" href="/articles/ap-deputy-mayor-vice-chairperson-posts-tdp-jana-sena-bjp-full-list-2026.html">
         <span class="latest-tag">News · Urban bodies</span>
         <b>AP deputy mayor and vice-chairperson posts: TDP 7 + 59, Jana Sena 17, BJP 2 + 7, full list</b>
-        <span>Municipality and district wise lists from TDP, Jana Sena and BJP, with Jana Sena candidate names. Read in English or తెలుగు.</span>
+        <span>Municipality and district wise lists from TDP, Jana Sena and BJP, with Jana Sena candidate names.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-phase-2-29-november-2026-27-districts-mandals-list-timings.html">
         <span class="latest-tag">Explainer · Phase 2</span>
         <b>AP panchayat Phase 2 on 29 November: 27 districts, mandal-wise list and timings</b>
-        <span>Sunday polling in 27 districts. 7 am to 1 pm, counting from 2 pm, re-poll 30 November. Full mandal list. Read in English or తెలుగు.</span>
+        <span>Sunday polling in 27 districts. 7 am to 1 pm, counting from 2 pm, re-poll 30 November. Full mandal list.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-phase-3-2-december-2026-25-districts-mandals-list-timings.html">
         <span class="latest-tag">Explainer · Phase 3</span>
         <b>AP panchayat Phase 3 on 2 December: 25 districts, mandal-wise list and timings</b>
-        <span>The last phase votes on Wednesday. 7 am to 1 pm, counting from 2 pm, re-poll 3 December. Full mandal list. Read in English or తెలుగు.</span>
+        <span>The last phase votes on Wednesday. 7 am to 1 pm, counting from 2 pm, re-poll 3 December. Full mandal list.</span>
       </a>
       <a class="latest-card" href="/articles/how-to-check-village-sarpanch-result-ap-panchayat-election-2026.html">
         <span class="latest-tag">How-to</span>
         <b>How to check your village sarpanch result: AP panchayat election 2026</b>
-        <span>Search by village, mandal or district, and how to tell unofficial results from SEC-confirmed ones. Read in English or తెలుగు.</span>
+        <span>Search by village, mandal or district, and how to tell unofficial results from SEC-confirmed ones.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-phase-1-26-november-2026-26-districts-201-mandals-timings-results.html">
         <span class="latest-tag">Explainer · Phase 1</span>
         <b>AP panchayat Phase 1 on 26 November: 26 districts, 201 mandals, timings and when results come</b>
-        <span>Villages in 201 mandals vote on Thursday. Polling 7 am to 1 pm, counting from 2 pm, results the same day, plus the full list of 26 districts. Read in English or తెలుగు.</span>
+        <span>Villages in 201 mandals vote on Thursday. Polling 7 am to 1 pm, counting from 2 pm, results the same day, plus the full list of 26 districts.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-reservation-2026-women-sc-st-bc-sarpanch-seats-data.html">
         <span class="latest-tag">Data · Reservation</span>
         <b>AP panchayat reservation 2026: 6,445 sarpanch seats for women, 6,751 for SC, ST and BC</b>
-        <span>ST 1,180, SC 2,466, BC 3,105 sarpanch posts, women's share, and why the BC share runs from 20% to 37% by district. Read in English or తెలుగు.</span>
+        <span>ST 1,180, SC 2,466, BC 3,105 sarpanch posts, women's share, and why the BC share runs from 20% to 37% by district.</span>
       </a>
       <a class="latest-card" href="/articles/ap-zilla-parishad-chairperson-candidates-2026-27-districts-full-list.html">
         <span class="latest-tag">Data · ZP polls</span>
         <b>AP Zilla Parishad chairperson candidates 2026: full list of 27 districts</b>
-        <span>Chairperson and vice-chairperson nominees of TDP, Jana Sena and BJP in all 27 districts, with the party-wise split of 54 posts. Read in English or తెలుగు.</span>
+        <span>Chairperson and vice-chairperson nominees of TDP, Jana Sena and BJP in all 27 districts, with the party-wise split of 54 posts.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-phase-1-nominations-2026-district-wise-data.html">
         <span class="latest-tag">Data · Phase 1 nominations</span>
         <b>AP panchayat Phase 1: 1,18,114 nominations for 43,779 posts</b>
-        <span>6.6 sarpanch nominations per village, district data, phase-wise seats and the 2021 benchmark. Read in English or తెలుగు.</span>
+        <span>6.6 sarpanch nominations per village, district data, phase-wise seats and the 2021 benchmark.</span>
       </a>
       <a class="latest-card" href="/articles/ap-ekagreevam-unanimous-panchayats-2026-incentives-15-25-50-lakh-data.html">
         <span class="latest-tag">Data · Unanimous polls</span>
         <b>AP unanimous panchayats 2026: up to Rs 50 lakh for unopposed sarpanch</b>
-        <span>What unopposed villages get, the 2021 benchmark of 16.77% and a labelled estimate for 2026. Read in English or తెలుగు.</span>
+        <span>What unopposed villages get, the 2021 benchmark of 16.77% and a labelled estimate for 2026.</span>
       </a>
       <a class="latest-card" href="/articles/ap-mpp-zp-chairperson-elections-19-20-november-2026-how-they-work.html">
         <span class="latest-tag">Explainer · 19-20 Nov</span>
         <b>AP MPP and ZP chairperson elections: how they work</b>
-        <span>Indirect polls in 659 mandal and 28 zilla parishads on 19 and 20 November, with co-option and whip rules. Read in English or తెలుగు.</span>
+        <span>Indirect polls in 659 mandal and 28 zilla parishads on 19 and 20 November, with co-option and whip rules.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html">
         <span class="latest-tag">Results tracker · from 26 Nov</span>
         <b>AP panchayat election results 2026</b>
-        <span>Phase-wise sarpanch results, updated from official figures on 26 Nov, 29 Nov and 2 Dec. Read in English or తెలుగు.</span>
+        <span>Phase-wise sarpanch results, updated from official figures on 26 Nov, 29 Nov and 2 Dec.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-elections-2026-by-the-numbers-voters-seats-polling-stations.html">
         <span class="latest-tag">Data · 18 Nov 2026</span>
         <b>AP panchayat elections 2026 by the numbers</b>
-        <span>2.61 crore voters, 13,167 sarpanch seats, 1,34,847 polling stations, women and BC reservation, spending limits. Read in English or తెలుగు.</span>
+        <span>2.61 crore voters, 13,167 sarpanch seats, 1,34,847 polling stations, women and BC reservation, spending limits.</span>
       </a>
       <a class="latest-card" href="/articles/ap-panchayat-election-2026-polling-day-guide-how-to-vote.html">
         <span class="latest-tag">Explainer · 18 Nov 2026</span>
         <b>AP panchayat election 2026 polling day guide: dates, timings and how to vote</b>
-        <span>Phase dates, 7 am to 1 pm timings, what to carry, the pink and white ballots and same-day results. Read in English or తెలుగు.</span>
+        <span>Phase dates, 7 am to 1 pm timings, what to carry, the pink and white ballots and same-day results.</span>
       </a>
       <a class="latest-card" href="/articles/ap-sarpanch-election-symbols-2026-list-allotment.html">
         <span class="latest-tag">Explainer · 17 Nov 2026</span>
         <b>AP sarpanch election symbols 2026: full list and how they are allotted</b>
-        <span>All 25 sarpanch and 20 ward member symbols, the alphabetical-order rule and when candidates get them. Read in English or తెలుగు.</span>
+        <span>All 25 sarpanch and 20 ward member symbols, the alphabetical-order rule and when candidates get them.</span>
       </a>
       <a class="latest-card" href="/articles/up-election-2027-yogi-vs-akhilesh-80-vs-20-analysis.html">
         <span class="latest-tag">Election analysis · 14 Nov 2026</span>
         <b>UP Election 2027: Yogi vs Akhilesh and the "80 vs 20" battle</b>
-        <span>2022 and 2024 results, the latest 267 vs 132 survey and the BSP swing vote. Read in English or తెలుగు.</span>
+        <span>2022 and 2024 results, the latest 267 vs 132 survey and the BSP swing vote.</span>
       </a>
       <a class="latest-card" href="/articles/ap-sarpanch-nomination-2026-documents-eligibility-deposit.html">
         <span class="latest-tag">Explainer · 14 Nov 2026</span>
         <b>AP sarpanch nomination 2026: documents, eligibility and process</b>
-        <span>Form-III, documents checklist, ₹3,000 deposit, phase dates and step-by-step filing guide. Read in English or తెలుగు.</span>
+        <span>Form-III, documents checklist, ₹3,000 deposit, phase dates and step-by-step filing guide.</span>
       </a>
       <a class="latest-card" href="/articles/vijayasai-reddy-new-party-prp-parivartan-rajniti-party.html">
         <span class="latest-tag">Political analysis · 14 Nov 2026</span>
         <b>Vijayasai Reddy's new party PRP: whose votes will it split?</b>
-        <span>Launch, flag, agenda and a vote-split analysis of the Parivartan Rajniti Party. Read in English or తెలుగు.</span>
+        <span>Launch, flag, agenda and a vote-split analysis of the Parivartan Rajniti Party.</span>
       </a>
       <a class="latest-card" href="/articles/ap-municipal-elections-2026-results.html">
         <span class="latest-tag">Election results · 13 Nov 2026</span>
