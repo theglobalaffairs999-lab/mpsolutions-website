@@ -949,7 +949,9 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
 <script>
 (function(){var C={TDP:"#C9A227",JSP:"#9B2447",BJP:"#F58220",YSRCP:"#2F6DB5",Others:"#3A9A5B"};
 function g(i){return document.getElementById(i)}
-function load(){fetch("/assets/panchayat-results.json?_="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+var last="";
+function load(){fetch("/assets/panchayat-results.json",{cache:"no-cache"}).then(function(r){return r.text()}).then(function(t){
+if(t===last)return;last=t;var d=JSON.parse(t);
 var R=d.rows||[];if(!R.length)return;var c={1:0,2:0,3:0},pt={},np=0;
 R.forEach(function(r){if(c[r.p]!=null)c[r.p]++;if(r.pt){np++;var k=C[r.pt]?r.pt:"Others";pt[k]=(pt[k]||0)+1}});
 g("pd-n1").textContent=c[1];g("pd-n2").textContent=c[2];g("pd-n3").textContent=c[3];g("pd-nt").textContent=R.length;g("pd-np").textContent=np;
@@ -957,7 +959,7 @@ g("pd-sub").textContent=R.length+" village results in"+(d.updated?" · updated "
 var b=g("pd-bar");b.replaceChildren();if(np){Object.keys(pt).forEach(function(k){var s=document.createElement("span");s.style.flex=pt[k];s.style.background=C[k];s.title=k+": "+pt[k];b.appendChild(s)});
 g("pd-pt").textContent="Party-backed: "+Object.keys(pt).map(function(k){return k+" "+pt[k]}).join(" · ")+". Unofficial, from media reports."}
 }).catch(function(){})}
-load();setInterval(load,60000)})();
+setTimeout(load,1200);setInterval(function(){if(!document.hidden)load()},90000)})();
 </script>
 </body>
 </html>
