@@ -308,13 +308,14 @@ footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
 </header>
 
 <main>
-<div class="estrip"><div class="wrap"><a href="/articles/ap-panchayat-election-results-2026-sarpanch-winners-phase-wise.html" id="estrip">
+<div class="estrip"><div class="wrap"><a href="/panchayat-results" id="estrip">
 <span class="live"><i></i>LIVE</span><b>AP Panchayat Elections 2026</b><span class="cd" id="estrip-cd">Polling 26 Nov · 29 Nov · 2 Dec</span><span class="go">Results tracker →</span></a></div></div>
 <script>(function(){var el=document.getElementById("estrip-cd");if(!el)return;var ph=[["Phase 1","2026-11-26"],["Phase 2","2026-11-29"],["Phase 3","2026-12-02"]],now=new Date(),t="";
 for(var i=0;i<ph.length;i++){var d=new Date(ph[i][1]+"T07:00:00+05:30"),end=new Date(ph[i][1]+"T23:59:00+05:30");
 if(now<d){var days=Math.ceil((d-now)/864e5);t=ph[i][0]+" polling "+(days<=1?"tomorrow":"in "+days+" days")+" · "+d.toLocaleDateString("en-IN",{day:"numeric",month:"short",timeZone:"Asia/Kolkata"});break}
 if(now<=end){t=ph[i][0]+" polling today · counting from 2 pm";break}}
 if(!t)t="All phases polled · see results";el.textContent=t})();</script>
+<div class="wrap" style="margin:14px auto"><form action="/panchayat-results" method="get" style="display:flex;gap:8px;flex-wrap:wrap;padding:16px;border-radius:12px;background:linear-gradient(135deg,#0B2147,#163a7a);border-left:6px solid #F47920;align-items:center"><strong style="color:#fff;flex:1 1 100%;font-size:1.1rem">&#128308; Check your village sarpanch result / మీ ఊరి సర్పంచ్ ఫలితం</strong><input name="q" type="search" placeholder="Village or mandal / ఊరు లేదా మండలం పేరు" aria-label="Village or mandal name" style="flex:1 1 200px;min-width:0;padding:12px 14px;border-radius:8px;border:0;font-size:1rem"><button type="submit" style="padding:12px 18px;border:0;border-radius:8px;background:#F47920;color:#fff;font-weight:800;font-size:1rem;cursor:pointer">Check result &rarr;</button></form></div>
   <section class="hero">
     <div class="wrap hero__grid">
       <div>
