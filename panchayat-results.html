@@ -138,7 +138,7 @@ const norm=s=>(s||"").toString().toLowerCase().normalize("NFC").replace(/[\s.\-_
 function esc(s){return (s||"").toString().replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 const sameD=(a,b)=>{a=norm(a);b=norm(b);return a===b||a.includes(b)||b.includes(a)};
 function buildD(){const fd=$("fd"),cur=fd.value;const L=[...new Set(places.map(x=>x.d))];rows.forEach(r=>{if(r.d&&!L.some(x=>sameD(x,r.d)))L.push(r.d)});L.sort();fd.length=1;L.forEach(d=>{const o=document.createElement("option");o.value=d;o.textContent=d;fd.appendChild(o)});fd.value=cur}
-let last="",loaded=false;const key=r=>r._k||(r._k=norm([r.v,r.vt,r.m,r.mt,r.d,r.dt,r.s,r.st].join(" ")));
+let last="",loaded=false;const key=r=>r._k||(r._k=norm([r.v,r.vt,r.m,r.mt,r.d,r.dt,r.s,r.st,r.n].join(" ")));
 const EMPTY="Results will appear here from 26 Nov, 2 pm. · ఫలితాలు 26 నవంబర్ మధ్యాహ్నం 2 గంటల నుండి ఇక్కడ కనిపిస్తాయి.";
 function load(){fetch("/assets/panchayat-results.json",{cache:"no-cache"}).then(r=>r.text()).then(t=>{if(t===last)return;last=t;const j=JSON.parse(t);loaded=true;rows=j.rows||[];upd=j.updated||"";buildD();draw()}).catch(()=>{if(!loaded)$("cnt").textContent=EMPTY})}
 function shareUrl(r){const t=r.v+(r.vt?" ("+r.vt+")":"")+" sarpanch, AP panchayat election 2026: "+r.s+(r.st?" ("+r.st+")":"")+(r.u?" [unofficial, "+r.src+"]":" [SEC]")+"\n"+"Check your village: https://mpsolutionsindia.com/panchayat-results?q="+encodeURIComponent(r.v);return "https://wa.me/?text="+encodeURIComponent(t)}
