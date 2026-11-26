@@ -1,5 +1,5 @@
 {
- "updated": "26 Nov 2026, 26 Nov 2026, 7:53 PM IST",
+ "updated": "26 Nov 2026, 8:05 PM IST",
  "rows": [
   {
    "v": "Guntapalli",
@@ -389,18 +389,6 @@
    "n": "Elected unopposed (ఏకగ్రీవం)"
   },
   {
-   "v": "Brahmadevacheruvu",
-   "vt": "బ్రహ్మదేవరచేను",
-   "m": "Kuppam",
-   "d": "Chittoor",
-   "p": 1,
-   "s": "Pichamma",
-   "st": "పిచ్చమ్మ",
-   "u": true,
-   "src": "Andhra Jyothy, 24 Nov 2026; Eenadu, 26 Nov 2026",
-   "n": "Elected unopposed (ఏకగ్రీవం) Also spelt Brahmadevaracheruvu / బ్రహ్మదేవరచెరువు."
-  },
-  {
    "v": "Veerapalli",
    "vt": "వీరపల్లి",
    "m": "Peddapanjani",
@@ -743,19 +731,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Vanukuvalasa",
-   "vt": "వనుకువలస",
-   "m": "Balijipeta",
-   "mt": "బలిజిపేట",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Alajangi Anusha",
-   "st": "అలజంగి అనూష",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Panukuvalasa / పనుకువలస."
-  },
-  {
    "v": "Subhadra",
    "vt": "సుభద్ర",
    "m": "Balijipeta",
@@ -767,19 +742,6 @@
    "st": "కర్రి శ్రీరాములు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Donkinavalasa",
-   "vt": "దొంకినవలస",
-   "m": "Badangi",
-   "mt": "బాడంగి",
-   "d": "Vizianagaram",
-   "dt": "విజయనగరం",
-   "p": 1,
-   "s": "Vasantala Suryanarayana",
-   "st": "వసంతల సూర్యనారాయణ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Domkinivalasa / డొంకినివలస."
   },
   {
    "v": "Mungada",
@@ -1107,32 +1069,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Ankarlapudi",
-   "vt": "అంకర్లపూడి",
-   "m": "Kondapi",
-   "mt": "కొండపి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "T. Sridevi",
-   "st": "టి. శ్రీదేవి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Anakarlapoodi / అనకర్లపూడి."
-  },
-  {
-   "v": "Chinakondagunta",
-   "vt": "చినకొండగుంట",
-   "m": "Kondapi",
-   "mt": "కొండపి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Chagamreddy Varamma",
-   "st": "చాగంరెడ్డి వరమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Chinakamdlagumta / చినకండ్లగుంట."
-  },
-  {
    "v": "Chodavaram",
    "vt": "చోడవరం",
    "m": "Kondapi",
@@ -1250,19 +1186,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chellipalli",
-   "vt": "చెల్లిపల్లి",
-   "m": "Chandra Sekhara Puram",
-   "mt": "చంద్రశేఖరపురం",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Gujjula Tirupathamma",
-   "st": "గుజ్జుల తిరుపతమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Cherlopalli / చెర్లోపల్లి."
-  },
-  {
    "v": "Chintapudi",
    "vt": "చింతపూడి",
    "m": "Chandra Sekhara Puram",
@@ -1354,19 +1277,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Mittapalli",
-   "vt": "మిట్టపల్లి",
-   "m": "Allagadda",
-   "mt": "ఆళ్లగడ్డ",
-   "d": "Nandyal",
-   "dt": "నంద్యాల",
-   "p": 1,
-   "s": "Pavan",
-   "st": "పవన్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Peraipalli",
    "vt": "పేరాయిపల్లి",
    "m": "Allagadda",
@@ -1406,19 +1316,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Mannem Vari Palli",
-   "vt": "మన్నెం వారి పల్లి",
-   "m": "Atlur",
-   "mt": "అట్లూరు",
-   "d": "Kadapa",
-   "dt": "వైఎస్సార్ కడప",
-   "p": 1,
-   "s": "Uppathi Ramakrishna Reddy",
-   "st": "ఉప్పత్తి రామకృష్ణారెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Mutukur",
    "vt": "ముటుకూరు",
    "m": "Atlur",
@@ -1441,19 +1338,6 @@
    "p": 1,
    "s": "Chevula Aithamma",
    "st": "చెవుల ఐతమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Tambalagonda",
-   "vt": "తంబళ్లగొంద",
-   "m": "Atlur",
-   "mt": "అట్లూరు",
-   "d": "Kadapa",
-   "dt": "వైఎస్సార్ కడప",
-   "p": 1,
-   "s": "Sangati Vimaladevi",
-   "st": "సంగటి విమలాదేవి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -1519,32 +1403,6 @@
    "p": 1,
    "s": "Afghan Nazeena Khanam",
    "st": "ఆఫ్గాన్ నజీనా ఖానం",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "C. Palimerapalli",
-   "vt": "సి.పాలిమేరపల్లి",
-   "m": "Chinnamandyam",
-   "mt": "చిన్నమండెం",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "K. Vani",
-   "st": "కె.వాణి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Devagudipalli",
-   "vt": "దేవగుడిపల్లి",
-   "m": "Chinnamandyam",
-   "mt": "చిన్నమండెం",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Gorantla Mallikarjuna",
-   "st": "గోరంట్ల మల్లికార్జున",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -1731,19 +1589,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Varaka",
-   "vt": "వరక",
-   "m": "Kaviti",
-   "mt": "కవిటి",
-   "d": "Srikakulam",
-   "dt": "శ్రీకాకుళం",
-   "p": 1,
-   "s": "Lakshmana",
-   "st": "లక్షణ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Kedaripuram",
    "vt": "కేదారిపురం",
    "m": "Palasa",
@@ -1770,19 +1615,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chepuruppalli",
-   "vt": "చేపురుపల్లి",
-   "m": "Vajrapukothuru",
-   "mt": "వజ్రపుకొత్తూరు",
-   "d": "Srikakulam",
-   "dt": "శ్రీకాకుళం",
-   "p": 1,
-   "s": "Sathupalli Kameswara Rao",
-   "st": "సాతుపల్లి కామేశ్వరరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Govindapuram",
    "vt": "గోవిందపురం",
    "m": "Vajrapukothuru",
@@ -1805,19 +1637,6 @@
    "p": 1,
    "s": "Guntu Divya",
    "st": "గుంటు దివ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Nuvvalarevu",
-   "vt": "నువ్వలరేవు",
-   "m": "Vajrapukothuru",
-   "mt": "వజ్రపుకొత్తూరు",
-   "d": "Srikakulam",
-   "dt": "శ్రీకాకుళం",
-   "p": 1,
-   "s": "Bainapalli Savitri",
-   "st": "బైనపల్లి సావిత్రి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -1965,19 +1784,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Kudama",
-   "vt": "కుడమ",
-   "m": "Jiyyammavalasa",
-   "mt": "జియ్యమ్మవలస",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Palla Malathi",
-   "st": "పల్ల మాలతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Kudama / కుదమ."
-  },
-  {
    "v": "Pippalabhadra",
    "vt": "పిప్పలభద్ర",
    "m": "Jiyyammavalasa",
@@ -2108,19 +1914,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Sudigam",
-   "vt": "సుదిగాం",
-   "m": "Parvathipuram",
-   "mt": "పార్వతీపురం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Gurajana Sridevi",
-   "st": "గురజాన శ్రీదేవి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Sudigaam / సుడిగాం."
-  },
-  {
    "v": "Venkampeta",
    "vt": "వెంకంపేట",
    "m": "Parvathipuram",
@@ -2147,19 +1940,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Balakrishnapuram",
-   "vt": "బల్లకృష్ణాపురం",
-   "m": "Seethanagaram",
-   "mt": "సీతానగరం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Gottapu Mahalakshmi",
-   "st": "గొట్టపు మహాలక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Ballakrishnaapuram / బల్లక్రిష్ణాపురం."
-  },
-  {
    "v": "Chinnabhogili",
    "vt": "చిన్నభోగిలి",
    "m": "Seethanagaram",
@@ -2182,32 +1962,6 @@
    "p": 1,
    "s": "Bogi Sankara Rao",
    "st": "బోగి శంకర రావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Gaddalupi",
-   "vt": "గెద్దలుప్పి",
-   "m": "Seethanagaram",
-   "mt": "సీతానగరం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Sarika Radha",
-   "st": "సారిక రాధ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Geddaluppi / గెడ్డలుప్పి."
-  },
-  {
-   "v": "Kasapeta",
-   "vt": "కాసాపేట",
-   "m": "Seethanagaram",
-   "mt": "సీతానగరం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Guddu Ravi",
-   "st": "గుడ్డు రవి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -2247,32 +2001,6 @@
    "p": 1,
    "s": "Reddy Sanjeeva Naidu",
    "st": "రెడ్డి సంజీవ నాయుడు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Gonduruvalasa",
-   "vt": "గొంగడవలస",
-   "m": "Bobbili",
-   "mt": "బొబ్బిలి",
-   "d": "Vizianagaram",
-   "dt": "విజయనగరం",
-   "p": 1,
-   "s": "Ruthala Lakshmi",
-   "st": "రుత్తల లక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "J. Rangarayapuram (Kevipeta)",
-   "vt": "జె.రంగరాయపురం (కేవిపేట)",
-   "m": "Bobbili",
-   "mt": "బొబ్బిలి",
-   "d": "Vizianagaram",
-   "dt": "విజయనగరం",
-   "p": 1,
-   "s": "Kunuku Radha",
-   "st": "కునుకు రాధ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -2364,19 +2092,6 @@
    "p": 1,
    "s": "Pulibanti Ramu",
    "st": "పులిబంటి రాము",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kallipalli",
-   "vt": "కల్లిపల్లి",
-   "m": "Lakkavarapukota",
-   "mt": "లక్కవరపుకోట",
-   "d": "Vizianagaram",
-   "dt": "విజయనగరం",
-   "p": 1,
-   "s": "Nakka Kanakamahalakshmi",
-   "st": "నక్క కనకమహాలక్ష్మి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -2602,19 +2317,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chikatipeta",
-   "vt": "చికటిపేట",
-   "m": "Therlam",
-   "mt": "తెర్లాం",
-   "d": "Vizianagaram",
-   "dt": "విజయనగరం",
-   "p": 1,
-   "s": "Battina Venkatamma",
-   "st": "బత్తిన వెంకటమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Sundarada",
    "vt": "సుందరాడ",
    "m": "Therlam",
@@ -2665,32 +2367,6 @@
    "st": "గరికి లక్ష్మి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Komallapudi",
-   "vt": "కోమల్లపూడి",
-   "m": "Butchayyapeta",
-   "mt": "బుచ్చయ్యపేట",
-   "d": "Anakapalli",
-   "dt": "అనకాపల్లి",
-   "p": 1,
-   "s": "Gedela Satyavathi",
-   "st": "గేదెల సత్యవతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Komallapoodi / కోమళ్లపూడి."
-  },
-  {
-   "v": "L.J.P. Agraharam",
-   "vt": "ఎల్.జె.పి.అగ్రహారం",
-   "m": "Butchayyapeta",
-   "mt": "బుచ్చయ్యపేట",
-   "d": "Anakapalli",
-   "dt": "అనకాపల్లి",
-   "p": 1,
-   "s": "Tamarana Uma",
-   "st": "తమరాన ఉమ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt El.bi.pi.agrahaaram / ఎల్‌.బి.పి.అగ్రహారం."
   },
   {
    "v": "L. Singavaram",
@@ -2793,19 +2469,6 @@
    "p": 1,
    "s": "Medida Eswara Rao",
    "st": "మేడిద ఈశ్వరరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Chamalapadu",
-   "vt": "చమలపాడు",
-   "m": "Ravikamatham",
-   "mt": "రావికమతం",
-   "d": "Anakapalli",
-   "dt": "అనకాపల్లి",
-   "p": 1,
-   "s": "Badri Chinnabbayi",
-   "st": "బద్రి చిన్నబ్బాయి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -2940,19 +2603,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Anthakapalli",
-   "vt": "అంతకపల్లి",
-   "m": "Sabbavaram",
-   "mt": "సబ్బవరం",
-   "d": "Anakapalli",
-   "dt": "అనకాపల్లి",
-   "p": 1,
-   "s": "Chokkakula Lakshmi",
-   "st": "చొక్కాకుల లక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Bangarammapalem",
    "vt": "బంగారమ్మపాలెం",
    "m": "Sabbavaram",
@@ -2979,19 +2629,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Bekkalipalem",
-   "vt": "బెక్కలిపాలెం",
-   "m": "Sabbavaram",
-   "mt": "సబ్బవరం",
-   "d": "Anakapalli",
-   "dt": "అనకాపల్లి",
-   "p": 1,
-   "s": "Medapureddy Govindamma",
-   "st": "మేడపురెడ్డి గోవిందమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Tekkalipaalem / టెక్కలిపాలెం."
-  },
-  {
    "v": "Nadakuduru",
    "vt": "నడకుదురు",
    "m": "Karapa",
@@ -3003,19 +2640,6 @@
    "st": "పైలా గౌరి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Pathalagadda",
-   "vt": "పాత్లగడ్డ",
-   "m": "Karapa",
-   "mt": "కరప",
-   "d": "Kakinada",
-   "dt": "కాకినాడ",
-   "p": 1,
-   "s": "Moora Padmavathi",
-   "st": "మూరా పద్మావతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Paatarlagadda / పాతర్లగడ్డ."
   },
   {
    "v": "Boyinapudi",
@@ -3343,19 +2967,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Nimmakayalakotapalli",
-   "vt": "నిమ్మకాయలకోటపల్లి",
-   "m": "Uppalaguptam",
-   "mt": "ఉప్పలగుప్తం",
-   "d": "Dr. B. R. Ambedkar Konaseema",
-   "dt": "డా.బి.ఆర్.అంబేడ్కర్ కోనసీమ",
-   "p": 1,
-   "s": "Lanke Srinivas",
-   "st": "లంకే శ్రీనివాస్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Pedagadavilli",
    "vt": "పెదగాడవిల్లి",
    "m": "Uppalaguptam",
@@ -3564,19 +3175,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Panguturu",
-   "vt": "పాంగుటూరు",
-   "m": "Koyyalagudem",
-   "mt": "కొయ్యలగూడెం",
-   "d": "Eluru",
-   "dt": "ఏలూరు",
-   "p": 1,
-   "s": "Rajanala Dhanalakshmi",
-   "st": "రాజనాల ధనలక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Urlagudem",
    "vt": "ఉర్లగూడెం",
    "m": "Chintalapudi",
@@ -3599,19 +3197,6 @@
    "p": 1,
    "s": "Bikkina Venkatarao",
    "st": "బిక్కిన వెంకటరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Sogipadu",
-   "vt": "సోగిపాడు",
-   "m": "Kamavarapukota",
-   "mt": "కామవరపుకోట",
-   "d": "Eluru",
-   "dt": "ఏలూరు",
-   "p": 1,
-   "s": "Alapati Viraja",
-   "st": "ఆలపాటి విరజ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -3668,19 +3253,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chatragaddapadu",
-   "vt": "చత్రగడ్డపాడు",
-   "m": "Vinukonda",
-   "mt": "వినుకొండ",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Alla Venkatalakshmi",
-   "st": "ఆళ్ల వెంకటలక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Chhatragaddapaadu / ఛత్రగడ్డపాడు."
-  },
-  {
    "v": "Dondapadu",
    "vt": "దొండపాడు",
    "m": "Vinukonda",
@@ -3716,19 +3288,6 @@
    "p": 1,
    "s": "Vemula Anjaneyulu",
    "st": "వేముల ఆంజనేయులు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Koppukonda Thanda",
-   "vt": "కొప్పుకొండ తండా",
-   "m": "Vinukonda",
-   "mt": "వినుకొండ",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Bhukya Mantru Naik",
-   "st": "భూక్యా మంత్రు నాయక్",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -3824,19 +3383,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Pattluru",
-   "vt": "పాట్లూరు",
-   "m": "Savalyapuram",
-   "mt": "శావల్యాపురం",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Abburi Sunitha",
-   "st": "అబ్బూరి సునీత",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Shanampudi",
    "vt": "శానంపూడి",
    "m": "Savalyapuram",
@@ -3913,19 +3459,6 @@
    "st": "భూక్యా శ్రావణి బాయి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Eddarlapeta",
-   "vt": "ఎడ్డర్లపేట",
-   "m": "Rompicherla",
-   "mt": "రొంపిచర్ల",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Kolakani Madhavi",
-   "st": "కొలకాని మాధవి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Edvardpeta / ఎడ్వర్డ్‌పేట."
   },
   {
    "v": "Gogulapadu",
@@ -4045,19 +3578,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Vaddamudivaripalem",
-   "vt": "వద్దమూడివారిపాలెం",
-   "m": "Rompicherla",
-   "mt": "రొంపిచర్ల",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Linga Anantaramayya",
-   "st": "లింగా అనంతరామయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Vadlamoodivaaripaalem / వడ్లమూడివారిపాలెం."
-  },
-  {
    "v": "Veeravatnam",
    "vt": "వీరవట్నం",
    "m": "Rompicherla",
@@ -4095,32 +3615,6 @@
    "st": "మెట్టు విజయలక్ష్మి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Gurappanaidupalem",
-   "vt": "గురప్పనాయుడుపాలెం",
-   "m": "Nuzendla",
-   "mt": "నూజెండ్ల",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Palepogu Asiya",
-   "st": "పాలెపోగు ఆసియా",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Gurrappanaayudupaalem / గుర్రప్పనాయుడుపాలెం."
-  },
-  {
-   "v": "K. Jaddavari Palem",
-   "vt": "కె.జడ్డవారి పాలెం",
-   "m": "Nuzendla",
-   "mt": "నూజెండ్ల",
-   "d": "Palnadu",
-   "dt": "పల్నాడు",
-   "p": 1,
-   "s": "Gunja Venkata Ramanamma",
-   "st": "గుంజా వెంకట రమణమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Ke.jaddavaari Paalem / కె.జద్దవారి పాలెం."
   },
   {
    "v": "Mutharasuvaripalem",
@@ -4539,19 +4033,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Narayya Apparaopeta",
-   "vt": "నారాయ్య అప్పారావుపేట",
-   "m": "Unguturu",
-   "mt": "ఉంగుటూరు",
-   "d": "Krishna",
-   "dt": "కృష్ణా",
-   "p": 1,
-   "s": "Petheti Nirmala Kumari",
-   "st": "పేటేటి నిర్మల కుమారి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Tuttagunta",
    "vt": "తుట్టగుంట",
    "m": "Unguturu",
@@ -4665,19 +4146,6 @@
    "p": 1,
    "s": "Anagani Lalithamba",
    "st": "అనగాని లలితాంబ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Serakalvapudi",
-   "vt": "సేరకల్వపూడి",
-   "m": "Gudlavalleru",
-   "mt": "గుడ్లవల్లేరు",
-   "d": "Krishna",
-   "dt": "కృష్ణా",
-   "p": 1,
-   "s": "Maddala Rajarao",
-   "st": "మద్దాల రాజారావు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -4903,32 +4371,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chelamakuru",
-   "vt": "చెలమకూరు",
-   "m": "Pamur",
-   "mt": "పామూరు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Yarasingu Naveen",
-   "st": "యరసింగు నవీన",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Dadireddypalli",
-   "vt": "దాదిరెడ్డిపల్లి",
-   "m": "Pamur",
-   "mt": "పామూరు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Kalluri Venkateswarlu",
-   "st": "కల్లూరి వెంకటేశ్వర్లు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Inimerla",
    "vt": "ఇనిమెర్ల",
    "m": "Pamur",
@@ -4940,19 +4382,6 @@
    "st": "ఎద్దుల నాచారమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kambadinne",
-   "vt": "కంబదిన్నె",
-   "m": "Pamur",
-   "mt": "పామూరు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Golla Veeranjaneyulu",
-   "st": "గోళ్ల వీరాంజనేయులు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Kambaladinne / కంబళదిన్నె."
   },
   {
    "v": "Kodigumpala",
@@ -5059,19 +4488,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Hajipuram",
-   "vt": "హాజీపురం",
-   "m": "Hanumanthuni Padu",
-   "mt": "హనుమంతునిపాడు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Gona Elisha",
-   "st": "గోన ఎలీషా",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Hanumanthunipadu",
    "vt": "హనుమంతునిపాడు",
    "m": "Hanumanthuni Padu",
@@ -5085,19 +4501,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Krishnampalli",
-   "vt": "కృష్ణంపల్లి",
-   "m": "Hanumanthuni Padu",
-   "mt": "హనుమంతునిపాడు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Nagendra Pothireddy",
-   "st": "నాగేంద్ర పోతురెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Kishtampalli / కిష్టంపల్లి."
-  },
-  {
    "v": "Kondareddypalli",
    "vt": "కొండారెడ్డిపల్లి",
    "m": "Hanumanthuni Padu",
@@ -5109,19 +4512,6 @@
    "st": "బొల్లం ఏడుకొండలు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Lingamgunta",
-   "vt": "లింగంగుంట",
-   "m": "Hanumanthuni Padu",
-   "mt": "హనుమంతునిపాడు",
-   "d": "Markapuram",
-   "dt": "మార్కాపురం",
-   "p": 1,
-   "s": "Buchi Ramakotireddy",
-   "st": "బుచ్చి రామకోటిరెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Limgamgumtla / లింగంగుంట్ల."
   },
   {
    "v": "Mittapalem",
@@ -5397,19 +4787,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Vardhanenipalem",
-   "vt": "వర్దనేనిపాలెం",
-   "m": "Zarugumilli",
-   "mt": "జరుగుమల్లి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Gali Padmavathi",
-   "st": "గాలి పద్మావతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Vardhinenipaalem / వర్ధినేనిపాలెం."
-  },
-  {
    "v": "Jammulapalem",
    "vt": "జమ్ములపాలెం",
    "m": "Tangutur",
@@ -5579,19 +4956,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "S.G. Palem",
-   "vt": "ఎస్.జి.పాలెం",
-   "m": "Ponnaluru",
-   "mt": "పొన్నలూరు",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Sarvepalli Murthamma",
-   "st": "సర్వేపల్లి ముర్తమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Es.bi.paalem / ఎస్‌.బి.పాలెం."
-  },
-  {
    "v": "S.R. Palem",
    "vt": "ఎస్.ఆర్.పాలెం",
    "m": "Ponnaluru",
@@ -5735,32 +5099,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Ankepalli",
-   "vt": "అంకెపల్లి",
-   "m": "Marripudi",
-   "mt": "మర్రిపూడి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Mancha Nageswararao",
-   "st": "మంచా నాగేశ్వరరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Chelamakuru",
-   "vt": "చెలమకూరు",
-   "m": "Marripudi",
-   "mt": "మర్రిపూడి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "G. Sunitha",
-   "st": "జి. సునీత",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Chimata",
    "vt": "చిమట",
    "m": "Marripudi",
@@ -5785,19 +5123,6 @@
    "st": "కొలకలూరి ఈశ్వరమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Glapeta",
-   "vt": "గ్లాపేట",
-   "m": "Marripudi",
-   "mt": "మర్రిపూడి",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Gundapaneni Subbulu",
-   "st": "గుండపనేని సుబ్బులు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Gaarlapeta / గార్లపేట."
   },
   {
    "v": "Gundlasamudram",
@@ -5943,19 +5268,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Ethamukkala",
-   "vt": "ఏతముక్కల",
-   "m": "Kotha Patnam",
-   "mt": "కొత్తపట్నం",
-   "d": "Prakasam",
-   "dt": "ప్రకాశం",
-   "p": 1,
-   "s": "Mannem Srinivasarao",
-   "st": "మన్నెం శ్రీనివాసరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Eetamukkala / ఈతముక్కల."
-  },
-  {
    "v": "Rangayyapalem",
    "vt": "రంగయ్యపాలెం",
    "m": "Kotha Patnam",
@@ -6045,19 +5357,6 @@
    "st": "రావి రవీంద్ర బాబు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "CH.G. Palem",
-   "vt": "సిహెచ్.జి.పాలెం",
-   "m": "Parchur",
-   "mt": "పర్చూరు",
-   "d": "Bapatla",
-   "dt": "బాపట్ల",
-   "p": 1,
-   "s": "Gade Koteswararao",
-   "st": "గాదె కోటేశ్వరరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Sihech.bi.paalem / సిహెచ్‌.బి.పాలెం."
   },
   {
    "v": "Devarapalli",
@@ -6190,19 +5489,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Degaramudi",
-   "vt": "దేగరమూడి",
-   "m": "Martur",
-   "mt": "మార్టూరు",
-   "d": "Bapatla",
-   "dt": "బాపట్ల",
-   "p": 1,
-   "s": "Jyothi Srinivasarao",
-   "st": "జ్యోతి శ్రీనివాసరావు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Konanki",
    "vt": "కోణంకి",
    "m": "Martur",
@@ -6253,19 +5539,6 @@
    "st": "గోళ్ల చైతన్య",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Idupulapadu",
-   "vt": "ఇదుపులపాడు",
-   "m": "Inkollu",
-   "mt": "ఇంకొల్లు",
-   "d": "Bapatla",
-   "dt": "బాపట్ల",
-   "p": 1,
-   "s": "P. Bapayya",
-   "st": "పి.బాపయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Idupulapaadu / ఇడుపులపాడు."
   },
   {
    "v": "Pusapadu",
@@ -6541,19 +5814,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Peddapattupalem",
-   "vt": "పెద్దపట్టుపాలెం",
-   "m": "Kavali",
-   "mt": "కావలి",
-   "d": "Sri Potti Sri Ramulu Nellore",
-   "dt": "నెల్లూరు",
-   "p": 1,
-   "s": "Yellamgari Prasad",
-   "st": "ఎల్లంగారి ప్రసాద్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Peddapattapu Paalem / పెద్దపట్టపు పాలెం."
-  },
-  {
    "v": "Chakali Konda",
    "vt": "చాకలి కొండ",
    "m": "Vinjamuru",
@@ -6654,58 +5914,6 @@
    "p": 1,
    "s": "Arogyamma",
    "st": "ఆరోగ్యమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Bevinahal",
-   "vt": "బెవినహాళ్",
-   "m": "Halaharvi",
-   "mt": "హాలహర్వి",
-   "d": "Kurnool",
-   "dt": "కర్నూలు",
-   "p": 1,
-   "s": "K. Jayasree",
-   "st": "కె. జయశ్రీ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Haradagiri",
-   "vt": "హారదగిరి",
-   "m": "Halaharvi",
-   "mt": "హాలహర్వి",
-   "d": "Kurnool",
-   "dt": "కర్నూలు",
-   "p": 1,
-   "s": "Mahalakshmi",
-   "st": "మహాలక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kaminahal",
-   "vt": "కామినహాళ్",
-   "m": "Halaharvi",
-   "mt": "హాలహర్వి",
-   "d": "Kurnool",
-   "dt": "కర్నూలు",
-   "p": 1,
-   "s": "Umakanth Reddy",
-   "st": "ఉమకాంత్ రెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Medehal",
-   "vt": "మేదేహాల్",
-   "m": "Halaharvi",
-   "mt": "హాలహర్వి",
-   "d": "Kurnool",
-   "dt": "కర్నూలు",
-   "p": 1,
-   "s": "Lakshmi",
-   "st": "లక్ష్మీ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -6840,19 +6048,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Vantavelagala",
-   "vt": "వంటవెలగల",
-   "m": "Gospadu",
-   "mt": "గోస్పాడు",
-   "d": "Nandyal",
-   "dt": "నంద్యాల",
-   "p": 1,
-   "s": "Eddula Lakshmidevi",
-   "st": "ఎద్దుల లక్ష్మీదేవి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Ammireddynagaram",
    "vt": "అమ్మిరెడ్డినగరం",
    "m": "Dornipadu",
@@ -6901,32 +6096,6 @@
    "p": 1,
    "s": "Bobbur Lakshmisirisha",
    "st": "బొబ్బూరి లక్ష్మీశిరీష",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "W. Govindinne",
-   "vt": "డబ్ల్యు. గోవిందిన్నె",
-   "m": "Dornipadu",
-   "mt": "దొర్నిపాడు",
-   "d": "Nandyal",
-   "dt": "నంద్యాల",
-   "p": 1,
-   "s": "Yusobu",
-   "st": "యూసోబు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "W. Kothapalli",
-   "vt": "డబ్ల్యు. కొత్తపల్లి",
-   "m": "Dornipadu",
-   "mt": "దొర్నిపాడు",
-   "d": "Nandyal",
-   "dt": "నంద్యాల",
-   "p": 1,
-   "s": "Pedda Obulesu",
-   "st": "పెద్ద ఓబులేసు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -7061,45 +6230,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Siddarampuram",
-   "vt": "సిద్ధారంపురం",
-   "m": "Bommanahal",
-   "mt": "బొమ్మనహాళ్",
-   "d": "Anantapur",
-   "dt": "అనంతపురం",
-   "p": 1,
-   "s": "Kuruba Malleswari",
-   "st": "కురుబ మల్లేశ్వరి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Singanahalli",
-   "vt": "సింగనహళ్ళి",
-   "m": "Bommanahal",
-   "mt": "బొమ్మనహాళ్",
-   "d": "Anantapur",
-   "dt": "అనంతపురం",
-   "p": 1,
-   "s": "Boya Geetha",
-   "st": "బోయ గీత",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Simganahalli / సింగనహళ్లి."
-  },
-  {
-   "v": "Upparahal",
-   "vt": "ఉప్పరహాళ్",
-   "m": "Bommanahal",
-   "mt": "బొమ్మనహాళ్",
-   "d": "Anantapur",
-   "dt": "అనంతపురం",
-   "p": 1,
-   "s": "Jayaram",
-   "st": "జయరాం",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Bhairavanithippa",
    "vt": "భైరవానితిప్ప",
    "m": "Brahmasamudram",
@@ -7139,19 +6269,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Gangapeduru",
-   "vt": "గంగపేరూరు",
-   "m": "Vontimitta",
-   "mt": "ఒంటిమిట్ట",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Peruru Siva",
-   "st": "పేరూరు శివ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Mantapampalli",
    "vt": "మంటపంపల్లి",
    "m": "Vontimitta",
@@ -7161,19 +6278,6 @@
    "p": 1,
    "s": "Geddam Kanakadurga",
    "st": "గెద్దం కనకదుర్గ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Pennaperur",
-   "vt": "పెన్నపేరూరు",
-   "m": "Vontimitta",
-   "mt": "ఒంటిమిట్ట",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Gajjala Anithareddy",
-   "st": "గజ్జల అనితారెడ్డి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -7295,19 +6399,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Madanagopalapuram",
-   "vt": "మదనగోపాలపురం",
-   "m": "Rajampet",
-   "mt": "రాజంపేట",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "L. Savitri",
-   "st": "ఎల్.సావిత్రి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Peddakarampalli",
    "vt": "పెద్దకారంపల్లి",
    "m": "Rajampet",
@@ -7360,19 +6451,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Kadavayapalli",
-   "vt": "కడవయపల్లి",
-   "m": "Sidhout",
-   "mt": "సిద్ధవటం",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Somu Chinnapalakondaiah",
-   "st": "సోము చిన్నపాలకొండయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Kadapayapalle / కడపయపల్లె."
-  },
-  {
    "v": "Nekunampuram",
    "vt": "నేకునాంపురం",
    "m": "Sidhout",
@@ -7412,19 +6490,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Akulanarayanapalli",
-   "vt": "ఆకులనారాయణపల్లి",
-   "m": "Sri Avadhutha Kasinayana",
-   "mt": "కాశినాయన",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Rebba Narasayya",
-   "st": "రెబ్బ నరసయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Aakulanaarayapalli / ఆకులనారయపల్లి."
-  },
-  {
    "v": "Balayapalli",
    "vt": "బాలయపల్లి",
    "m": "Sri Avadhutha Kasinayana",
@@ -7462,19 +6527,6 @@
    "st": "కర్నాటి సుబ్బమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Savaisettipalli",
-   "vt": "సవాసెట్టిపల్లి",
-   "m": "Sri Avadhutha Kasinayana",
-   "mt": "కాశినాయన",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Bandi Lakshmi",
-   "st": "బండి లక్ష్మి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Savishettipalli / సవిశెట్టిపల్లి."
   },
   {
    "v": "S. Venkataramapuram",
@@ -7553,19 +6605,6 @@
    "st": "గంధం విజయ్‌భాస్కర్",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "B. Ramapuram",
-   "vt": "బి. రామాపురం",
-   "m": "Kalasapadu",
-   "mt": "కలసపాడు",
-   "d": "Kadapa",
-   "dt": "కడప",
-   "p": 1,
-   "s": "Basireddy Ramasubbamma",
-   "st": "బాసిరెడ్డి రామసుబ్బమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt E. Raamaapuram / ఇ. రామాపురం."
   },
   {
    "v": "Sankavaram",
@@ -7724,19 +6763,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Koneyyagaripalli",
-   "vt": "కోనయ్యగారిపల్లి",
-   "m": "Pullampeta",
-   "mt": "పుల్లంపేట",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Singamala Ramamurthy",
-   "st": "సింగమాల రామ్మూర్తి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "P.V.G. Palli",
    "vt": "పి.వి.జి.పల్లి",
    "m": "Pullampeta",
@@ -7789,19 +6815,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Pandaluru",
-   "vt": "పాండలూరు",
-   "m": "Penagalur",
-   "mt": "పెనగలూరు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Vaddi Venkatareddy",
-   "st": "వద్ది వెంకటరెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Pomdalooru / పొందలూరు."
-  },
-  {
    "v": "Singareddipalli",
    "vt": "సింగారెడ్డిపల్లి",
    "m": "Penagalur",
@@ -7815,19 +6828,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "G. Kammapalli",
-   "vt": "జి.కమ్మపల్లి",
-   "m": "Obulavaripalle",
-   "mt": "ఓబులవారిపల్లె",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Vemana Ratnamma",
-   "st": "వేమన రత్నమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Bi.kammapalli / బి.కమ్మపల్లి."
-  },
-  {
    "v": "Bommavaram",
    "vt": "బొమ్మవరం",
    "m": "Obulavaripalle",
@@ -7837,32 +6837,6 @@
    "p": 1,
    "s": "Gaddam Lavanya",
    "st": "గద్దం లావణ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "G.P. Rachapalli",
-   "vt": "జి.పి.రాచపల్లి",
-   "m": "Obulavaripalle",
-   "mt": "ఓబులవారిపల్లె",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Mekala Sekhar",
-   "st": "మేకల శేఖర్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Bi.pi.raachapalli / బి.పి.రాచపల్లి."
-  },
-  {
-   "v": "Govindapalli",
-   "vt": "గోవిందపల్లి",
-   "m": "Obulavaripalle",
-   "mt": "ఓబులవారిపల్లె",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Uppalapati Srinivasulu Raju",
-   "st": "ఉప్పలపాటి శ్రీనివాసులు రాజు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -8036,32 +7010,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Pinumallam",
-   "vt": "పినుమల్లం",
-   "m": "Yerpedu",
-   "mt": "ఏర్పేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Niranjan Babu Naidu",
-   "st": "నిరంజన్ బాబు నాయుడు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Rajulapalem",
-   "vt": "రాజులపాలెం",
-   "m": "Yerpedu",
-   "mt": "ఏర్పేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Chalapathi",
-   "st": "చలపతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Saraswathi Kandriga",
    "vt": "సరస్వతి కండ్రిగ",
    "m": "Yerpedu",
@@ -8073,32 +7021,6 @@
    "st": "శ్రీ హరి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Vikrutamala",
-   "vt": "విక్రుతమాల",
-   "m": "Yerpedu",
-   "mt": "ఏర్పేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Vijayakumar",
-   "st": "విజయకుమార్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Vikrutamaala / వికృతమాల."
-  },
-  {
-   "v": "C.M.O. Rachapalli",
-   "vt": "సి.ఎం.ఓ.రాచపల్లి",
-   "m": "Chitvel",
-   "mt": "చిట్వేలి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Sangaraju Padmavathamma",
-   "st": "సంగరాజు పద్మావతమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Si.em.raachapalli / సి.ఎం.రాచపల్లి."
   },
   {
    "v": "Devanchapalli",
@@ -8231,32 +7153,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "C.L.N. Palli",
-   "vt": "సీఎల్ఎన్ పల్లి",
-   "m": "Varadaiahpalem",
-   "mt": "వరదయ్యపాలెం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Manjula",
-   "st": "మంజుల",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kurinjalam",
-   "vt": "కురింజలం",
-   "m": "Varadaiahpalem",
-   "mt": "వరదయ్యపాలెం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Alagala Gangayya",
-   "st": "అలగల గంగయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Maradavada",
    "vt": "మరదవాడ",
    "m": "Varadaiahpalem",
@@ -8268,19 +7164,6 @@
    "st": "వరలక్ష్మి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Nelluru",
-   "vt": "నెల్లూరు",
-   "m": "Varadaiahpalem",
-   "mt": "వరదయ్యపాలెం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Keerthana",
-   "st": "కీర్తన",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Nellatooru / నెల్లటూరు."
   },
   {
    "v": "Pandur",
@@ -8305,32 +7188,6 @@
    "p": 1,
    "s": "Vijay Reddy",
    "st": "విజయ్ రెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Varadaiahpalem",
-   "vt": "వరదయ్యపాలెం",
-   "m": "Varadaiahpalem",
-   "mt": "వరదయ్యపాలెం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Pannem Nirmal",
-   "st": "పన్నెం నిర్మల్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Varadayyapaalem / వరదయ్యపాళెం."
-  },
-  {
-   "v": "Bonupalli",
-   "vt": "బోనుపల్లి",
-   "m": "Thottambedu",
-   "mt": "తొట్టంబేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Sumalatha",
-   "st": "సుమలత",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -8452,19 +7309,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Lingamanaidupalli",
-   "vt": "లింగమనాయుడుపల్లి",
-   "m": "Thottambedu",
-   "mt": "తొట్టంబేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Ankamma",
-   "st": "అంకమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Peddakanapalli",
    "vt": "పెద్దకనపర్తి",
    "m": "Thottambedu",
@@ -8491,19 +7335,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Payya",
-   "vt": "పాయ్య",
-   "m": "Thottambedu",
-   "mt": "తొట్టంబేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Sunitha",
-   "st": "సునీత",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Rothusuramala",
    "vt": "రౌతుసూరమాల",
    "m": "Thottambedu",
@@ -8513,19 +7344,6 @@
    "p": 1,
    "s": "Ratnayya",
    "st": "రత్నయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Sombayyapalem",
-   "vt": "సొంబయ్యపాలెం",
-   "m": "Thottambedu",
-   "mt": "తొట్టంబేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Munireddy",
-   "st": "మునిరెడ్డి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -8634,32 +7452,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Guntakindapalli",
-   "vt": "గుంటకిందపల్లి",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Durgamma",
-   "st": "దుర్గమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Gumtakrimda Palli / గుంటక్రింద పల్లి."
-  },
-  {
-   "v": "Isanaluru",
-   "vt": "ఇసనలూరు",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Srihari",
-   "st": "శ్రీహరి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Inagalooru / ఇనగలూరు."
-  },
-  {
    "v": "Kalavagunta",
    "vt": "కలవగుంట",
    "m": "Srikalahasti",
@@ -8712,19 +7504,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Maddeledu",
-   "vt": "మద్దేలేదు",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Mani",
-   "st": "మణి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Maddiledu / మద్దిలేడు."
-  },
-  {
    "v": "Mangalapuram",
    "vt": "మంగళపురి",
    "m": "Srikalahasti",
@@ -8751,19 +7530,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Melchuru",
-   "vt": "మేల్చూరు",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Amaravathi",
-   "st": "అమరావతి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Melachchooru / మేలచ్చూరు."
-  },
-  {
    "v": "Muchivolu",
    "vt": "ముచ్చివోలు",
    "m": "Srikalahasti",
@@ -8775,19 +7541,6 @@
    "st": "ఈశ్వరమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Obuthayapalli",
-   "vt": "ఓబుతాయపల్లి",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Ankamma",
-   "st": "అంకమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Obulaayapalli / ఓబుళాయపల్లి."
   },
   {
    "v": "Pathagunta",
@@ -8812,19 +7565,6 @@
    "p": 1,
    "s": "Muthyalamma",
    "st": "ముత్యాలమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Ramanujapalli",
-   "vt": "రామానుజపల్లి",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Chiranjeevi",
-   "st": "చిరంజీవి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -8868,19 +7608,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Repalle / రేపల్లె."
   },
   {
-   "v": "Subbanaidu Kandriga",
-   "vt": "సుబ్బానాయుడు కండ్రిగ",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Rekha",
-   "st": "రేఖ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Udamalapadu",
    "vt": "ఉడమలపాడు",
    "m": "Srikalahasti",
@@ -8890,32 +7617,6 @@
    "p": 1,
    "s": "Venkata Subbamma",
    "st": "వెంకట సుబ్బమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Vagavedu",
-   "vt": "వాగవేడు",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Murahayya",
-   "st": "మురగయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Vedo",
-   "vt": "వెడో",
-   "m": "Srikalahasti",
-   "mt": "శ్రీకాళహస్తి",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Jyothi",
-   "st": "జ్యోతి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -8942,45 +7643,6 @@
    "p": 1,
    "s": "Nagamma",
    "st": "నాగమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Irugulam",
-   "vt": "ఇరుగులం",
-   "m": "Satyavedu",
-   "mt": "సత్యవేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Kavitha",
-   "st": "కవిత",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Irugulam / ఇరుగుళం."
-  },
-  {
-   "v": "Jadari",
-   "vt": "జాదరి",
-   "m": "Satyavedu",
-   "mt": "సత్యవేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Guruvayya",
-   "st": "గురువయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kadaredu",
-   "vt": "కదరేడు",
-   "m": "Satyavedu",
-   "mt": "సత్యవేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Spandana",
-   "st": "స్పందన",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9037,19 +7699,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Revallivada",
-   "vt": "రేవల్లివాడ",
-   "m": "Satyavedu",
-   "mt": "సత్యవేడు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Sundaramma",
-   "st": "సుందరమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Repallivaada / రేపల్లివాడ."
-  },
-  {
    "v": "Venkatrajula Kandriga",
    "vt": "వెంకట్రాజుల కండ్రిగ",
    "m": "Satyavedu",
@@ -9074,45 +7723,6 @@
    "st": "పుంగోడి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Digavakanakapalem",
-   "vt": "దిగువకణకపాలెం",
-   "m": "Narayanavanam",
-   "mt": "నారాయణవనం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Govindaswamy",
-   "st": "గోవిందస్వామి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kasimitta",
-   "vt": "కాశీమిట్ట",
-   "m": "Narayanavanam",
-   "mt": "నారాయణవనం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Arumugam",
-   "st": "ఆర్ముగం",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Keesaram",
-   "vt": "కీసరం",
-   "m": "Narayanavanam",
-   "mt": "నారాయణవనం",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Somanathan",
-   "st": "సోమనాథన్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Keelagaram / కీళగరం."
   },
   {
    "v": "Tiruvatyam",
@@ -9167,32 +7777,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Kotramangalam",
-   "vt": "కోత్రమంగళం",
-   "m": "Renigunta",
-   "mt": "రేణిగుంట",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Devender Reddy",
-   "st": "దేవేందర్ రెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Kotramamgalam / కోట్రమంగళం."
-  },
-  {
-   "v": "Srinivasadasipuram",
-   "vt": "శ్రీనివాసదాసిపురం",
-   "m": "Renigunta",
-   "mt": "రేణిగుంట",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Paidi Kranthi Kumar",
-   "st": "పైడి క్రాంతి కుమార్",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Vedullacheruvu",
    "vt": "వెదుళ్ల చెరువు",
    "m": "Renigunta",
@@ -9202,19 +7786,6 @@
    "p": 1,
    "s": "Eega Chenchayya",
    "st": "ఈగ చెంచయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Adivisankarapuram",
-   "vt": "అడివిశంకరపురం",
-   "m": "Pichatur",
-   "mt": "పిచ్చాటూరు",
-   "d": "Tirupati",
-   "dt": "తిరుపతి",
-   "p": 1,
-   "s": "Babu",
-   "st": "బాబు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9362,32 +7933,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Chandireddypalle",
-   "vt": "చాదిరెడ్డిపల్లె",
-   "m": "Gangavaram",
-   "mt": "గంగవరం",
-   "d": "Chittoor",
-   "dt": "చిత్తూరు",
-   "p": 1,
-   "s": "Jayamma",
-   "st": "జయమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Aravidu",
-   "vt": "అరవీడు",
-   "m": "Galiveedu",
-   "mt": "గాలివీడు",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Venkateswarlu",
-   "st": "వెంకటేశ్వర్లు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Aaraveedu / ఆరవీడు."
-  },
-  {
    "v": "Boreddygaripalli",
    "vt": "బోరెడ్డిగారి పల్లె",
    "m": "Galiveedu",
@@ -9397,19 +7942,6 @@
    "p": 1,
    "s": "B. Shanthamma",
    "st": "బి.శాంతమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Chimalacheruvupalli",
-   "vt": "చీమలచెరువు పల్లి",
-   "m": "Galiveedu",
-   "mt": "గాలివీడు",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Nagayya",
-   "st": "నాగయ్య",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9436,32 +7968,6 @@
    "p": 1,
    "s": "Bevari Sirajunnisa",
    "st": "బేవరి సిరాజున్నిసా",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Garugapalli",
-   "vt": "గరుగపల్లి",
-   "m": "Galiveedu",
-   "mt": "గాలివీడు",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Pedda Pullayya",
-   "st": "పెద్ద పుల్లయ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Gopanapalli",
-   "vt": "గోపనపల్లి",
-   "m": "Galiveedu",
-   "mt": "గాలివీడు",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Mittapalli Parvathamma",
-   "st": "మిట్టపల్లి పార్వతమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9609,32 +8115,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Appakondaiahgaripalli",
-   "vt": "అప్పకొండయ్యగారి పల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Dande Krishnaveni",
-   "st": "దండే కృష్ణవేణి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Budida Gunta Palli",
-   "vt": "బూడిద గుంట పల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Motupalli Anjanamma",
-   "st": "మోటుపల్లి అంజనమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "B. Yerragudi",
    "vt": "బి.యెర్రగుడి",
    "m": "Lakkireddipalli",
@@ -9646,32 +8126,6 @@
    "st": "తోపిరెడ్డి లీలావతమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Chatapalli",
-   "vt": "చాటపల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Chelluru Srinivasulu",
-   "st": "చెల్లు శ్రీనివాసులు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Dappalli",
-   "vt": "దప్పల్లె",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Bale Krishnamma",
-   "st": "బాలే కృష్ణమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Dappepalle / దప్పెపల్లె."
   },
   {
    "v": "Dinnepadu",
@@ -9726,32 +8180,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Karnathala",
-   "vt": "కర్నాతల",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Vemula Nagendramma",
-   "st": "వేముల నాగేంద్రమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Lakkireddipalli",
-   "vt": "లక్కిరెడ్డిపల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Chellu Chandra",
-   "st": "చెల్లు చంద్ర",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Maddirevula",
    "vt": "మద్దిరేవుల",
    "m": "Lakkireddipalli",
@@ -9774,32 +8202,6 @@
    "p": 1,
    "s": "Gunde Lalitha Kumari",
    "st": "గుండె లలిత కుమారి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Pandillapalli",
-   "vt": "పందిళ్లపల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Moogi Venkataramana",
-   "st": "మూగి వెంకటరమణ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Reddivari Palli",
-   "vt": "రెడ్డివారి పల్లి",
-   "m": "Lakkireddipalli",
-   "mt": "లక్కిరెడ్డిపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Karasala Sriramulu",
-   "st": "కారసాల శ్రీరాములు",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9843,19 +8245,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Gurijenjukunta",
-   "vt": "గురిజెంజకుంట",
-   "m": "Sambepalli",
-   "mt": "సంబేపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Venkatasubbamma",
-   "st": "వెంకటసుబ్బమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Gurigimjakumta / గురిగింజకుంట."
-  },
-  {
    "v": "Motakattu",
    "vt": "మోటకట్ల",
    "m": "Sambepalli",
@@ -9865,19 +8254,6 @@
    "p": 1,
    "s": "Sivaprasadreddy",
    "st": "శివప్రసాద్‌రెడ్డి",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Narayanareddypalli",
-   "vt": "నారాయణరెడ్డిపల్లి",
-   "m": "Sambepalli",
-   "mt": "సంబేపల్లి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Rangareddy",
-   "st": "రంగారెడ్డి",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9904,19 +8280,6 @@
    "p": 1,
    "s": "Ravindra Naidu",
    "st": "రవీంద్ర నాయుడు",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Chinnamukkapalli",
-   "vt": "చిన్నముక్కపల్లి",
-   "m": "Rayachoti",
-   "mt": "రాయచోటి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Chennuri Kiran Kumar",
-   "st": "చెన్నూరి కిరణ్ కుమార్",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -9995,32 +8358,6 @@
    "p": 1,
    "s": "Bodireddy Manemma",
    "st": "బోదిరెడ్డి మణెమ్మ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Volaga Papireddigaripalli",
-   "vt": "వోలగ పాపిరెడ్డిగారిపల్లి",
-   "m": "Rayachoti",
-   "mt": "రాయచోటి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Battala Venkataramana",
-   "st": "బత్తల వెంకటరమణ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Voriga Paapireddigaaripalli / వోరిగ పాపిరెడ్డిగారిపల్లి."
-  },
-  {
-   "v": "Yandapalli",
-   "vt": "యాండపల్లి",
-   "m": "Rayachoti",
-   "mt": "రాయచోటి",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "Bandaral Reddamma",
-   "st": "బండరాల రెడ్డమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
@@ -10142,19 +8479,6 @@
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
   },
   {
-   "v": "Saraswathipalli",
-   "vt": "సరస్వతిపల్లి",
-   "m": "Ramapuram",
-   "mt": "రామాపురం",
-   "d": "Annamayya",
-   "dt": "అన్నమయ్య",
-   "p": 1,
-   "s": "P. Sandhya",
-   "st": "పి.సంధ్య",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
    "v": "Teetakallu",
    "vt": "తీటకల్లు",
    "m": "Brahmasamudram",
@@ -10192,32 +8516,6 @@
    "st": "వెంకటేశ్",
    "src": "Way2News, 26 Nov 2026",
    "n": "Declared winner as reported by Way2News; unofficial until SEC confirms"
-  },
-  {
-   "v": "Usakonda",
-   "vt": "ఊసకొండ",
-   "m": "Kurupam",
-   "mt": "కురుపాం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Arika Chinnarao",
-   "st": "ఆరిక చిన్నారావు",
-   "src": "HM TV, TV9 Telugu, Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by HM TV and TV9 Telugu; unofficial until SEC confirms Also spelt Voosakomda / వూసకొండ."
-  },
-  {
-   "v": "Jarada",
-   "vt": "జరడ",
-   "m": "Kurupam",
-   "mt": "కురుపాం",
-   "d": "Parvathipuram Manyam",
-   "dt": "పార్వతీపురం మన్యం",
-   "p": 1,
-   "s": "Arika Sampanni",
-   "st": "ఆరిక సంపన్ని",
-   "src": "HM TV, TV9 Telugu, 26 Nov 2026",
-   "n": "Declared winner as reported by HM TV and TV9 Telugu; unofficial until SEC confirms"
   },
   {
    "v": "T. Sakibanda",
@@ -12649,19 +10947,6 @@
    "st": "దంతులూరి బుచ్చి వెంకాయమ్మ",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
-  },
-  {
-   "v": "Kommanaapalli",
-   "vt": "కొమ్మనాపల్లి",
-   "m": "Mummidivaram",
-   "mt": "ముమ్మిడివరం",
-   "d": "Dr. B. R. Ambedkar Konaseema",
-   "dt": "డా.బి.ఆర్.అంబేడ్కర్ కోనసీమ",
-   "p": 1,
-   "s": "Kumchanapalli Vemkata Durgaa Lakshmee Naaraayana",
-   "st": "కుంచనపల్లి వెంకట దుర్గా లక్ష్మీ నారాయణ",
-   "src": "Eenadu, 26 Nov 2026",
-   "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms Also spelt Komaanapalli / కొమానపల్లి."
   },
   {
    "v": "Marlapaalem",
