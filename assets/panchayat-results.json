@@ -1,5 +1,5 @@
 {
- "updated": "26 Nov 2026, 4:55 PM IST",
+ "updated": "26 Nov 2026, 5:00 PM IST",
  "rows": [
   {
    "v": "Guntapalli",
@@ -10153,6 +10153,32 @@
    "st": "పి.సంధ్య",
    "src": "Eenadu, 26 Nov 2026",
    "n": "Declared winner as reported by Eenadu; unofficial until SEC confirms"
+  },
+  {
+   "v": "Teetakallu",
+   "vt": "తీటకల్లు",
+   "m": "Brahmasamudram",
+   "mt": "బ్రహ్మసముద్రం",
+   "d": "Anantapur",
+   "dt": "అనంతపురం",
+   "p": 1,
+   "s": "Anjinamma",
+   "st": "అంజినమ్మ",
+   "src": "Local report, 26 Nov 2026",
+   "n": "Declared winner as reported locally; unofficial until SEC confirms"
+  },
+  {
+   "v": "Rayalappadoddi",
+   "vt": "రాయలప్పదొడ్డి",
+   "m": "Brahmasamudram",
+   "mt": "బ్రహ్మసముద్రం",
+   "d": "Anantapur",
+   "dt": "అనంతపురం",
+   "p": 1,
+   "s": "Rayala Nagaratnamma",
+   "st": "రాయల నాగరత్నమ్మ",
+   "src": "Local report, 26 Nov 2026",
+   "n": "Declared winner as reported locally; unofficial until SEC confirms"
   }
  ]
 }
