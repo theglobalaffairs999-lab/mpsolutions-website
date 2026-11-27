@@ -315,7 +315,7 @@ for(var i=0;i<ph.length;i++){var d=new Date(ph[i][1]+"T07:00:00+05:30"),end=new 
 if(now<d){var days=Math.ceil((d-now)/864e5);t=ph[i][0]+" polling "+(days<=1?"tomorrow":"in "+days+" days")+" · "+d.toLocaleDateString("en-IN",{day:"numeric",month:"short",timeZone:"Asia/Kolkata"});break}
 if(now<=end){t=ph[i][0]+" polling today · counting from 2 pm";break}}
 if(!t)t="All phases polled · see results";el.textContent=t})();</script>
-<div class="wrap" style="margin:14px auto"><form action="/panchayat-results" method="get" style="display:flex;gap:8px;flex-wrap:wrap;padding:16px;border-radius:12px;background:linear-gradient(135deg,#0B2147,#163a7a);border-left:6px solid #F47920;align-items:center"><strong style="color:#fff;flex:1 1 100%;font-size:1.1rem">&#128308; Check your village sarpanch result / మీ ఊరి సర్పంచ్ ఫలితం</strong><input name="q" type="search" placeholder="Village or mandal / ఊరు లేదా మండలం పేరు" aria-label="Village or mandal name" style="flex:1 1 200px;min-width:0;padding:12px 14px;border-radius:8px;border:0;font-size:1rem"><button type="submit" style="padding:12px 18px;border:0;border-radius:8px;background:#F47920;color:#fff;font-weight:800;font-size:1rem;cursor:pointer">Check result &rarr;</button></form></div>
+<div class="wrap" style="margin:14px auto"><form action="/panchayat-results" method="get" style="display:flex;gap:8px;flex-wrap:wrap;padding:16px;border-radius:12px;background:linear-gradient(135deg,#0B2147,#163a7a);border-left:6px solid #F47920;align-items:center"><strong style="color:#fff;flex:1 1 100%;font-size:1.1rem">&#128308; Check your village sarpanch result</strong><input name="q" type="search" placeholder="Village or mandal name" aria-label="Village or mandal name" style="flex:1 1 200px;min-width:0;padding:12px 14px;border-radius:8px;border:0;font-size:1rem"><button type="submit" style="padding:12px 18px;border:0;border-radius:8px;background:#F47920;color:#fff;font-weight:800;font-size:1rem;cursor:pointer">Check result &rarr;</button></form></div>
   <section class="hero">
     <div class="wrap hero__grid">
       <div>
@@ -394,10 +394,15 @@ if(!t)t="All phases polled · see results";el.textContent=t})();</script>
   <section class="band band--mist" id="latest">
     <div class="wrap">
       <h2>Latest analysis</h2>
+      <a class="latest-card" href="/articles/ap-panchayat-phase-1-turnout-77-65-percent-district-wise-vs-2021-analysis.html">
+        <span class="latest-tag">Data · Phase 1 turnout</span>
+        <b>AP panchayat Phase 1 turnout: 77.65%, 4.13 points below 2021 in a poll three hours shorter</b>
+        <span>Chittoor highest at 83.37%, Alluri Sitharama Raju lowest at 58.85%. District-wise turnout and an hour-by-hour comparison with 2021.</span>
+      </a>
       <a class="latest-card" href="/panchayat-results">
         <span class="latest-tag">Live · Phase 1 · 26 Nov</span>
         <b>Live: Phase 1 results. Search your village sarpanch result</b>
-        <span>Counting from 2 pm. Village results are added as local media report them, marked unofficial until the SEC confirms. మీ ఊరి సర్పంచ్ ఫలితం చూడండి.</span>
+        <span>Counting from 2 pm. Village results are added as local media report them, marked unofficial until the SEC confirms.</span>
       </a>
       <a class="latest-card" href="/panchayat-results">
         <span class="latest-tag">Live from 26 Nov · Search</span>
