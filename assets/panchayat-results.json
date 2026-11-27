@@ -1,5 +1,5 @@
 {
- "updated": "26 Nov 2026, 10:20 PM IST",
+ "updated": "27 Nov 2026, 10:52 AM IST",
  "rows": [
   {
    "v": "Guntapalli",
@@ -40080,6 +40080,32 @@
    "st": "వడ్డే ముత్యాలు",
    "src": "Single source (local report), 26 Nov 2026",
    "n": "Single-source report (YSRCP-backed, 74 votes majority); not yet in Eenadu or SEC lists. Unofficial until confirmed"
+  },
+  {
+   "v": "Kothavalasa Major",
+   "vt": "కొత్తవలస మేజర్ పంచాయతీ",
+   "m": "Kothavalasa",
+   "mt": "కొత్తవలస",
+   "d": "Vizianagaram",
+   "dt": "విజయనగరం",
+   "p": 1,
+   "s": "Bobbadi Nagapaidamma",
+   "st": "బొబ్బాది నాగపైడమ్మ",
+   "src": "Andhra Jyothy, 26 Nov 2026",
+   "n": "Declared winner as reported by Andhra Jyothy; unofficial until SEC confirms"
+  },
+  {
+   "v": "Tummikapalli",
+   "vt": "తుమ్మికాపల్లి",
+   "m": "Kothavalasa",
+   "mt": "కొత్తవలస",
+   "d": "Vizianagaram",
+   "dt": "విజయనగరం",
+   "p": 1,
+   "s": "Pilla Appalaraju",
+   "st": "పిల్లా అప్పలరాజు",
+   "src": "Andhra Jyothy, 26 Nov 2026",
+   "n": "Declared winner as reported by Andhra Jyothy; unofficial until SEC confirms"
   }
  ]
 }
